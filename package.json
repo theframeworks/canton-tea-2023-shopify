@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "dev": "npx tailwindcss -i ./assets/app-tailwind.css -o ./assets/app.css --watch"
   },
   "repository": {
     "type": "git",
@@ -31,5 +32,8 @@
   "prettier": "@trelliscommerce/prettier-config",
   "lint-staged": {
     "*.{js,css}": "prettier --write"
+  },
+  "volta": {
+    "node": "18.16.1"
   }
 }

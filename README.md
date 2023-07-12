@@ -107,7 +107,7 @@ These secret values are used in the `ci.yml` github workflow:
    `shopify theme pull -d`
 
 4. Anytime you add a TailwindCSS class (remember to prefix it with tw-), run the CLI tool to scan your template files for classes and build your CSS to assets/app.css:
-   `npx tailwindcss -i ./assets/app-tailwind.css -o ./assets/app.css --watch`
+   `npm run dev`
 
 - Run this command in a separate terminal so it will continue to run while you are developing.
 
