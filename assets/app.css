@@ -475,40 +475,40 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-backdrop-sepia: ;
 }
 
-.twcss-container {
+.tw-container {
   width: 100%;
 }
 
 @media (min-width: 320px) {
-  .twcss-container {
+  .tw-container {
     max-width: 320px;
   }
 }
 
 @media (min-width: 750px) {
-  .twcss-container {
+  .tw-container {
     max-width: 750px;
   }
 }
 
 @media (min-width: 990px) {
-  .twcss-container {
+  .tw-container {
     max-width: 990px;
   }
 }
 
 @media (min-width: 1440px) {
-  .twcss-container {
+  .tw-container {
     max-width: 1440px;
   }
 }
 
 @media (min-width: 1920px) {
-  .twcss-container {
+  .tw-container {
     max-width: 1920px;
   }
 }
 
-.twcss-block {
+.tw-block {
   display: block;
 }
