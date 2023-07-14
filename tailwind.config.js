@@ -24,6 +24,9 @@ module.exports = {
       },
     },
     color: {
+      current: 'currentColor',
+      inherit: 'inherit',
+      transparent: 'transparent',
       black: '#000000',
     },
   },
