@@ -112,4 +112,4 @@ These secret values are used in the `ci.yml` github workflow:
 - Run this command in a separate terminal so it will continue to run while you are developing.
 
 5. Launch the local development server:
-   `shopify theme serve`
+   `shopify theme dev`
