@@ -1046,7 +1046,7 @@
       "name": "Header",
       "settings": {
         "logo_help": {
-          "content": "Edit your logo in [theme settings](/editor?context=theme&category=logo)."
+          "content": ""
         },
         "logo_position": {
           "label": "Desktop logo position",
