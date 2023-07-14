@@ -1,0 +1,42 @@
+<div class="tw-container">
+    <div class="tw-grid md:tw-grid-cols-2 lg:tw-grid-cols-12 tw-border-b tw-border-stroke-grey tw-gap-3 tw-pt-3">
+      <div class="lg:tw-col-span-5">
+        <div class="tw-sticky tw-top-2.5 tw-mb-3">
+          <h3 class="tw-mb-12 tw-tracking-[-1px]">{{ product.metafields.quote.text.value | raw }}</h3>
+        </div>
+      </div>
+
+      <div class="lg:tw-col-span-7">
+        {% assign quoteFile = product.metafields.quote.images.value %}
+        {% for image in product.metafields.quote.images.value %}
+          <img
+            loading="lazy"
+            class="tw-inline tw-mb-3"
+            src=" {{ image | image_url: width: '1640x' }}"
+            sizes="
+                  (min-width: 1600px) calc((1600px - 2 * 1.5rem) * 1 / 2),
+                  (min-width: 1440px) calc((1440px - 2 * 1.5rem) * 1 / 2),
+                  (min-width: 1024px) calc((1024px - 2 * 1.5rem) * 1 / 2),
+                  (min-width: 768px) calc((768px - 2 * 1.5rem) * 1 / 2),
+                  (min-width: 570px) calc(100vw - 2 * 1.5rem),
+                  100vw"
+            data-aspectratio="{{ image.aspect_ratio }}"
+            data-sizes="auto"
+          />
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Quote",
+  "class": "quote",
+  "presets": [
+    {
+      "name": "Quote"
+    }
+  ]
+}
+{% endschema %}
