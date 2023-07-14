@@ -507,14 +507,149 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 }
 
+.tw-sticky {
+  position: sticky;
+}
+
+.tw-top-2\.5 {
+  top: 0.625rem;
+}
+
+.tw-top-2 {
+  top: 0.5rem;
+}
+
+.tw-order-2 {
+  order: 2;
+}
+
+.tw-order-1 {
+  order: 1;
+}
+
+.tw-mb-3 {
+  margin-bottom: 0.75rem;
+}
+
+.tw-mb-12 {
+  margin-bottom: 3rem;
+}
+
+.tw-mb-8 {
+  margin-bottom: 2rem;
+}
+
+.tw-mb-5 {
+  margin-bottom: 1.25rem;
+}
+
+.tw-inline {
+  display: inline;
+}
+
+.tw-flex {
+  display: flex;
+}
+
+.tw-grid {
+  display: grid;
+}
+
+.tw-h-\[695px\] {
+  height: 695px;
+}
+
+.tw-w-full {
+  width: 100%;
+}
+
+.tw-flex-col {
+  flex-direction: column;
+}
+
+.tw-gap-3 {
+  gap: 0.75rem;
+}
+
+.tw-gap-4 {
+  gap: 1rem;
+}
+
+.tw-border-b {
+  border-bottom-width: 1px;
+}
+
+.tw-object-cover {
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.tw-pt-3 {
+  padding-top: 0.75rem;
+}
+
+.tw-text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+.tw-capitalize {
+  text-transform: capitalize;
+}
+
+.tw-tracking-\[-1px\] {
+  letter-spacing: -1px;
+}
+
 :root {
   --font-heading-family: neue-haas-grotesk-display, sans-serif;
   --font-body-family: TechnoScript, Courier, monospace;
 }
 
+.hover\:tw-underline:hover {
+  -webkit-text-decoration-line: underline;
+  text-decoration-line: underline;
+}
+
+@media (min-width: 570px) {
+  .sm\:tw-order-1 {
+    order: 1;
+  }
+
+  .sm\:tw-order-2 {
+    order: 2;
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:tw-col-span-6 {
+    grid-column: span 6 / span 6;
+  }
+
+  .md\:tw-w-3\/4 {
+    width: 75%;
+  }
+
+  .md\:tw-w-5\/12 {
+    width: 41.666667%;
+  }
+
+  .md\:tw-grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .md\:tw-grid-cols-12 {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+}
+
 @media (min-width: 1024px) {
   .lg\:tw-col-span-5 {
     grid-column: span 5 / span 5;
+  }
+
+  .lg\:tw-col-span-7 {
+    grid-column: span 7 / span 7;
   }
 
   .lg\:tw-col-start-2 {
@@ -547,6 +682,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .lg\:\!tw-gap-3 {
     gap: 0.75rem !important;
+  }
+
+  .lg\:tw-gap-10 {
+    gap: 2.5rem;
   }
 
   .lg\:\!tw-pl-0 {
