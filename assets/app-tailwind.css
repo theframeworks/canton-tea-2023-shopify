@@ -3,15 +3,6 @@
 @tailwind utilities;
 
 :root {
-  --font-heading-family: '"neue-haas-grotesk-display"', 'sans-serif';
-  --font-body-family: '"TechnoScript"', 'Courier', 'monospace';
-}
-
-@layer base {
-  @font-face {
-    font-family: 'TechnoScript';
-    src: url('../fonts/TechnoScriptEF.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-  }
+  --font-heading-family: neue-haas-grotesk-display, sans-serif;
+  --font-body-family: TechnoScript, Courier, monospace;
 }

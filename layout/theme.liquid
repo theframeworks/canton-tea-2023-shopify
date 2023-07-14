@@ -238,6 +238,15 @@
       }
     {% endstyle %}
 
+    <style>
+      @font-face {
+        font-family: "TechnoScript";
+        src: url("{{ 'TechnoScriptEF.woff2' | asset_url }}") format("woff2");
+        font-weight: normal;
+        font-style: normal;
+      }
+    </style>
+
     {{ 'app.css' | asset_url | stylesheet_tag }}
     {{ 'base.css' | asset_url | stylesheet_tag }}
 
