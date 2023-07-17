@@ -2,7 +2,130 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --font-heading-family: neue-haas-grotesk-display, sans-serif;
-  --font-body-family: TechnoScript, Courier, monospace;
+@layer base {
+  :root {
+    --font-heading-family: neue-haas-grotesk-display, sans-serif;
+    --font-body-family: TechnoScript, Courier, monospace;
+  }
+
+  body,
+  .body {
+    @apply !tw-text-base !tw-font-body;
+  }
+
+  small,
+  .small {
+    @apply !tw-text-[10px]/[18px];
+  }
+
+  :is(.h0, .h1, .h2, .h3, .h4).h-style,
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply !tw-font-heading !tw-tracking-[-1px];
+  }
+  :is(.h5, .h6).h-style,
+  h5,
+  h6,
+  b,
+  strong {
+    @apply !tw-font-semibold;
+  }
+  :is(.h5, .h6).h-style {
+    @apply !tw-font-body;
+  }
+  h1,
+  .h1 {
+    @apply !tw-text-[50px]/[49px];
+    @apply xl:!tw-text-[100px]/[90px];
+  }
+  h2,
+  .h2 {
+    @apply !tw-text-[42px]/[38px];
+    @apply xl:!tw-text-[72px]/[65px];
+  }
+  h3,
+  .h3 {
+    @apply !tw-text-[32px]/[29px];
+    @apply xl:!tw-text-[48px]/[47px];
+  }
+  h4,
+  .h4 {
+    @apply !tw-text-[26px]/[23px];
+    @apply xl:!tw-text-[32px]/[30px];
+  }
+  h5,
+  .h5 {
+    @apply !tw-text-[22px]/[26px];
+  }
+  h6,
+  .h6 {
+    @apply body;
+  }
+
+  blockquote {
+    @apply !tw-space-y-4 md:!tw-space-y-6 xl:!tw-space-y-8;
+
+    & p {
+      @apply first-of-type:before:!tw-content-['“'] last-of-type:after:!tw-content-['”'];
+    }
+    & cite {
+      @apply !tw-block !tw-not-italic;
+    }
+  }
+  blockquote p,
+  .blockquote {
+    @apply !tw-text-[30px]/[36px];
+    @apply md:!tw-text-[38px]/[42px];
+    @apply xl:!tw-text-[44px]/[48px];
+  }
+
+  blockquote,
+  figure {
+    @apply !tw-space-y-4 md:!tw-space-y-6 xl:!tw-space-y-8;
+  }
+  blockquote cite,
+  figure figcaption {
+    @apply !tw-font-body !tw-text-xs;
+  }
+
+  p:empty {
+    @apply !tw-hidden;
+  }
+
+  :any-link {
+    @apply !tw-underline-offset-[.175em] !tw-decoration-1;
+  }
+
+  .thef-prose {
+    /* @apply max-w-[--thef-prose-max-w] thef-prose--content;*/
+
+    &
+      :where(
+        blockquote,
+        dl,
+        dd,
+        figure,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        hr,
+        menu,
+        ol,
+        p,
+        pre,
+        ul
+      ):not(:last-child) {
+      @apply !tw-mb-4;
+    }
+  }
+  .thef-prose--content {
+    & :any-link {
+      @apply !tw-underline !tw-transition-colors hover:!tw-decoration-gold focus:!tw-decoration-gold;
+    }
+  }
 }
