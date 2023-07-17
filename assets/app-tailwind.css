@@ -6,6 +6,7 @@
   :root {
     --font-heading-family: neue-haas-grotesk-display, sans-serif;
     --font-body-family: TechnoScript, Courier, monospace;
+    --font-body-scale: 1.6;
   }
 
   body,
