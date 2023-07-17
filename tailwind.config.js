@@ -21,6 +21,7 @@ module.exports = {
     extend: {
       fontFamily: {
         heading: 'var(--font-heading-family)',
+        body: 'var(--font-body-family)',
       },
     },
     color: {
