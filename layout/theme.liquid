@@ -45,6 +45,13 @@
     %}
 
     {% style %}
+      @font-face {
+        font-family: "TechnoScript";
+        src: url("{{ 'TechnoScriptEF.woff2' | asset_url }}") format("woff2");
+        font-weight: normal;
+        font-style: normal;
+      }
+
       {{ settings.type_body_font | font_face: font_display: 'swap' }}
       {{ body_font_bold | font_face: font_display: 'swap' }}
       {{ body_font_italic | font_face: font_display: 'swap' }}
@@ -237,15 +244,6 @@
         }
       }
     {% endstyle %}
-
-    <style>
-      @font-face {
-        font-family: "TechnoScript";
-        src: url("{{ 'TechnoScriptEF.woff2' | asset_url }}") format("woff2");
-        font-weight: normal;
-        font-style: normal;
-      }
-    </style>
 
     {{ 'app.css' | asset_url | stylesheet_tag }}
     {{ 'base.css' | asset_url | stylesheet_tag }}
