@@ -78,7 +78,7 @@
               disabled
             {% endif %}
           >
-            <span>
+            <span class="tw-font-heading tw-uppercase tw-tracking-[1.5px]">
               {%- if product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
                 {{ 'products.product.sold_out' | t }}
               {%- else -%}
