@@ -1,6 +1,4 @@
 @tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 @layer base {
   :root {
@@ -11,12 +9,12 @@
 
   body,
   .body {
-    @apply !tw-text-base !tw-font-body;
+    @apply tw-text-base tw-font-body;
   }
 
   small,
   .small {
-    @apply !tw-text-[10px]/[18px];
+    @apply tw-text-[10px]/[18px];
   }
 
   :is(.h0, .h1, .h2, .h3, .h4).h-style,
@@ -24,41 +22,41 @@
   h2,
   h3,
   h4 {
-    @apply !tw-font-heading !tw-tracking-[-1px];
+    @apply tw-font-heading tw-tracking-[-1px];
   }
   :is(.h5, .h6).h-style,
   h5,
   h6,
   b,
   strong {
-    @apply !tw-font-semibold;
+    @apply tw-font-semibold;
   }
   :is(.h5, .h6).h-style {
-    @apply !tw-font-body;
+    @apply tw-font-body;
   }
   h1,
   .h1 {
-    @apply !tw-text-[50px]/[49px];
-    @apply xl:!tw-text-[100px]/[90px];
+    @apply tw-text-[50px]/[49px];
+    @apply xl:tw-text-[100px]/[90px];
   }
   h2,
   .h2 {
-    @apply !tw-text-[42px]/[38px];
-    @apply xl:!tw-text-[72px]/[65px];
+    @apply tw-text-[42px]/[38px];
+    @apply xl:tw-text-[72px]/[65px];
   }
   h3,
   .h3 {
-    @apply !tw-text-[32px]/[29px];
-    @apply xl:!tw-text-[48px]/[47px];
+    @apply tw-text-[32px]/[29px];
+    @apply xl:tw-text-[48px]/[47px];
   }
   h4,
   .h4 {
-    @apply !tw-text-[26px]/[23px];
-    @apply xl:!tw-text-[32px]/[30px];
+    @apply tw-text-[26px]/[23px];
+    @apply xl:tw-text-[32px]/[30px];
   }
   h5,
   .h5 {
-    @apply !tw-text-[22px]/[26px];
+    @apply tw-text-[22px]/[26px];
   }
   h6,
   .h6 {
@@ -66,37 +64,37 @@
   }
 
   blockquote {
-    @apply !tw-space-y-4 md:!tw-space-y-6 xl:!tw-space-y-8;
+    @apply tw-space-y-4 md:tw-space-y-6 xl:tw-space-y-8;
 
     & p {
-      @apply first-of-type:before:!tw-content-['“'] last-of-type:after:!tw-content-['”'];
+      @apply first-of-type:before:tw-content-['“'] last-of-type:after:tw-content-['”'];
     }
     & cite {
-      @apply !tw-block !tw-not-italic;
+      @apply tw-block !tw-not-italic;
     }
   }
   blockquote p,
   .blockquote {
-    @apply !tw-text-[30px]/[36px];
-    @apply md:!tw-text-[38px]/[42px];
-    @apply xl:!tw-text-[44px]/[48px];
+    @apply tw-text-[30px]/[36px];
+    @apply md:tw-text-[38px]/[42px];
+    @apply xl:tw-text-[44px]/[48px];
   }
 
   blockquote,
   figure {
-    @apply !tw-space-y-4 md:!tw-space-y-6 xl:!tw-space-y-8;
+    @apply tw-space-y-4 md:tw-space-y-6 xl:tw-space-y-8;
   }
   blockquote cite,
   figure figcaption {
-    @apply !tw-font-body !tw-text-xs;
+    @apply tw-font-body tw-text-xs;
   }
 
   p:empty {
-    @apply !tw-hidden;
+    @apply tw-hidden;
   }
 
   :any-link {
-    @apply !tw-underline-offset-[.175em] !tw-decoration-1;
+    @apply tw-underline-offset-[.175em] tw-decoration-1;
   }
 
   .thef-prose {
@@ -121,12 +119,15 @@
         pre,
         ul
       ):not(:last-child) {
-      @apply !tw-mb-4;
+      @apply tw-mb-4;
     }
   }
   .thef-prose--content {
     & :any-link {
-      @apply !tw-underline !tw-transition-colors hover:!tw-decoration-gold focus:!tw-decoration-gold;
+      @apply tw-underline tw-transition-colors hover:tw-decoration-gold focus:tw-decoration-gold;
     }
   }
 }
+
+@tailwind components;
+@tailwind utilities;
