@@ -553,7 +553,7 @@ blockquote > :not([hidden]) ~ :not([hidden]) {
   margin-bottom: calc(1rem * var(--tw-space-y-reverse));
 }
 
-@media (min-width: 768px) {
+@media (min-width: 750px) {
   blockquote > :not([hidden]) ~ :not([hidden]) {
     --tw-space-y-reverse: 0;
     margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
@@ -592,7 +592,7 @@ blockquote p,
   line-height: 36px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 750px) {
   blockquote p,
   .blockquote {
     font-size: 38px;
@@ -615,7 +615,7 @@ figure > :not([hidden]) ~ :not([hidden]) {
   margin-bottom: calc(1rem * var(--tw-space-y-reverse));
 }
 
-@media (min-width: 768px) {
+@media (min-width: 750px) {
   blockquote > :not([hidden]) ~ :not([hidden]),
   figure > :not([hidden]) ~ :not([hidden]) {
     --tw-space-y-reverse: 0;
@@ -770,9 +770,9 @@ p:empty {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 750px) {
   .tw-container {
-    max-width: 768px;
+    max-width: 750px;
   }
 }
 
@@ -916,9 +916,29 @@ p:empty {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 750px) {
   #app :is(.md\:tw-col-span-6) {
     grid-column: span 6 / span 6;
+  }
+
+  #app :is(.md\:tw-col-span-4) {
+    grid-column: span 4 / span 4;
+  }
+
+  #app :is(.md\:tw-col-start-2) {
+    grid-column-start: 2;
+  }
+
+  #app :is(.md\:tw-col-start-8) {
+    grid-column-start: 8;
+  }
+
+  #app :is(.md\:tw-col-end-7) {
+    grid-column-end: 7;
+  }
+
+  #app :is(.md\:tw-grid) {
+    display: grid;
   }
 
   #app :is(.md\:tw-w-3\/4) {
@@ -929,12 +949,32 @@ p:empty {
     width: 41.666667%;
   }
 
+  #app :is(.md\:tw-w-full) {
+    width: 100%;
+  }
+
+  #app :is(.md\:tw-max-w-full) {
+    max-width: 100%;
+  }
+
   #app :is(.md\:tw-grid-cols-12) {
     grid-template-columns: repeat(12, minmax(0, 1fr));
   }
 
   #app :is(.md\:tw-grid-cols-2) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  #app :is(.md\:tw-gap-3) {
+    gap: 0.75rem;
+  }
+
+  #app :is(.md\:tw-gap-6) {
+    gap: 1.5rem;
+  }
+
+  #app :is(.md\:tw-pl-0) {
+    padding-left: 0px;
   }
 }
 
@@ -1001,12 +1041,16 @@ p:empty {
     grid-column: span 4 / span 4;
   }
 
+  #app :is(.xl\:tw-col-span-3) {
+    grid-column: span 3 / span 3;
+  }
+
   #app :is(.xl\:tw-col-start-8) {
     grid-column-start: 8;
   }
 }
 
-@media not all and (min-width: 768px) {
+@media not all and (min-width: 750px) {
   #app :is(.max-md\:\[\&_div\:first-child\]\:tw-border-b div:first-child) {
     border-bottom-width: 1px;
   }
