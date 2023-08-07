@@ -123,6 +123,21 @@
         "padding_bottom": 12
       }
     },
+    "d4d6d999-152c-4aff-9b0e-0dfe142fb986": {
+      "type": "product-flavour-profile",
+      "settings": {
+      }
+    },
+    "0141b941-b0e1-4900-884c-7533e85b4b06": {
+      "type": "product-quote",
+      "settings": {
+      }
+    },
+    "7f7aa685-080b-4b43-9487-a59113a61133": {
+      "type": "product-origin",
+      "settings": {
+      }
+    },
     "related-products": {
       "type": "related-products",
       "settings": {
@@ -140,10 +155,21 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
+    },
+    "f8877fd8-2715-45d4-8008-4eedd495c08e": {
+      "type": "featured-blog-alt",
+      "settings": {
+        "blog": "journal",
+        "post_limit": 2
+      }
     }
   },
   "order": [
     "main",
-    "related-products"
+    "d4d6d999-152c-4aff-9b0e-0dfe142fb986",
+    "0141b941-b0e1-4900-884c-7533e85b4b06",
+    "7f7aa685-080b-4b43-9487-a59113a61133",
+    "related-products",
+    "f8877fd8-2715-45d4-8008-4eedd495c08e"
   ]
 }
