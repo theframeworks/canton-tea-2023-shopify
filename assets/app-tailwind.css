@@ -6,7 +6,6 @@
   :root {
     --font-heading-family: neue-haas-grotesk-display, sans-serif;
     --font-body-family: TechnoScript, Courier, monospace;
-    --font-body-scale: 1.6;
   }
 
   body,
@@ -36,7 +35,7 @@
   :is(.h5, .h6).h-style {
     @apply tw-font-body;
   }
-  h1,
+  /*h1,
   .h1 {
     @apply tw-text-[50px]/[49px];
     @apply xl:tw-text-[100px]/[90px];
@@ -59,7 +58,7 @@
   h5,
   .h5 {
     @apply tw-text-[22px]/[26px];
-  }
+  }*/
   h6,
   .h6 {
     @apply body;
