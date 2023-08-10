@@ -123,6 +123,21 @@
         "padding_bottom": 12
       }
     },
+    "17d51860-93f0-43ea-aede-1aa67de23b9f": {
+      "type": "product-flavour-profile",
+      "settings": {
+      }
+    },
+    "3deb5c96-f96f-4f88-946e-6af1be7b16fe": {
+      "type": "product-quote",
+      "settings": {
+      }
+    },
+    "b2b02d52-5f68-42c0-b8e7-889c3dafdc11": {
+      "type": "product-origin",
+      "settings": {
+      }
+    },
     "related-products": {
       "type": "related-products",
       "settings": {
@@ -141,16 +156,6 @@
         "padding_bottom": 28
       }
     },
-    "17d51860-93f0-43ea-aede-1aa67de23b9f": {
-      "type": "product-flavour-profile",
-      "settings": {
-      }
-    },
-    "b2b02d52-5f68-42c0-b8e7-889c3dafdc11": {
-      "type": "product-origin",
-      "settings": {
-      }
-    },
     "dedfc025-cbb5-4958-99f8-be35cba4f7c3": {
       "type": "featured-blog-alt",
       "settings": {
@@ -161,9 +166,10 @@
   },
   "order": [
     "main",
-    "related-products",
     "17d51860-93f0-43ea-aede-1aa67de23b9f",
+    "3deb5c96-f96f-4f88-946e-6af1be7b16fe",
     "b2b02d52-5f68-42c0-b8e7-889c3dafdc11",
+    "related-products",
     "dedfc025-cbb5-4958-99f8-be35cba4f7c3"
   ]
 }
