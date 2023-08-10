@@ -145,11 +145,25 @@
       "type": "product-flavour-profile",
       "settings": {
       }
+    },
+    "b2b02d52-5f68-42c0-b8e7-889c3dafdc11": {
+      "type": "product-origin",
+      "settings": {
+      }
+    },
+    "dedfc025-cbb5-4958-99f8-be35cba4f7c3": {
+      "type": "featured-blog-alt",
+      "settings": {
+        "blog": "journal",
+        "post_limit": 2
+      }
     }
   },
   "order": [
     "main",
     "related-products",
-    "17d51860-93f0-43ea-aede-1aa67de23b9f"
+    "17d51860-93f0-43ea-aede-1aa67de23b9f",
+    "b2b02d52-5f68-42c0-b8e7-889c3dafdc11",
+    "dedfc025-cbb5-4958-99f8-be35cba4f7c3"
   ]
 }
