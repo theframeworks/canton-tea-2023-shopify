@@ -28,7 +28,16 @@ module.exports = {
       inherit: 'inherit',
       transparent: 'transparent',
       black: '#000000',
+      white: '#ffffff',
     },
   },
-  plugins: [require('tailwindcss-debug-screens')],
+  plugins: [
+    require('tailwindcss-debug-screens'),
+    function ({ addVariant, matchUtilities, theme }) {
+      addVariant('js', ':root.js &');
+      addVariant('parent', ':has(>&)');
+      addVariant('not-first', '&:not(:first-child)');
+      addVariant('not-last', '&:not(:last-child)');
+    },
+  ],
 };
