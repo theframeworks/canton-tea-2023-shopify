@@ -1,0 +1,106 @@
+<div class="tw-container">
+  <div class="tw-grid md:tw-grid-cols-12 tw-gap-3 tw-pt-3 tw-mb-8 max-md:[&_div:first-child]:tw-border-b max-md:[&_div:first-child]:tw-border-stroke-grey max-md:[&_div:first-child]:tw-pb-5">
+    {%- assign blog = blogs[section.settings.blog] -%}
+    
+    {%- for article in blog.articles limit: section.settings.post_limit -%}
+      <div class="md:tw-col-span-6 tw-flex tw-flex-col tw-gap-4 lg:tw-gap-10">
+        <a href="{{ article.url }}">
+          {%- if article.image -%}
+            <img
+              class="tw-mb-5 tw-object-cover tw-w-full tw-h-[695px]"
+              loading="lazy"
+              src=" {{ article.image | image_url: width: '1640x' }}"
+              sizes="
+                  (min-width: 1600px) calc((1600px - 2 * 1.5rem) * 1 / 2),
+                  (min-width: 1440px) calc((1440px - 2 * 1.5rem) * 1 / 2),
+                  (min-width: 1024px) calc((1024px - 2 * 1.5rem) * 1 / 2),
+                  (min-width: 768px) calc((768px - 2 * 1.5rem) * 1 / 2),
+                  (min-width: 570px) calc(100vw - 2 * 1.5rem),
+                  100vw"
+              data-aspectratio="{{ article.image.aspect_ratio }}"
+              data-sizes="auto"
+            />
+          {%- endif -%}
+          <h3 class="tw-tracking-[-1px] md:tw-w-5/12">
+            {{ article.title }}
+          </h3>
+        </a>
+
+        {%- if article.excerpt.size > 0 -%}
+          <div class="[&_p]:tw-md:w-7/12">
+            {{ article.excerpt }}
+          </div>
+        {%- else -%}
+          <div class="[&_p]:tw-md:w-7/12">
+            {{ article.content | strip_html | truncate: 150 }}
+          </div>
+        {%- endif -%}
+
+        <ul>
+          <li>
+            <a class="hover:tw-underline" href="{{ article.url }}" aria-label="{{ article.title }}">
+              {%- if article.metafields.global.read_more -%}
+                {{ article.metafields.global.read_more.value }}
+              {%- else -%}
+                Read more
+              {%- endif -%}
+            </a>
+          </li>
+
+          {%- if blog.comments_enabled? and article.comments_count > 0 -%}
+            <li>
+              <a href="{{ article.url }}#comments">
+                {{ article.comments_count }} comments
+              </a>
+            </li>
+          {%- endif -%}
+
+        </ul>
+      </div>
+    {%- endfor -%}
+
+
+
+
+{%- if section.settings.show_view_all -%}
+  <a href="{{ blog.url }}"
+    class="btn"
+    aria-label="{{ 'blogs.article.view_all_blogs' }}">
+    {{ 'blogs.article.view_all' }}
+  </a>
+{%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Blog posts alt",
+  "class": "index-section",
+  "settings": [
+    {
+      "id": "blog",
+      "type": "blog",
+      "label": "Blog"
+    },
+    {
+      "type": "range",
+      "id": "post_limit",
+      "label": "Posts",
+      "min": 2,
+      "max": 12,
+      "step": 2,
+      "default": 2
+    }
+  ],
+  "presets": [
+    {
+      "name": "Blog posts alt",
+      "category": "Blog",
+      "settings": {
+        "blog": "News",
+        "post_limit": 2
+      }
+    }
+  ]
+}
+{% endschema %}
