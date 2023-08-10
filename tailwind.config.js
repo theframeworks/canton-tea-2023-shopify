@@ -17,6 +17,10 @@ module.exports = {
       x2lg: '1920px',
       pageMaxWidth: '1440px',
     },
+    container: {
+      center: true,
+      padding: '1rem',
+    },
     extend: {
       fontFamily: {
         body: 'var(--font-body-family)',
