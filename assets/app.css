@@ -545,7 +545,202 @@ video {
   --tw-backdrop-sepia: ;
 }
 
-#app :is(.tw-text-black) {
-  --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity));
+.tw-container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+@media (min-width: 320px) {
+  .tw-container {
+    max-width: 320px;
+  }
+}
+
+@media (min-width: 750px) {
+  .tw-container {
+    max-width: 750px;
+  }
+}
+
+@media (min-width: 990px) {
+  .tw-container {
+    max-width: 990px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .tw-container {
+    max-width: 1440px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .tw-container {
+    max-width: 1920px;
+  }
+}
+
+#app :is(.tw-sticky) {
+  position: sticky;
+}
+
+#app :is(.tw-top-2) {
+  top: 0.5rem;
+}
+
+#app :is(.tw-top-2\.5) {
+  top: 0.625rem;
+}
+
+#app :is(.tw-order-1) {
+  order: 1;
+}
+
+#app :is(.tw-order-2) {
+  order: 2;
+}
+
+#app :is(.tw-mb-12) {
+  margin-bottom: 3rem;
+}
+
+#app :is(.tw-mb-3) {
+  margin-bottom: 0.75rem;
+}
+
+#app :is(.tw-mb-5) {
+  margin-bottom: 1.25rem;
+}
+
+#app :is(.tw-mb-8) {
+  margin-bottom: 2rem;
+}
+
+#app :is(.tw-inline) {
+  display: inline;
+}
+
+#app :is(.tw-flex) {
+  display: flex;
+}
+
+#app :is(.tw-grid) {
+  display: grid;
+}
+
+#app :is(.tw-h-\[695px\]) {
+  height: 695px;
+}
+
+#app :is(.tw-w-full) {
+  width: 100%;
+}
+
+#app :is(.tw-flex-col) {
+  flex-direction: column;
+}
+
+#app :is(.tw-gap-3) {
+  gap: 0.75rem;
+}
+
+#app :is(.tw-gap-4) {
+  gap: 1rem;
+}
+
+#app :is(.tw-border-b) {
+  border-bottom-width: 1px;
+}
+
+#app :is(.tw-object-cover) {
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+#app :is(.tw-pt-3) {
+  padding-top: 0.75rem;
+}
+
+#app :is(.tw-font-body) {
+  font-family: var(--font-body-family);
+}
+
+#app :is(.tw-text-xs) {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+#app :is(.tw-capitalize) {
+  text-transform: capitalize;
+}
+
+#app :is(.tw-tracking-\[-1px\]) {
+  letter-spacing: -1px;
+}
+
+#app :is(.hover\:tw-underline:hover) {
+  text-decoration-line: underline;
+}
+
+@media (min-width: 320px) {
+  #app :is(.sm\:tw-order-1) {
+    order: 1;
+  }
+
+  #app :is(.sm\:tw-order-2) {
+    order: 2;
+  }
+}
+
+@media (min-width: 750px) {
+  #app :is(.md\:tw-col-span-6) {
+    grid-column: span 6 / span 6;
+  }
+
+  #app :is(.md\:tw-w-3\/4) {
+    width: 75%;
+  }
+
+  #app :is(.md\:tw-w-5\/12) {
+    width: 41.666667%;
+  }
+
+  #app :is(.md\:tw-grid-cols-12) {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+
+  #app :is(.md\:tw-grid-cols-2) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 990px) {
+  #app :is(.lg\:tw-col-span-5) {
+    grid-column: span 5 / span 5;
+  }
+
+  #app :is(.lg\:tw-col-span-7) {
+    grid-column: span 7 / span 7;
+  }
+
+  #app :is(.lg\:tw-grid-cols-12) {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+
+  #app :is(.lg\:tw-gap-10) {
+    gap: 2.5rem;
+  }
+}
+
+@media not all and (min-width: 750px) {
+  #app :is(.max-md\:\[\&_div\:first-child\]\:tw-border-b div:first-child) {
+    border-bottom-width: 1px;
+  }
+
+  #app :is(.max-md\:\[\&_div\:first-child\]\:tw-pb-5 div:first-child) {
+    padding-bottom: 1.25rem;
+  }
 }
