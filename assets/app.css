@@ -545,38 +545,6 @@ video {
   --tw-backdrop-sepia: ;
 }
 
-.tw-container {
-  width: 100%;
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: 1rem;
-  padding-left: 1rem;
-}
-
-@media (min-width: 320px) {
-  .tw-container {
-    max-width: 320px;
-  }
-}
-
-@media (min-width: 750px) {
-  .tw-container {
-    max-width: 750px;
-  }
-}
-
-@media (min-width: 990px) {
-  .tw-container {
-    max-width: 990px;
-  }
-}
-
-@media (min-width: 1440px) {
-  .tw-container {
-    max-width: 1440px;
-  }
-}
-
 #app :is(.tw-sticky) {
   position: sticky;
 }
