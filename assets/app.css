@@ -577,12 +577,6 @@ video {
   }
 }
 
-@media (min-width: 1920px) {
-  .tw-container {
-    max-width: 1920px;
-  }
-}
-
 #app :is(.tw-sticky) {
   position: sticky;
 }

@@ -14,8 +14,8 @@ module.exports = {
       md: '750px',
       lg: '990px',
       xlg: '1440px',
-      x2lg: '1920px',
-      pageMaxWidth: '1440px',
+      // x2lg: '1920px',
+      // pageMaxWidth: '1440px',
     },
     container: {
       center: true,
