@@ -1,5 +1,16 @@
 @tailwind base;
 @tailwind components;
+
+/**
+  * style to always be included, to be kept outside @layer
+  • see https://tailwindcss.com/docs/content-configuration#working-with-third-party-libraries
+ **/
+#app {
+  :is(.shopify-payment-button__button) {
+    @apply tw-font-heading tw-uppercase;
+  }
+}
+
 @tailwind utilities;
 
 @layer base {

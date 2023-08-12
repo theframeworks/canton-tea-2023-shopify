@@ -545,6 +545,20 @@ video {
   --tw-backdrop-sepia: ;
 }
 
+/**
+  * style to always be included, to be kept outside @layer
+  • see https://tailwindcss.com/docs/content-configuration#working-with-third-party-libraries
+ **/
+
+#app {
+  :is(.shopify-payment-button__button) {
+    font-family: var(--font-heading-family);
+  }
+  :is(.shopify-payment-button__button) {
+    text-transform: uppercase;
+  }
+}
+
 #app :is(.tw-sticky) {
   position: sticky;
 }
@@ -630,17 +644,33 @@ video {
   font-family: var(--font-body-family);
 }
 
+#app :is(.tw-font-heading) {
+  font-family: var(--font-heading-family);
+}
+
 #app :is(.tw-text-xs) {
   font-size: 0.75rem;
   line-height: 1rem;
+}
+
+#app :is(.tw-uppercase) {
+  text-transform: uppercase;
 }
 
 #app :is(.tw-capitalize) {
   text-transform: capitalize;
 }
 
+#app :is(.tw-leading-tight) {
+  line-height: 1.25;
+}
+
 #app :is(.tw-tracking-\[-1px\]) {
   letter-spacing: -1px;
+}
+
+#app :is(.tw-tracking-tight) {
+  letter-spacing: -0.025em;
 }
 
 #app :is(.hover\:tw-underline:hover) {
