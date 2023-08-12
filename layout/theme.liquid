@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="theme-color" content="">
     <link rel="canonical" href="{{ canonical_url }}">
-    <link rel="stylesheet" href="https://use.typekit.net/nim5rms.css">
 
     {%- if settings.favicon != blank -%}
       <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
@@ -50,6 +49,34 @@
         src: url("{{ 'TechnoScriptEF.woff2' | asset_url }}") format("woff2");
         font-weight: normal;
         font-style: normal;
+      }
+
+      @font-face {
+        font-family: "NeueHaasGroteskDisplay";
+        src: url("{{ 'NeueHaasGroteskDisplayLight.woff2' | asset_url }}") format("woff2");
+        font-style: normal;
+        font-weight: normal;
+      }
+
+      @font-face {
+        font-family: "NeueHaasGroteskDisplay";
+        src: url("{{ 'NeueHaasGroteskDisplayLightItalic.woff2' | asset_url }}") format("woff2");
+        font-style: italic;
+        font-weight: normal;
+      }
+
+      @font-face {
+        font-family:"NeueHaasGroteskDisplay";
+        src: url({{ 'NeueHaasGroteskDisplayMedium.woff2' | asset_url }}) format("woff2");
+        font-style: normal;
+        font-weight: bold;
+      }
+
+      @font-face {
+        font-family: "NeueHaasGroteskDisplay";
+        src: url({{ 'NeueHaasGroteskDisplayMediumItalic.woff2' | asset_url }}) format("woff2");
+        font-style: italic;
+        font-weight: bold;
       }
 
       {{ settings.type_body_font | font_face: font_display: 'swap' }}
@@ -272,7 +299,7 @@
     </script>
   </head>
 
-  <body class="tw-leading-tight tw-tracking-tight gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
+  <body class="tw-leading-tight tw-tracking-tight tw-antialiased gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
       {{ 'accessibility.skip_to_text' | t }}
     </a>
@@ -329,5 +356,9 @@
     {%- if settings.predictive_search_enabled -%}
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
+
+    {% style %}
+      @import url("https://p.typekit.net/p.css?s=1&k=nim5rms&ht=tk&f=39494.39495.39498.39499&a=113220005&app=typekit&e=css");
+    {% endstyle %}
   </body>
 </html>

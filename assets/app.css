@@ -440,7 +440,7 @@ video {
 
 :root {
   --font-body-family: 'TechnoScript', 'Courier', 'monospace';
-  --font-heading-family: 'neue-haas-grotesk-display', 'sans-serif';
+  --font-heading-family: 'NeueHaasGroteskDisplay', 'sans-serif';
 }
 
 *,
@@ -671,6 +671,11 @@ video {
 
 #app :is(.tw-tracking-tight) {
   letter-spacing: -0.025em;
+}
+
+#app :is(.tw-antialiased) {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 #app :is(.hover\:tw-underline:hover) {

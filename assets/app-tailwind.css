@@ -16,6 +16,6 @@
 @layer base {
   :root {
     --font-body-family: 'TechnoScript', 'Courier', 'monospace';
-    --font-heading-family: 'neue-haas-grotesk-display', 'sans-serif';
+    --font-heading-family: 'NeueHaasGroteskDisplay', 'sans-serif';
   }
 }
