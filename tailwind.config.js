@@ -27,7 +27,7 @@ module.exports = {
       current: 'currentColor',
       inherit: 'inherit',
       transparent: 'transparent',
-      black: '#000000',
+      black: '#292727',
       white: '#ffffff',
     },
   },
