@@ -1,9 +1,10 @@
 {
   "current": {
+    "logo": "shopify:\/\/shop_images\/Canton_Tea_Logo.svg",
     "logo_width": 90,
-    "type_header_font": "assistant_n4",
+    "type_header_font": "sans-serif",
     "heading_scale": 100,
-    "type_body_font": "assistant_n4",
+    "type_body_font": "mono",
     "body_scale": 100,
     "page_width": 1200,
     "spacing_sections": 0,
@@ -371,5 +372,10 @@
         }
       }
     }
+  },
+  "platform_customizations": {
+    "custom_css": [
+
+    ]
   }
 }
