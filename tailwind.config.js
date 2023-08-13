@@ -22,6 +22,9 @@ module.exports = {
         body: 'var(--font-body-family)',
         heading: 'var(--font-heading-family)',
       },
+      gridTemplateColumns: {
+        16: 'repeat(16, minmax(0, 1fr))',
+      },
     },
     color: {
       current: 'currentColor',

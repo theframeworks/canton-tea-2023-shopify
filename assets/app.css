@@ -712,9 +712,17 @@ video {
   #app :is(.md\:tw-grid-cols-2) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  #app :is(.md\:tw-pl-0) {
+    padding-left: 0px;
+  }
 }
 
 @media (min-width: 990px) {
+  #app :is(.lg\:tw-order-first) {
+    order: -9999;
+  }
+
   #app :is(.lg\:tw-col-span-5) {
     grid-column: span 5 / span 5;
   }
@@ -723,8 +731,20 @@ video {
     grid-column: span 7 / span 7;
   }
 
+  #app :is(.lg\:tw-col-start-10) {
+    grid-column-start: 10;
+  }
+
+  #app :is(.lg\:tw-col-start-2) {
+    grid-column-start: 2;
+  }
+
   #app :is(.lg\:tw-grid-cols-12) {
     grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+
+  #app :is(.lg\:tw-grid-cols-16) {
+    grid-template-columns: repeat(16, minmax(0, 1fr));
   }
 
   #app :is(.lg\:tw-gap-10) {
