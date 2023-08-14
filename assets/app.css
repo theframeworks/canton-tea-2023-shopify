@@ -631,6 +631,10 @@ video {
   object-fit: cover;
 }
 
+#app :is(.tw-pl-4) {
+  padding-left: 1rem;
+}
+
 #app :is(.tw-pt-3) {
   padding-top: 0.75rem;
 }
@@ -646,6 +650,10 @@ video {
 #app :is(.tw-text-xs) {
   font-size: 0.75rem;
   line-height: 1rem;
+}
+
+#app :is(.tw-font-normal) {
+  font-weight: 400;
 }
 
 #app :is(.tw-uppercase) {
@@ -666,6 +674,11 @@ video {
 
 #app :is(.tw-tracking-tight) {
   letter-spacing: -0.025em;
+}
+
+#app :is(.tw-text-black) {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
 #app :is(.tw-antialiased) {

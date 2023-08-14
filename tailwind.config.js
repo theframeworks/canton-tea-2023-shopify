@@ -31,6 +31,7 @@ module.exports = {
       inherit: 'inherit',
       transparent: 'transparent',
       black: '#292727',
+      gray: '#4E4B48',
       white: '#ffffff',
     },
   },
