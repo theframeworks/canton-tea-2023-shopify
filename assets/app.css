@@ -438,11 +438,6 @@ video {
   display: none;
 }
 
-:root {
-  --font-body-family: 'TechnoScript', 'Courier', 'monospace';
-  --font-heading-family: 'NeueHaasGroteskDisplay', 'sans-serif';
-}
-
 *,
 ::before,
 ::after {

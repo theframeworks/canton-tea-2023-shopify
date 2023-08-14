@@ -33,6 +33,41 @@
     %}
 
     {% style %}
+      @font-face {
+        font-family: "TechnoScript";
+        src: url("{{ 'TechnoScriptEF.woff2' | asset_url }}") format("woff2");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "NeueHaasGroteskDisplay";
+        src: url("{{ 'NeueHaasGroteskDisplayLight.woff2' | asset_url }}") format("woff2");
+        font-style: normal;
+        font-weight: normal;
+      }
+
+      @font-face {
+        font-family: "NeueHaasGroteskDisplay";
+        src: url("{{ 'NeueHaasGroteskDisplayLightItalic.woff2' | asset_url }}") format("woff2");
+        font-style: italic;
+        font-weight: normal;
+      }
+
+      @font-face {
+        font-family:"NeueHaasGroteskDisplay";
+        src: url({{ 'NeueHaasGroteskDisplayMedium.woff2' | asset_url }}) format("woff2");
+        font-style: normal;
+        font-weight: bold;
+      }
+
+      @font-face {
+        font-family: "NeueHaasGroteskDisplay";
+        src: url({{ 'NeueHaasGroteskDisplayMediumItalic.woff2' | asset_url }}) format("woff2");
+        font-style: italic;
+        font-weight: bold;
+      }
+
       {{ settings.type_body_font | font_face: font_display: 'swap' }}
       {{ body_font_bold | font_face: font_display: 'swap' }}
       {{ body_font_italic | font_face: font_display: 'swap' }}
@@ -40,11 +75,11 @@
       {{ settings.type_header_font | font_face: font_display: 'swap' }}
 
       :root {
-        --font-body-family: {{ settings.type_body_font.family }}, {{ settings.type_body_font.fallback_families }};
+        --font-body-family: 'TechnoScript', {{ settings.type_body_font.family }}, {{ settings.type_body_font.fallback_families }};
         --font-body-style: {{ settings.type_body_font.style }};
         --font-body-weight: {{ settings.type_body_font.weight }};
 
-        --font-heading-family: {{ settings.type_header_font.family }}, {{ settings.type_header_font.fallback_families }};
+        --font-heading-family: 'NeueHaasGroteskDisplay', {{ settings.type_header_font.family }}, {{ settings.type_header_font.fallback_families }};
         --font-heading-style: {{ settings.type_header_font.style }};
         --font-heading-weight: {{ settings.type_header_font.weight }};
 
