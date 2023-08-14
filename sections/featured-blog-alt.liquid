@@ -1,14 +1,16 @@
 <div class="page-width">
-  <div class="tw-grid md:tw-grid-cols-12 tw-gap-3 tw-pt-3 tw-mb-8 max-md:[&_div:first-child]:tw-border-b max-md:[&_div:first-child]:tw-border-stroke-grey max-md:[&_div:first-child]:tw-pb-5">
+  <div class="tw-border-t tw-border-stroke-gray tw-mt-4 tw-pt-4 tw-grid md:tw-grid-cols-2 tw-gap-4 tw-mb-8 max-md:tw-space-y-4 max-md:tw-divide-y max-md:tw-divide-stroke-gray">
     {%- assign blog = blogs[section.settings.blog] -%}
     
     {%- for article in blog.articles limit: section.settings.post_limit -%}
-      <div class="md:tw-col-span-6 tw-flex tw-flex-col tw-gap-4 lg:tw-gap-10">
+      <div class="max-md:not-first:tw-pt-4 tw-flex tw-flex-col tw-gap-4 lg:tw-gap-10">
         <a href="{{ article.url }}">
           {%- if article.image -%}
             <img
               class="tw-mb-5 tw-object-cover tw-w-full tw-h-[695px]"
               loading="lazy"
+              width="{{ article.image.width }}"
+              height="{{ article.image.height }}"
               src=" {{ article.image | image_url: width: '1640x' }}"
               sizes="
                   (min-width: 1600px) calc((1600px - 2 * 1.5rem) * 1 / 2),
@@ -21,7 +23,7 @@
               data-sizes="auto"
             />
           {%- endif -%}
-          <h3 class="tw-tracking-[-1px] md:tw-w-5/12">
+          <h3 class="tw-text-xl lg:tw-text-2xl tw-font-normal tw-text-balance tw-max-w-2xl">
             {{ article.title }}
           </h3>
         </a>
@@ -38,11 +40,11 @@
 
         <ul>
           <li>
-            <a class="hover:tw-underline" href="{{ article.url }}" aria-label="{{ article.title }}">
+            <a class="tw-link" href="{{ article.url }}">
               {%- if article.metafields.global.read_more -%}
                 {{ article.metafields.global.read_more.value }}
               {%- else -%}
-                Read more
+                Read more <span class="tw-sr-only">about {{ article.title }}</span>
               {%- endif -%}
             </a>
           </li>
