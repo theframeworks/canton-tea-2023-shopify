@@ -12,3 +12,23 @@
 }
 
 @tailwind utilities;
+
+@layer base {
+  #app {
+    :is(:link) {
+      @apply tw-decoration-1 tw-decoration-stroke-gray tw-underline-offset-2;
+    }
+  }
+}
+
+@layer components {
+  .accordion.product__accordion {
+    @apply tw-border-stroke-gray;
+  }
+}
+
+@layer utilities {
+  .tw-link {
+    @apply tw-underline;
+  }
+}
