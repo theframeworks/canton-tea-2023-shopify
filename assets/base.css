@@ -3097,27 +3097,28 @@ details-disclosure > details {
   clear: both;
   content: '';
   display: block;
-  .rte
-    :is(
-      blockquote,
-      dl,
-      dd,
-      figure,
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6,
-      hr,
-      menu,
-      ol,
-      p,
-      pre,
-      ul
-    ) {
-    margin: 1.6rem 0;
-  }
+}
+
+.rte
+  :is(
+    blockquote,
+    dl,
+    dd,
+    figure,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    hr,
+    menu,
+    ol,
+    p,
+    pre,
+    ul
+  ) {
+  margin: 1rem 0;
 }
 
 .rte > *:first-child {
