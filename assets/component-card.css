@@ -290,7 +290,6 @@
 
   .underline-links-hover:hover a {
     text-decoration: underline;
-    text-underline-offset: 0.3rem;
   }
 }
 
@@ -353,10 +352,6 @@
 
 .card-information > * + * {
   margin-top: 0.5rem;
-}
-
-.card-information {
-  width: 100%;
 }
 
 .card-information > * {
