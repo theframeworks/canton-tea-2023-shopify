@@ -1,54 +1,51 @@
-<div class="page-width">
+<section class="page-width">
 
-    <div class="tw-grid md:tw-grid-cols-2 lg:tw-grid-cols-12 tw-border-b tw-border-stroke-grey tw-gap-3 tw-pt-3">
-        
-      <div class="lg:tw-col-span-5 tw-order-2 sm:tw-order-1">
+  <div class="tw-grid tw-gap-x-4 tw-gap-y-16 md:tw-grid-cols-2 lg:tw-grid-cols-16 tw-border-t tw-border-stroke-gray tw-mt-4 tw-pt-4 tw-pb-16">
 
-        <div class="tw-sticky tw-top-2.5 tw-mb-3">
-          <div class="tw-text-xs tw-mb-3">Flavour profile</div>
-          
-            {% assign flavours = product.metafields.flavour_profile.flavours %}
-            {% if flavours %}
-            <h3 class="tw-mb-12 tw-tracking-[-1px]">
-              {{ product.metafields.flavour_profile.flavours.value }}
-            </h3>
-            {% endif %}
+    <div class="lg:tw-col-span-5">
 
-            {% assign flavour_copy = product.metafields.flavour_profile.copy %}
-            {% if flavour_copy %}
-            <div class="tw-font-body md:tw-w-3/4">
-              {{ product.metafields.flavour_profile.copy.value }}
-            </div>
-            {% endif %}
+      <div class="tw-sticky tw-top-4">
+        <h2 class="tw-font-body tw-font-normal tw-text-sm tw-mb-4">flavour profile</h2>
 
+        <h3 class="tw-font-normal tw-text-balance tw-text-xl lg:tw-text-2xl">
+          {{ product.metafields.flavour_profile.flavours.value }}
+        </h3>
+
+        {% if product.metafields.flavour_profile.copy.value %}
+
+          <div class="tw-mt-16 rte">
+            {{ product.metafields.flavour_profile.copy.value }}
           </div>
-        </div>
-          
-      <div class="lg:tw-col-span-7 tw-order-1 sm:tw-order-2">
-        {% assign file = product.metafields.flavour_profile.images.value %}
-        {% if file %}
-        {% for image in product.metafields.flavour_profile.images.value %}
-          <img
-            loading="lazy"
-            class="tw-inline tw-mb-3"
-            src=" {{ image | image_url: width: '1640x' }}"
-            sizes="
-                  (min-width: 1600px) calc((1600px - 2 * 1.5rem) * 1 / 2),
-                  (min-width: 1440px) calc((1440px - 2 * 1.5rem) * 1 / 2),
-                  (min-width: 1024px) calc((1024px - 2 * 1.5rem) * 1 / 2),
-                  (min-width: 768px) calc((768px - 2 * 1.5rem) * 1 / 2),
-                  (min-width: 570px) calc(100vw - 2 * 1.5rem),
-                  100vw"
-            data-aspectratio="{{ image.aspect_ratio }}"
-            data-sizes="auto"
-          />
-        {% endfor %}
+
         {% endif %}
+
       </div>
 
     </div>
+    <div class="lg:tw-col-start-8 lg:tw-col-span-9 tw-space-y-4">
+      {% for image in product.metafields.flavour_profile.images.value %}
+        <img
+          alt=""
+          loading="lazy"
+          width="{{ image.width }}"
+          height="{{ image.height }}"
+          src=" {{ image | image_url: width: '1640x' }}"
+          sizes="
+                (min-width: 1600px) calc((1600px - 2 * 1.5rem) * 1 / 2),
+                (min-width: 1440px) calc((1440px - 2 * 1.5rem) * 1 / 2),
+                (min-width: 1024px) calc((1024px - 2 * 1.5rem) * 1 / 2),
+                (min-width: 768px) calc((768px - 2 * 1.5rem) * 1 / 2),
+                (min-width: 570px) calc(100vw - 2 * 1.5rem),
+                100vw"
+          data-aspectratio="{{ image.aspect_ratio }}"
+          data-sizes="auto"
+        />
+      {% endfor %}
+    </div>
 
-</div>
+  </div>
+
+</section>
 
 {% schema %}
 {
