@@ -33,6 +33,7 @@ module.exports = {
       transparent: 'transparent',
       black: '#292727',
       gray: '#4E4B48',
+      'clickable-gray': '#786E6E',
       'stroke-gray': '#8F8F8F',
       white: '#ffffff',
     },

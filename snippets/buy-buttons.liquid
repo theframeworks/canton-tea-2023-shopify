@@ -73,7 +73,11 @@
             id = "ProductSubmitButton-{{ section_id }}"
             type="submit"
             name="add"
-            class="tw-font-heading tw-uppercase product-form__submit button button--full-width {% if show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}"
+            class="
+              tw-font-heading tw-uppercase tw-border-clickable-gray tw-bg-clickable-gray tw-text-white after:tw-content-none
+              product-form__submit button button--full-width
+              {% if show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}
+            "
             {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout %}
               disabled
             {% endif %}
