@@ -115,6 +115,15 @@
         "copy": "{{ product.metafields.custom.flavour_profile_copy | metafield_tag }}"
       }
     },
+    "20ce41da-0b85-4457-a9d5-a6140e9daa63": {
+      "type": "product-section",
+      "settings": {
+        "topic": "Quote",
+        "subtitle": "{{ product.metafields.custom.quote_subtitle.value }}",
+        "heading": "<p>{{ product.metafields.custom.quote_headings | metafield_tag }}<\/p>",
+        "copy": "{{ product.metafields.custom.quote_copy | metafield_tag }}"
+      }
+    },
     "related-products": {
       "type": "related-products",
       "settings": {
@@ -146,6 +155,7 @@
   "order": [
     "main",
     "3c548303-77e6-4491-bdf0-6b7d0d342e2a",
+    "20ce41da-0b85-4457-a9d5-a6140e9daa63",
     "related-products",
     "dedfc025-cbb5-4958-99f8-be35cba4f7c3"
   ]
