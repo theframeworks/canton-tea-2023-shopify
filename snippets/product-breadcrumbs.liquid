@@ -1,0 +1,8 @@
+{% if product.collections %}
+  <nav class="tw-flex tw-gap-3 tw-mb-3 tw-leading-none [&_:link]:tw-pr-3 [&_:link:where(:hover,:focus)]:tw-underline [&>*:not(:last-child)]:tw-border-black [&>*:not(:last-child)]:tw-border-r [&>*:not(:last-child)]:tw-border-solid" role="navigation" aria-label="breadcrumbs">
+    {% for collection in product.collections %}
+    {% assign collection_page = '/collections/' | append: collection.title | replace: " ", "-"  %}
+      {{ collection.title | downcase | link_to: collection_page }}
+    {% endfor %}
+  </nav>
+{% endif %}
