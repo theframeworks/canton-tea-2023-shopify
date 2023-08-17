@@ -109,9 +109,10 @@
     "3c548303-77e6-4491-bdf0-6b7d0d342e2a": {
       "type": "product-section",
       "settings": {
-        "subtitle": "me gusta",
-        "heading": "<p>let's see<\/p>",
-        "copy": "<p>lorem ipsum<\/p>"
+        "topic": "Flavour profile",
+        "subtitle": "{{ product.metafields.custom.flavour_profile_subtitle.value }}",
+        "heading": "<p>{{ product.metafields.custom.flavour_profile_headings | metafield_tag }}<\/p>",
+        "copy": "{{ product.metafields.custom.flavour_profile_copy | metafield_tag }}"
       }
     },
     "related-products": {
