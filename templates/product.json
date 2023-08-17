@@ -124,6 +124,15 @@
         "copy": "{{ product.metafields.custom.quote_copy | metafield_tag }}"
       }
     },
+    "76143fe0-dfb1-411f-8c98-4dcf2ad193b6": {
+      "type": "product-section",
+      "settings": {
+        "topic": "Origin",
+        "subtitle": "{{ product.metafields.custom.origin_subtitle.value }}",
+        "heading": "<p>{{ product.metafields.custom.origin_headings | metafield_tag }}<\/p>",
+        "copy": "{{ product.metafields.custom.origin_copy | metafield_tag }}"
+      }
+    },
     "related-products": {
       "type": "related-products",
       "settings": {
@@ -156,6 +165,7 @@
     "main",
     "3c548303-77e6-4491-bdf0-6b7d0d342e2a",
     "20ce41da-0b85-4457-a9d5-a6140e9daa63",
+    "76143fe0-dfb1-411f-8c98-4dcf2ad193b6",
     "related-products",
     "dedfc025-cbb5-4958-99f8-be35cba4f7c3"
   ]
