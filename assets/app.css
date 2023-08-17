@@ -623,6 +623,14 @@ video {
   margin-bottom: 0.75rem;
 }
 
+#app :is(.tw-mb-10) {
+  margin-bottom: 2.5rem;
+}
+
+#app :is(.tw-mb-20) {
+  margin-bottom: 5rem;
+}
+
 #app :is(.tw-inline) {
   display: inline;
 }
@@ -894,6 +902,10 @@ video {
     grid-column-start: 8;
   }
 
+  #app :is(.lg\:tw-mb-20) {
+    margin-bottom: 5rem;
+  }
+
   #app :is(.lg\:tw-grid) {
     display: grid;
   }
@@ -948,6 +960,26 @@ video {
   border-color: rgb(41 39 39 / var(--tw-border-opacity));
 }
 
+#app :is(.\[\&\>\:link\]\:tw-hidden > :link) {
+  display: none;
+}
+
+@media (min-width: 750px) {
+  #app :is(.\[\&\>\:link\]\:md\:tw-visible > :link) {
+    visibility: visible;
+  }
+}
+
+@media (min-width: 990px) {
+  #app :is(.\[\&\>\:link\]\:lg\:tw-visible > :link) {
+    visibility: visible;
+  }
+}
+
+#app :is(.\[\&\>\:md\:link\]\:tw-visible > :md:link) {
+  visibility: visible;
+}
+
 #app :is(.\[\&_\:link\:not-last\]\:tw-border-solid :link:not-last) {
   border-style: solid;
 }
@@ -963,6 +995,19 @@ video {
 
 #app
   :is(
+    .\[\&_\:link\:where\(\:hover\2c
+      \:focus\)\]\:tw-no-underline
+      :link:where(:hover, :focus)
+  ) {
+  text-decoration-line: none;
+}
+
+#app :is(.\[\&_\:link\:where\(\:lg\)\]\:tw-visible :link:where(:lg)) {
+  visibility: visible;
+}
+
+#app
+  :is(
     .\[\&_\:link\:where\(\:not-last\)\]\:tw-border-solid :link:where(:not-last)
   ) {
   border-style: solid;
@@ -974,6 +1019,10 @@ video {
       :link:where(tw-not-last)
   ) {
   border-style: solid;
+}
+
+#app :is(.\[\&_\:link\]\:tw-hidden :link) {
+  display: none;
 }
 
 #app :is(.\[\&_\:link\]\:tw-border :link) {
@@ -1001,12 +1050,26 @@ video {
   padding-right: 0.75rem;
 }
 
+#app :is(.\[\&_\:link\]\:tw-pt-3 :link) {
+  padding-top: 0.75rem;
+}
+
 #app :is(.\[\&_\:link\]\:tw-underline :link) {
   text-decoration-line: underline;
 }
 
 #app :is(.\[\&_\:link\]\:not-last\:tw-border-solid:not(:last-child) :link) {
   border-style: solid;
+}
+
+@media (min-width: 990px) {
+  #app :is(.\[\&_\:link\]\:lg\:tw-visible :link) {
+    visibility: visible;
+  }
+
+  #app :is(.lg\:\[\&_\:link\]\:tw-visible :link) {
+    visibility: visible;
+  }
 }
 
 #app :is(.\[\&_not-last\:link\]\:tw-border-solid not-last:link) {
