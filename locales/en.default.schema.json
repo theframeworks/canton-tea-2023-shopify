@@ -2728,6 +2728,23 @@
         "name": "Page"
       }
     },
+     "product-section": {
+      "name": "Text / Media (2cols)",
+      "settings": {
+        "paragraph__1": {
+          "content": "Populate this section by adding content using the fields below"
+        },
+        "subtitle": {
+          "label": "Subtitle"
+        },
+        "heading": {
+          "label": "Heading"
+        },
+        "copy": {
+          "label": "Copy"
+        }
+      }
+    },
     "related-products": {
       "name": "Related products",
       "settings": {
