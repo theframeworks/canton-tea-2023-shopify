@@ -106,25 +106,20 @@
         "padding_bottom": 0
       }
     },
-    "17d51860-93f0-43ea-aede-1aa67de23b9f": {
-      "type": "product-flavour-profile",
+    "3c548303-77e6-4491-bdf0-6b7d0d342e2a": {
+      "type": "product-section",
       "settings": {
-      }
-    },
-    "3deb5c96-f96f-4f88-946e-6af1be7b16fe": {
-      "type": "product-quote",
-      "settings": {
-      }
-    },
-    "b2b02d52-5f68-42c0-b8e7-889c3dafdc11": {
-      "type": "product-origin",
-      "settings": {
+        "subtitle": "me gusta",
+        "heading": "<p>let's see<\/p>",
+        "copy": "<p>lorem ipsum<\/p>"
       }
     },
     "related-products": {
       "type": "related-products",
       "settings": {
         "heading": "You may also like",
+        "linkurl": "",
+        "linktext": "",
         "heading_size": "h2",
         "products_to_show": 4,
         "columns_desktop": 4,
@@ -149,9 +144,7 @@
   },
   "order": [
     "main",
-    "17d51860-93f0-43ea-aede-1aa67de23b9f",
-    "3deb5c96-f96f-4f88-946e-6af1be7b16fe",
-    "b2b02d52-5f68-42c0-b8e7-889c3dafdc11",
+    "3c548303-77e6-4491-bdf0-6b7d0d342e2a",
     "related-products",
     "dedfc025-cbb5-4958-99f8-be35cba4f7c3"
   ]
