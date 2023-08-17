@@ -5,10 +5,27 @@
     <div class="lg:tw-col-span-5">
 
       <div class="tw-sticky tw-top-4">
+
         {% if section.settings.subtitle %}
           <h2 class="tw-font-body tw-font-normal tw-text-sm tw-mb-4 lowercase">
-            {{ section.settings.subtitle }}
+            {% if section.settings.subtitle.value %}
+              {{ section.settings.subtitle }}
+            
+            {% else %}
+             
+              {% if section.settings.topic != 'Choose a topic' %}
+                {% case section.settings.topic %}
+                  {% when 'Flavour profile' %}
+                  <span>Flavour profile</span>
+                  {% when 'Origin' %}
+                  <span>Origin</span>
+                {% endcase %}
+
+              {% endif %}
+            
+            {% endif %}
           </h2>
+
         {% endif %}
 
         {% if section.settings.heading %}
@@ -27,33 +44,21 @@
 
     </div>
     <div class="lg:tw-col-start-8 lg:tw-col-span-9 tw-space-y-4">
-       {% for block in section.blocks %} 
-          {% case block.type %}
 
-          {% when 'select' %}
-            {%- assign media = block.settings.image -%}
-            <img
-            alt="{{ media.alt }}"
-            loading="lazy"
-            width="{{ media.width }}"
-            height="{{ media.height }}"
-            src=" {{ media | image_url: width: '1640x' }}"
-            sizes="
-                  (min-width: 1600px) calc((1600px - 2 * 1.5rem) * 1 / 2),
-                  (min-width: 1440px) calc((1440px - 2 * 1.5rem) * 1 / 2),
-                  (min-width: 1024px) calc((1024px - 2 * 1.5rem) * 1 / 2),
-                  (min-width: 768px) calc((768px - 2 * 1.5rem) * 1 / 2),
-                  (min-width: 570px) calc(100vw - 2 * 1.5rem),
-                  100vw"
-            data-aspectratio="{{ media.aspect_ratio }}"
-            data-sizes="auto"
-          />
-
-          {% when 'html' %}
-          {{ block.settings.svg }}
-
-        {% endcase %} 
-      {% endfor %}
+        {% case section.settings.topic %}
+          {% when 'Flavour profile' %}
+            {% for image in product.metafields.custom.flavour_profile_media.value %}
+              {% render 'product-media-section' image:image %}
+            {% endfor %}
+          {% when 'Quote' %}
+            {% for image in product.metafields.custom.quote_media.value %}
+              {% render 'product-media-section' image:image %}
+            {% endfor %}
+          {% when 'Origin' %}
+            {% for image in product.metafields.custom.origin_media.value %}
+              {% render 'product-media-section' image:image %}
+            {% endfor %}
+        {% endcase %}
 
     </div>
 
@@ -71,8 +76,32 @@
       "content": "t:sections.product-section.settings.paragraph__1.content"
     },
     {
+      "type": "select",
+      "id": "topic", 
+      "label": "t:sections.product-section.settings.topic.label",
+      "info": "t:sections.product-section.settings.topic.content",
+      "options": [
+        {
+          "value": "Choose a topic",
+          "label": "t:sections.product-section.settings.topic.options__1.label"
+        },
+        {
+          "value": "Flavour profile",
+          "label": "t:sections.product-section.settings.topic.options__2.label"
+        },
+        {
+          "value": "Quote",
+          "label": "t:sections.product-section.settings.topic.options__3.label"
+        },
+        {
+          "value": "Origin",
+          "label": "t:sections.product-section.settings.topic.options__4.label"
+        }
+      ]
+    },
+    {
       "type": "text",
-      "id": "subtitle",
+      "id": "subtitle", 
       "label": "t:sections.product-section.settings.subtitle.label"
     },
     {
@@ -84,30 +113,6 @@
       "type": "richtext",
       "id": "copy",
       "label": "t:sections.product-section.settings.copy.label"
-    }
-  ],
-  "blocks": [
-    {
-      "type": "select",
-      "name": "Image",
-      "settings": [
-        {
-          "id": "image",
-          "type": "image_picker",
-          "label": "Image picker"
-        } 
-      ]
-    },
-    {
-      "type": "html",
-      "name": "SVG code",
-      "settings": [
-        {
-          "id": "svg",
-          "type": "html",
-          "label": "Paste code"
-        }
-      ]
     }
   ],
   "presets": [

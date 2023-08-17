@@ -2036,6 +2036,12 @@
         "collapsible_tab": {
           "name": "Collapsible row",
           "settings": {
+            "section_title_1": {
+              "label": "HEADER"
+            },
+            "section_title_2": {
+              "label": "CONTENT"
+            },
             "heading": {
               "info": "Include a heading that explains the content.",
               "label": "Heading"
@@ -2047,7 +2053,8 @@
               "label": "Row content from page"
             },
             "icon": {
-              "label": "Icon",
+              "label": "Icon (optional)",
+              "info": "This icon appears alongside the tab title",
               "options__1": {
                 "label": "None"
               },
@@ -2733,6 +2740,25 @@
       "settings": {
         "paragraph__1": {
           "content": "Populate this section by adding content using the fields below"
+        },
+        "topic": {
+          "label": "Topic",
+          "content": "Select the topic which allow default values to be pulled for the subtitle field value below and thus saving users to add this to each product",
+          "options__1": {
+            "label": "Choose a topic"
+          },
+          "options__2": {
+            "label": "Flavour profile"
+          },
+          "options__3": {
+            "label": "Quote"
+          },
+          "options__4": {
+            "label": "Origin"
+          },
+          "options__5": {
+            "label": "Add a topic"
+          }
         },
         "subtitle": {
           "label": "Subtitle"

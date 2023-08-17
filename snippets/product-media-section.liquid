@@ -1,0 +1,16 @@
+<img
+  alt=""
+  loading="lazy"
+  width="{{ image.width }}"
+  height="{{ image.height }}"
+  src=" {{ image | image_url: width: '1640x' }}"
+  sizes="
+      (min-width: 1600px) calc((1600px - 2 * 1.5rem) * 1 / 2),
+      (min-width: 1440px) calc((1440px - 2 * 1.5rem) * 1 / 2),
+      (min-width: 1024px) calc((1024px - 2 * 1.5rem) * 1 / 2),
+      (min-width: 768px) calc((768px - 2 * 1.5rem) * 1 / 2),
+      (min-width: 570px) calc(100vw - 2 * 1.5rem),
+      100vw"
+  data-aspectratio="{{ image.aspect_ratio }}"
+  data-sizes="auto"
+/>
