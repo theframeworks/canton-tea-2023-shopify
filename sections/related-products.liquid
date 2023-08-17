@@ -27,9 +27,12 @@
   >
     {% if recommendations.performed and recommendations.products_count > 0 %}
       <div class="tw-border-t tw-border-stroke-gray tw-mt-4 tw-pt-4 lg:tw-grid lg:tw-grid-cols-3 lg:tw-gap-8">
-        <h2 class="tw-font-normal tw-text-balance tw-text-xl lg:tw-text-2xl related-products__heading inline-richtext {{ section.settings.heading_size }}">
-          {{ section.settings.heading }}
-        </h2>
+        <div class="[&_:link]:tw-pt-3 [&_:link:where(:hover,:focus)]:tw-underline">
+          <h2 class="tw-font-normal tw-text-balance tw-text-xl lg:tw-text-2xl related-products__heading inline-richtext {{ section.settings.heading_size }} lg:tw-mb-20">
+            {{ section.settings.heading }}
+          </h2>
+          {{ section.settings.linktext | link_to: section.settings.linkurl }}
+        </div>
         <ul
           class="lg:tw-col-span-2 lg:tw-grid lg:tw-grid-cols-2 lg:tw-order-first grid product-grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down"
           role="list"
@@ -70,6 +73,16 @@
       "id": "heading",
       "default": "You may also like",
       "label": "t:sections.related-products.settings.heading.label"
+    },
+    {
+      "id": "linkurl",
+      "type": "url",
+      "label": "t:sections.related-products.settings.linkurl.label"
+    },
+    {
+      "id": "linktext",
+      "type": "text",
+       "label": "t:sections.related-products.settings.linktext.label"
     },
     {
       "type": "select",

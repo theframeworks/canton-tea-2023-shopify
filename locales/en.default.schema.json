@@ -2751,6 +2751,12 @@
         "heading": {
           "label": "Heading"
         },
+        "linkurl": {
+          "label": "Shop link"
+        },
+        "linktext": {
+          "label": "Shop link text"
+        },
         "products_to_show": {
           "label": "Maximum products to show"
         },
