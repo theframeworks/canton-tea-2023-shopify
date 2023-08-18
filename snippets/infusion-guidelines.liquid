@@ -1,8 +1,6 @@
 {%- if show != false -%}
 	<div class="tw-flex tw-gap-10 tw-mt-4 tw-mb-8">
         {%- assign infusion-temperature = product.metafields.custom.infusion_temperature.value -%}
-        {% if infusion-temperature == '95' %}
-            <div>TRUE</div>
         {% endif %}
 		{% if product.metafields.custom.infusion_amount != blank %}
             <div>
