@@ -1116,6 +1116,22 @@ video {
   }
 }
 
+#app :is(.\[\&_\>\*\]\:tw-underline > *) {
+  text-decoration-line: underline;
+}
+
+#app :is(.\[\&_\>\:first-child\]\:tw-flex > :first-child) {
+  display: flex;
+}
+
+#app :is(.\[\&_\>\:first-child\]\:tw-flex-col > :first-child) {
+  flex-direction: column;
+}
+
+#app :is(.\[\&_\>\:first-child\]\:tw-gap-4 > :first-child) {
+  gap: 1rem;
+}
+
 #app :is(.\[\&_not-last\:link\]\:tw-border-solid not-last:link) {
   border-style: solid;
 }

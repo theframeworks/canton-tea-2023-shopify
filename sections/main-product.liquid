@@ -229,21 +229,21 @@
                       <div class="tw-flex tw-gap-10 tw-mt-4 tw-mb-8">
                         
                         {% if product.metafields.custom.infusion_amount != blank %}
-                          <div class="tw-flex tw-flex-col tw-gap-4">
+                          <div>
                             {% render 'infusion-icon', icon: 'amount' %}
                             {% render 'infusion-info', text: 'amount' %}
                           </div>
                         {% endif %}
 
                         {% if product.metafields.custom.infusion_temperature != blank %}
-                          <div class="tw-flex tw-flex-col tw-gap-4">
+                          <div>
                             {% render 'infusion-icon', icon: 'temperature' %}
                             {% render 'infusion-info', text: 'temperature' %}
                           </div>
                         {% endif %}
 
                         {% if product.metafields.custom.infusion_time != blank %}
-                          <div class="tw-flex tw-flex-col tw-gap-4">
+                          <div>
                             {% render 'infusion-icon', icon: 'time' %}
                             {% render 'infusion-info', text: 'time' %}
                           </div>
