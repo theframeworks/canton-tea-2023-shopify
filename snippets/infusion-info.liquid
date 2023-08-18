@@ -1,0 +1,19 @@
+{%- assign infusion-amount = product.metafields.custom.infusion_amount.value -%}
+{%- assign infusion-temperature = product.metafields.custom.infusion_temperature.value -%}
+{%- assign infusion-time = product.metafields.custom.infusion_time.value -%}
+
+{%- if icon != 'none' -%}
+
+	<div class="tw-text-xs tw-text-center">
+	{%- case text -%}
+        
+        {%- when 'amount' -%}
+          {{ infusion-amount }}
+        {%- when 'temperature' -%}
+          {{ infusion-temperature }}
+        {%- when 'time' -%}
+          {{ infusion-time }}
+        
+    {%- endcase -%}
+	</div>
+{%- endif -%}
