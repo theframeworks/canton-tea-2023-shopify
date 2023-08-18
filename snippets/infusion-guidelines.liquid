@@ -1,16 +1,24 @@
 {%- if show != false -%}
 	<div class="tw-flex tw-gap-10 tw-mt-4 tw-mb-8">
+        {%- assign infusion-temperature = product.metafields.custom.infusion_temperature.value -%}
+        {% if infusion-temperature == '95' %}
+            <div>TRUE</div>
+        {% endif %}
 		{% if product.metafields.custom.infusion_amount != blank %}
             <div>
-                {% render 'infusion-icon', icon: 'amount' %}
+                {% if product.tags contains 'loose' %}
+                    {% render 'infusion-icon', icon: 'loose' %}
+                {% else %}
+                    {% render 'infusion-icon', icon: 'teabag' %}
+                {% endif %}
                 {% render 'infusion-info', text: 'amount' %}
             </div>
         {% endif %}
 
         {% if product.metafields.custom.infusion_temperature != blank %}
             <div>
-                {% render 'infusion-icon', icon: 'temperature' %}
-                {% render 'infusion-info', text: 'temperature' %}
+                {% render 'infusion-icon', icon: infusion-temperature %}
+                {% render 'infusion-info', text: 'volume' %}
             </div>
         {% endif %}
 

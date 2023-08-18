@@ -1,5 +1,5 @@
 {%- assign infusion-amount = product.metafields.custom.infusion_amount.value -%}
-{%- assign infusion-temperature = product.metafields.custom.infusion_temperature.value -%}
+{%- assign infusion-volume = product.metafields.custom.infusion_volume.value -%}
 {%- assign infusion-time = product.metafields.custom.infusion_time.value -%}
 
 {%- if icon != 'none' -%}
@@ -9,8 +9,8 @@
         
         {%- when 'amount' -%}
           {{ infusion-amount }}
-        {%- when 'temperature' -%}
-          {{ infusion-temperature }}
+        {%- when 'volume' -%}
+          {{ infusion-volume }}
         {%- when 'time' -%}
           {{ infusion-time }}
         
