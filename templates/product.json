@@ -55,6 +55,9 @@
           "settings": {
             "heading": "Product details",
             "icon": "none",
+            "infusion-amount": "",
+            "infusion-temperature": "",
+            "infusion-time": "",
             "content": "<p>Eu no eius fugit aeque duo posidonium at ad sed pri solet duo nostrud fugit vulputate. No offendit has elit mel has justo doming fastidii cibo te saperet suscipiantur ad.<\/p>",
             "page": ""
           }
@@ -64,6 +67,9 @@
           "settings": {
             "heading": "Infusion",
             "icon": "none",
+            "infusion-amount": "",
+            "infusion-temperature": "",
+            "infusion-time": "",
             "content": "<p>step 1: For one cup, measure out 4 grams (around 2 tsp) into your teapot or brew mug.<\/p><p>step 2: Heat 250ml of water to 95°C.<\/p><p>step 3: Pour your heated water over the leaves and steep for 2 minutes if taking black, and 4 minutes if taking with milk.<\/p><p>step 4: Drink.<\/p>",
             "page": ""
           }
@@ -73,6 +79,9 @@
           "settings": {
             "heading": "Delivery\/Returns",
             "icon": "none",
+            "infusion-amount": "",
+            "infusion-temperature": "",
+            "infusion-time": "",
             "content": "<p>Eu no eius fugit aeque duo posidonium at ad sed pri solet duo nostrud fugit vulputate. No offendit has elit mel has justo doming fastidii cibo te saperet suscipiantur ad.<\/p>",
             "page": ""
           }
@@ -138,7 +147,7 @@
       "settings": {
         "heading": "You may also like",
         "linkurl": "",
-        "linktext": "",
+        "linktext": "View all",
         "heading_size": "h2",
         "products_to_show": 4,
         "columns_desktop": 4,
@@ -148,7 +157,7 @@
         "show_secondary_image": true,
         "show_vendor": false,
         "show_rating": false,
-        "columns_mobile": "2",
+        "columns_mobile": "1",
         "padding_top": 36,
         "padding_bottom": 28
       }
