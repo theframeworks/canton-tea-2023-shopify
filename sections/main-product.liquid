@@ -224,33 +224,7 @@
                     {% render 'icon-caret' %}
                   </summary>
                   <div class="accordion__content rte" id="ProductAccordion-{{ block.id }}-{{ section.id }}">
-                    
-                    {% if product.metafields.custom.infusion_amount or product.metafields.custom.infusion_temperature or product.metafields.custom.infusion_time %}
-                      <div class="tw-flex tw-gap-10 tw-mt-4 tw-mb-8">
-                        
-                        {% if product.metafields.custom.infusion_amount != blank %}
-                          <div>
-                            {% render 'infusion-icon', icon: 'amount' %}
-                            {% render 'infusion-info', text: 'amount' %}
-                          </div>
-                        {% endif %}
-
-                        {% if product.metafields.custom.infusion_temperature != blank %}
-                          <div>
-                            {% render 'infusion-icon', icon: 'temperature' %}
-                            {% render 'infusion-info', text: 'temperature' %}
-                          </div>
-                        {% endif %}
-
-                        {% if product.metafields.custom.infusion_time != blank %}
-                          <div>
-                            {% render 'infusion-icon', icon: 'time' %}
-                            {% render 'infusion-info', text: 'time' %}
-                          </div>
-                        {% endif %}
-                      </div>
-                    {% endif %}
-
+                    {% render 'infusion-guidelines', show: block.settings.show_infusion_guidelines %}
                     {{ block.settings.content }}
                     {{ block.settings.page.content }}
                   </div>
@@ -1036,19 +1010,10 @@
           "content": "t:sections.main-product.blocks.collapsible_tab.settings.section_title_2.label"
         },
         {
-          "type": "text",
-          "id": "infusion-amount",
-          "label": "Amount"
-        },
-        {
-          "type": "text",
-          "id": "infusion-temperature",
-          "label": "Temperature"
-        },
-        {
-          "type": "text",
-          "id": "infusion-time",
-          "label": "Time"
+          "type": "checkbox",
+          "id": "show_infusion_guidelines",
+          "label": "Show infusion guidelines",
+          "default": false
         },
         {
           "type": "richtext",
