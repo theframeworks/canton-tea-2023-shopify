@@ -591,26 +591,17 @@ video {
   top: 1rem;
 }
 
-#app :is(.tw-order-1) {
-  order: 1;
-}
-
-#app :is(.tw-order-2) {
-  order: 2;
-}
-
-#app :is(.tw-m-0) {
-  margin: 0px;
-}
-
 #app :is(.tw-my-4) {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
 
-#app :is(.tw-my-8) {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+#app :is(.tw-mb-0) {
+  margin-bottom: 0px;
+}
+
+#app :is(.tw-mb-3) {
+  margin-bottom: 0.75rem;
 }
 
 #app :is(.tw-mb-4) {
@@ -625,14 +616,6 @@ video {
   margin-bottom: 2rem;
 }
 
-#app :is(.tw-ml-auto) {
-  margin-left: auto;
-}
-
-#app :is(.tw-mr-8) {
-  margin-right: 2rem;
-}
-
 #app :is(.tw-mt-16) {
   margin-top: 4rem;
 }
@@ -641,36 +624,8 @@ video {
   margin-top: 1rem;
 }
 
-#app :is(.tw-mb-3) {
-  margin-bottom: 0.75rem;
-}
-
-#app :is(.tw-mb-10) {
-  margin-bottom: 2.5rem;
-}
-
-#app :is(.tw-mb-20) {
-  margin-bottom: 5rem;
-}
-
-#app :is(.tw-mt-2) {
-  margin-top: 0.5rem;
-}
-
-#app :is(.tw-mb-0) {
-  margin-bottom: 0px;
-}
-
-#app :is(.tw-mt-3) {
-  margin-top: 0.75rem;
-}
-
 #app :is(.tw-mt-\[10px\]) {
   margin-top: 10px;
-}
-
-#app :is(.tw-inline) {
-  display: inline;
 }
 
 #app :is(.tw-flex) {
@@ -714,33 +669,16 @@ video {
   justify-content: center;
 }
 
-#app :is(.tw-gap-4) {
-  gap: 1rem;
-}
-
-#app :is(.tw-gap-2) {
-  gap: 0.5rem;
+#app :is(.tw-gap-10) {
+  gap: 2.5rem;
 }
 
 #app :is(.tw-gap-3) {
   gap: 0.75rem;
 }
 
-#app :is(.tw-gap-8) {
-  gap: 2rem;
-}
-
-#app :is(.tw-gap-10) {
-  gap: 2.5rem;
-}
-
-#app :is(.tw-gap-x-4) {
-  -moz-column-gap: 1rem;
-  column-gap: 1rem;
-}
-
-#app :is(.tw-gap-y-16) {
-  row-gap: 4rem;
+#app :is(.tw-gap-4) {
+  gap: 1rem;
 }
 
 #app :is(.tw-space-y-4 > :not([hidden]) ~ :not([hidden])) {
@@ -751,14 +689,6 @@ video {
 
 #app :is(.tw-border-t) {
   border-top-width: 1px;
-}
-
-#app :is(.tw-border-r) {
-  border-right-width: 1px;
-}
-
-#app :is(.tw-border-solid) {
-  border-style: solid;
 }
 
 #app :is(.tw-border-clickable-gray) {
@@ -776,11 +706,6 @@ video {
   border-color: rgb(143 143 143 / var(--tw-border-opacity));
 }
 
-#app :is(.tw-border-black) {
-  --tw-border-opacity: 1;
-  border-color: rgb(41 39 39 / var(--tw-border-opacity));
-}
-
 #app :is(.tw-bg-clickable-gray) {
   --tw-bg-opacity: 1;
   background-color: rgb(120 110 110 / var(--tw-bg-opacity));
@@ -791,20 +716,8 @@ video {
   object-fit: cover;
 }
 
-#app :is(.tw-pb-16) {
-  padding-bottom: 4rem;
-}
-
-#app :is(.tw-pl-4) {
-  padding-left: 1rem;
-}
-
 #app :is(.tw-pt-4) {
   padding-top: 1rem;
-}
-
-#app :is(.tw-pr-3) {
-  padding-right: 0.75rem;
 }
 
 #app :is(.tw-text-center) {
@@ -892,18 +805,6 @@ video {
   content: var(--tw-content);
 }
 
-#app :is(.not-last\:tw-border-0:not(:last-child)) {
-  border-width: 0px;
-}
-
-#app :is(.not-last\:tw-border-solid:not(:last-child)) {
-  border-style: solid;
-}
-
-#app :is(.not-last\:tw-border-transparent:not(:last-child)) {
-  border-color: transparent;
-}
-
 @media not all and (min-width: 750px) {
   #app :is(.max-md\:tw-order-2) {
     order: 2;
@@ -932,8 +833,8 @@ video {
 }
 
 @media (min-width: 750px) {
-  #app :is(.md\:tw-order-1) {
-    order: 1;
+  #app :is(.md\:tw-mt-0) {
+    margin-top: 0px;
   }
 
   #app :is(.md\:tw-flex) {
@@ -1027,6 +928,10 @@ video {
     gap: 2rem;
   }
 
+  #app :is(.lg\:tw-pl-0) {
+    padding-left: 0px;
+  }
+
   #app :is(.lg\:tw-text-2xl) {
     font-size: 4.8rem;
     line-height: 98%;
@@ -1049,30 +954,6 @@ video {
   border-color: rgb(41 39 39 / var(--tw-border-opacity));
 }
 
-#app :is(.\[\&\>\:link\]\:tw-hidden > :link) {
-  display: none;
-}
-
-@media (min-width: 750px) {
-  #app :is(.\[\&\>\:link\]\:md\:tw-visible > :link) {
-    visibility: visible;
-  }
-}
-
-@media (min-width: 990px) {
-  #app :is(.\[\&\>\:link\]\:lg\:tw-visible > :link) {
-    visibility: visible;
-  }
-}
-
-#app :is(.\[\&\>\:md\:link\]\:tw-visible > :md:link) {
-  visibility: visible;
-}
-
-#app :is(.\[\&_\:link\:not-last\]\:tw-border-solid :link:not-last) {
-  border-style: solid;
-}
-
 #app
   :is(
     .\[\&_\:link\:where\(\:hover\2c
@@ -1080,63 +961,6 @@ video {
       :link:where(:hover, :focus)
   ) {
   text-decoration-line: underline;
-}
-
-#app
-  :is(
-    .\[\&_\:link\:where\(\:hover\2c
-      \:focus\)\]\:tw-no-underline
-      :link:where(:hover, :focus)
-  ) {
-  text-decoration-line: none;
-}
-
-#app :is(.\[\&_\:link\:where\(\:lg\)\]\:tw-visible :link:where(:lg)) {
-  visibility: visible;
-}
-
-#app
-  :is(
-    .\[\&_\:link\:where\(\:not-last\)\]\:tw-border-solid :link:where(:not-last)
-  ) {
-  border-style: solid;
-}
-
-#app
-  :is(
-    .\[\&_\:link\:where\(tw-not-last\)\]\:tw-border-solid
-      :link:where(tw-not-last)
-  ) {
-  border-style: solid;
-}
-
-#app :is(.\[\&_\:link\]\:tw-hidden :link) {
-  display: none;
-}
-
-#app :is(.\[\&_\:link\]\:tw-border :link) {
-  border-width: 1px;
-}
-
-#app :is(.\[\&_\:link\]\:tw-border-r :link) {
-  border-right-width: 1px;
-}
-
-#app :is(.\[\&_\:link\]\:tw-border-solid :link) {
-  border-style: solid;
-}
-
-#app :is(.\[\&_\:link\]\:tw-border-black :link) {
-  --tw-border-opacity: 1;
-  border-color: rgb(41 39 39 / var(--tw-border-opacity));
-}
-
-#app :is(.\[\&_\:link\]\:tw-p-10 :link) {
-  padding: 2.5rem;
-}
-
-#app :is(.\[\&_\:link\]\:tw-pl-3 :link) {
-  padding-left: 0.75rem;
 }
 
 #app :is(.\[\&_\:link\]\:tw-pr-3 :link) {
@@ -1147,50 +971,16 @@ video {
   padding-top: 0.75rem;
 }
 
-#app :is(.\[\&_\:link\]\:tw-underline :link) {
-  text-decoration-line: underline;
+#app :is(.\[\&_\:link\]\:tw-text-xs :link) {
+  font-size: 1rem;
+  line-height: 180%;
+  letter-spacing: -0.04rem;
 }
 
-#app :is(.\[\&_\:link\]\:not-last\:tw-border-solid:not(:last-child) :link) {
-  border-style: solid;
-}
-
-@media (min-width: 990px) {
-  #app :is(.\[\&_\:link\]\:lg\:tw-visible :link) {
-    visibility: visible;
-  }
-
-  #app :is(.lg\:\[\&_\:link\]\:tw-visible :link) {
-    visibility: visible;
-  }
-}
-
-#app :is(.\[\&_\>\*\]\:tw-underline > *) {
-  text-decoration-line: underline;
-}
-
-#app :is(.\[\&_\>\:first-child\]\:tw-flex > :first-child) {
-  display: flex;
-}
-
-#app :is(.\[\&_\>\:first-child\]\:tw-flex-col > :first-child) {
-  flex-direction: column;
-}
-
-#app :is(.\[\&_\>\:first-child\]\:tw-gap-4 > :first-child) {
-  gap: 1rem;
-}
-
-#app :is(.\[\&_div\]\:tw-p-10 div) {
-  padding: 2.5rem;
-}
-
-#app :is(.\[\&_not-last\:link\]\:tw-border-solid not-last:link) {
-  border-style: solid;
-}
-
-#app :is(.\[\&_span\]\:tw-p-10 span) {
-  padding: 2.5rem;
+#app :is(.\[\&_\:link\]\:tw-text-sm :link) {
+  font-size: 1.2rem;
+  line-height: 120%;
+  letter-spacing: -0.06rem;
 }
 
 #app :is(.\[\&_span\]\:tw-underline span) {

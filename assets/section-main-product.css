@@ -131,12 +131,10 @@
   margin-top: 0.5rem;
 }
 
+/* Turned off in theme settings but still showing up */
 .product-form .shopify-payment-button,
 .product-form .shopify-payment-button button {
-  height: 0;
-  min-width: 0;
-  min-height: 0;
-  padding: 0;
+  display: none;
 }
 
 /* Form Elements */
