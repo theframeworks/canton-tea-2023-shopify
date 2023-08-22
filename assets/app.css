@@ -936,6 +936,10 @@ video {
     order: 1;
   }
 
+  #app :is(.md\:tw-flex) {
+    display: flex;
+  }
+
   #app :is(.md\:tw-grid-cols-2) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1127,6 +1131,10 @@ video {
   border-color: rgb(41 39 39 / var(--tw-border-opacity));
 }
 
+#app :is(.\[\&_\:link\]\:tw-p-10 :link) {
+  padding: 2.5rem;
+}
+
 #app :is(.\[\&_\:link\]\:tw-pl-3 :link) {
   padding-left: 0.75rem;
 }
@@ -1173,6 +1181,18 @@ video {
   gap: 1rem;
 }
 
+#app :is(.\[\&_div\]\:tw-p-10 div) {
+  padding: 2.5rem;
+}
+
 #app :is(.\[\&_not-last\:link\]\:tw-border-solid not-last:link) {
   border-style: solid;
+}
+
+#app :is(.\[\&_span\]\:tw-p-10 span) {
+  padding: 2.5rem;
+}
+
+#app :is(.\[\&_span\]\:tw-underline span) {
+  text-decoration-line: underline;
 }
