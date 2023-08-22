@@ -591,6 +591,14 @@ video {
   top: 1rem;
 }
 
+#app :is(.tw-order-1) {
+  order: 1;
+}
+
+#app :is(.tw-order-2) {
+  order: 2;
+}
+
 #app :is(.tw-m-0) {
   margin: 0px;
 }
@@ -897,6 +905,10 @@ video {
 }
 
 @media not all and (min-width: 750px) {
+  #app :is(.max-md\:tw-order-2) {
+    order: 2;
+  }
+
   #app :is(.max-md\:tw-space-y-4 > :not([hidden]) ~ :not([hidden])) {
     --tw-space-y-reverse: 0;
     margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
@@ -920,6 +932,10 @@ video {
 }
 
 @media (min-width: 750px) {
+  #app :is(.md\:tw-order-1) {
+    order: 1;
+  }
+
   #app :is(.md\:tw-grid-cols-2) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
