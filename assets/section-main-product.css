@@ -135,8 +135,6 @@
 .product-form__input {
   flex: 0 0 100%;
   padding: 0;
-  margin: 0 0 1.2rem 0;
-  max-width: 44rem;
   min-width: fit-content;
   border: none;
 }
@@ -146,12 +144,9 @@ variant-selects {
   display: block;
 }
 
-.product-form__input--dropdown {
-  margin-bottom: 1.6rem;
-}
-
 .product-form__input .form__label {
   padding-left: 0;
+  visibility: hidden;
 }
 
 fieldset.product-form__input .form__label {
@@ -255,10 +250,6 @@ fieldset.product-form__input .form__label {
   input[type='radio']:focus:not(:focus-visible)
   + label {
   box-shadow: none;
-}
-
-.product-form__input .select {
-  max-width: 25rem;
 }
 
 .product-form__submit {
@@ -433,10 +424,6 @@ a.product__text {
   max-width: 100%;
 }
 
-.product-form__quantity .form__label {
-  margin-bottom: 0.6rem;
-}
-
 .product-form__quantity-top .form__label {
   margin-bottom: 1.2rem;
 }
@@ -444,10 +431,6 @@ a.product__text {
 .product--no-media fieldset.product-form__input {
   flex-wrap: wrap;
   margin: 0 auto 1.2rem auto;
-}
-
-.product-form__buttons {
-  max-width: 44rem;
 }
 
 .product--no-media .product__info-container > modal-opener {
