@@ -940,6 +940,15 @@ video {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  #app :is(.md\:tw-border-t) {
+    border-top-width: 1px;
+  }
+
+  #app :is(.md\:tw-border-gray) {
+    --tw-border-opacity: 1;
+    border-color: rgb(78 75 72 / var(--tw-border-opacity));
+  }
+
   #app :is(.md\:tw-pl-0) {
     padding-left: 0px;
   }
