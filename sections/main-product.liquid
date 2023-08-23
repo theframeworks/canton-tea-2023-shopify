@@ -112,14 +112,9 @@
               >
                 {{- block.settings.text -}}
               </p>
-            {%- when 'title' -%}
+            {%- when 'multiline-title' -%}
               <div class="product__title" {{ block.shopify_attributes }}>
-                <h1 class="tw-text-balance tw-text-xl lg:tw-text-2xl">{{ product.title | escape }}</h1>
-                <a href="{{ product.url }}" class="product__title">
-                  <h2 class="h1">
-                    {{ product.title | escape }}
-                  </h2>
-                </a>
+                <h1 class="tw-text-balance tw-text-xl lg:tw-text-2xl tw-lowercase">{{- block.settings.multiline-title -}}</h1>
               </div>
             {%- when 'price' -%}
               <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
@@ -646,6 +641,17 @@
       "type": "title",
       "name": "t:sections.main-product.blocks.title.name",
       "limit": 1
+    },
+    {
+      "type": "multiline-title",
+      "name": "Product Title",
+      "settings": [
+        {
+          "id": "multiline-title",
+          "type": "richtext",
+          "label": "Product title"
+        }
+      ]
     },
     {
       "type": "price",
