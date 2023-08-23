@@ -709,6 +709,10 @@ video {
   max-width: 42rem;
 }
 
+#app :is(.tw-max-w-\[50\%\]) {
+  max-width: 50%;
+}
+
 #app :is(.tw-flex-grow) {
   flex-grow: 1;
 }
@@ -1042,6 +1046,10 @@ video {
 
   #app :is(.lg\:tw-max-w-none) {
     max-width: none;
+  }
+
+  #app :is(.lg\:tw-max-w-\[33\.33\%\]) {
+    max-width: 33.33%;
   }
 
   #app :is(.lg\:tw-grid-cols-16) {
