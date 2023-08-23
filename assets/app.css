@@ -583,12 +583,28 @@ video {
   border-width: 0;
 }
 
+#app :is(.tw-absolute) {
+  position: absolute;
+}
+
 #app :is(.tw-sticky) {
   position: sticky;
 }
 
 #app :is(.tw-top-4) {
   top: 1rem;
+}
+
+#app :is(.tw-right-0) {
+  right: 0px;
+}
+
+#app :is(.tw-top-0) {
+  top: 0px;
+}
+
+#app :is(.tw-z-10) {
+  z-index: 10;
 }
 
 #app :is(.tw-my-4) {
@@ -626,6 +642,30 @@ video {
 
 #app :is(.tw-mt-\[10px\]) {
   margin-top: 10px;
+}
+
+#app :is(.tw-mt-3) {
+  margin-top: 0.75rem;
+}
+
+#app :is(.tw-mr-3) {
+  margin-right: 0.75rem;
+}
+
+#app :is(.tw-mr-4) {
+  margin-right: 1rem;
+}
+
+#app :is(.tw-mr-5) {
+  margin-right: 1.25rem;
+}
+
+#app :is(.tw-mr-6) {
+  margin-right: 1.5rem;
+}
+
+#app :is(.tw-mr-7) {
+  margin-right: 1.75rem;
 }
 
 #app :is(.tw-flex) {
@@ -1015,4 +1055,8 @@ video {
 
 #app :is(.\[\&_span\]\:tw-underline span) {
   text-decoration-line: underline;
+}
+
+#app :is(.\[\&_svg\]\:tw-h-3 svg) {
+  height: 0.75rem;
 }
