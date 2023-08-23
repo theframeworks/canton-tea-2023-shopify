@@ -961,6 +961,18 @@ video {
     margin-top: 0px;
   }
 
+  #app :is(.md\:tw-mb-16) {
+    margin-bottom: 4rem;
+  }
+
+  #app :is(.md\:tw-mb-20) {
+    margin-bottom: 5rem;
+  }
+
+  #app :is(.md\:tw-mb-24) {
+    margin-bottom: 6rem;
+  }
+
   #app :is(.md\:tw-flex) {
     display: flex;
   }
