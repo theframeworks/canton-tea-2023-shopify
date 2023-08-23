@@ -782,6 +782,14 @@ video {
   letter-spacing: 0em;
 }
 
+#app :is(.tw-tracking-wide) {
+  letter-spacing: 0.025em;
+}
+
+#app :is(.tw-tracking-widest) {
+  letter-spacing: 0.1em;
+}
+
 #app :is(.tw-text-white) {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
