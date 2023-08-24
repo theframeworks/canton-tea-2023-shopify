@@ -1263,6 +1263,12 @@ class VariantSelects extends HTMLElement {
           );
         }
 
+        const priceButton = `price-button-${this.dataset.section}`;
+        const destinationPriceButton = document.getElementById(priceButton);
+        const sourcePriceButton = html.getElementById(priceButton);
+        if (destinationPriceButton && sourcePriceButton)
+          destinationPriceButton.innerHTML = sourcePriceButton.innerHTML;
+
         const price = document.getElementById(`price-${this.dataset.section}`);
 
         if (price) price.classList.remove('visibility-hidden');
