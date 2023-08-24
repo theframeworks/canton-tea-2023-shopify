@@ -676,6 +676,14 @@ video {
   margin-left: 0.25rem;
 }
 
+#app :is(.tw-mb-20) {
+  margin-bottom: 5rem;
+}
+
+#app :is(.tw-mb-10) {
+  margin-bottom: 2.5rem;
+}
+
 #app :is(.tw-block) {
   display: block;
 }
@@ -1154,6 +1162,20 @@ video {
       :link:where(:hover, :focus)
   ) {
   text-decoration-line: underline;
+}
+
+#app :is(.\[\&_\:link\]\:tw-block :link) {
+  display: block;
+}
+
+#app :is(.\[\&_\:link\]\:tw-py-10 :link) {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+#app :is(.\[\&_\:link\]\:tw-py-5 :link) {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
 }
 
 #app :is(.\[\&_\:link\]\:tw-pr-3 :link) {
