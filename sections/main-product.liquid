@@ -92,13 +92,15 @@
         scroll-trigger animate--slide-in
       {% endif %}
     ">
-      {% render 'product-breadcrumbs' %}
+      
       <product-info
         id="ProductInfo-{{ section.id }}"
         data-section="{{ section.id }}"
         data-url="{{ product.url }}"
         class="product__info-container md:tw-mb-24{% if section.settings.enable_sticky_info %} product__column-sticky{% endif %}"
       >
+        {% render 'product-breadcrumbs' %}
+        
         {%- assign product_form_id = 'product-form-' | append: section.id -%}
 
         {%- for block in section.blocks -%}
