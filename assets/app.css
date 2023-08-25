@@ -552,40 +552,6 @@ video {
   --tw-backdrop-sepia: ;
 }
 
-.tw-container {
-  width: 100%;
-}
-
-@media (min-width: 320px) {
-  .tw-container {
-    max-width: 320px;
-  }
-}
-
-@media (min-width: 750px) {
-  .tw-container {
-    max-width: 750px;
-  }
-}
-
-@media (min-width: 990px) {
-  .tw-container {
-    max-width: 990px;
-  }
-}
-
-@media (min-width: 1440px) {
-  .tw-container {
-    max-width: 1440px;
-  }
-}
-
-@media (min-width: 1920px) {
-  .tw-container {
-    max-width: 1920px;
-  }
-}
-
 .accordion.product__accordion {
   --tw-border-opacity: 1;
   border-color: rgb(143 143 143 / var(--tw-border-opacity));
@@ -754,11 +720,6 @@ video {
   border-color: rgb(120 110 110 / var(--tw-border-opacity));
 }
 
-#app :is(.tw-border-gray) {
-  --tw-border-opacity: 1;
-  border-color: rgb(78 75 72 / var(--tw-border-opacity));
-}
-
 #app :is(.tw-border-stroke-gray) {
   --tw-border-opacity: 1;
   border-color: rgb(143 143 143 / var(--tw-border-opacity));
@@ -772,26 +733,6 @@ video {
 #app :is(.tw-object-cover) {
   -o-object-fit: cover;
   object-fit: cover;
-}
-
-#app :is(.tw-px-5) {
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-}
-
-#app :is(.tw-px-10) {
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
-}
-
-#app :is(.tw-px-9) {
-  padding-left: 2.25rem;
-  padding-right: 2.25rem;
-}
-
-#app :is(.tw-px-8) {
-  padding-left: 2rem;
-  padding-right: 2rem;
 }
 
 #app :is(.tw-px-4) {
@@ -947,10 +888,6 @@ video {
 }
 
 @media (min-width: 750px) {
-  #app :is(.md\:tw-col-span-4) {
-    grid-column: span 4 / span 4;
-  }
-
   #app :is(.md\:tw-mb-24) {
     margin-bottom: 6rem;
   }
@@ -969,11 +906,6 @@ video {
 
   #app :is(.md\:tw-border-t) {
     border-top-width: 1px;
-  }
-
-  #app :is(.md\:tw-border-gray) {
-    --tw-border-opacity: 1;
-    border-color: rgb(78 75 72 / var(--tw-border-opacity));
   }
 
   #app :is(.md\:tw-px-8) {
@@ -1001,10 +933,6 @@ video {
 
   #app :is(.lg\:tw-col-span-9) {
     grid-column: span 9 / span 9;
-  }
-
-  #app :is(.lg\:tw-col-span-6) {
-    grid-column: span 6 / span 6;
   }
 
   #app :is(.lg\:tw-col-start-10) {
@@ -1066,10 +994,6 @@ video {
   #app :is(.lg\:tw-px-0) {
     padding-left: 0px;
     padding-right: 0px;
-  }
-
-  #app :is(.lg\:tw-pl-0) {
-    padding-left: 0px;
   }
 
   #app :is(.lg\:tw-text-2xl) {
