@@ -28,7 +28,7 @@
   }
 
   .product__info-wrapper {
-    padding: 0 0 0 5rem;
+    padding: 0 5rem;
   }
 
   .product__info-wrapper--extra-padding {
@@ -360,10 +360,6 @@ a.product__text {
 }
 
 @media screen and (min-width: 750px) {
-  .product__info-container {
-    max-width: 60rem;
-  }
-
   .product__info-container .price--on-sale .price-item--regular {
     font-size: 1.6rem;
   }

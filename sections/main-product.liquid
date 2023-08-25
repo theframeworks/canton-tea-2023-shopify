@@ -1,6 +1,6 @@
 <section
   id="MainProduct-{{ section.id }}"
-  class="page-width section-{{ section.id }}-padding"
+  class="section-{{ section.id }}-padding"
   data-section="{{ section.id }}"
 >
   {{ 'section-main-product.css' | asset_url | stylesheet_tag }}
@@ -56,7 +56,7 @@
   {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
 
   <div class="
-    tw-grid tw-gap-4 md:tw-grid-cols-2 lg:tw-grid-cols-16
+    tw-grid tw-gap-4 md:tw-grid-cols-2 lg:tw-grid-cols-16 tw-px-4 md:tw-px-8
     product
     product--{{ section.settings.media_size }}
     product--{{ section.settings.media_position }}
@@ -84,7 +84,7 @@
       {%- else -%}
         lg:tw-col-start-10
       {% endif %}
-      lg:tw-pl-0 product__info-wrapper grid__item
+      lg:tw-px-0 product__info-wrapper grid__item
       {% if settings.page_width > 1400 and section.settings.media_size == "small" %}
         product__info-wrapper--extra-padding
       {% endif %}

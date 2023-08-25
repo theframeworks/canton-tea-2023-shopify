@@ -552,6 +552,40 @@ video {
   --tw-backdrop-sepia: ;
 }
 
+.tw-container {
+  width: 100%;
+}
+
+@media (min-width: 320px) {
+  .tw-container {
+    max-width: 320px;
+  }
+}
+
+@media (min-width: 750px) {
+  .tw-container {
+    max-width: 750px;
+  }
+}
+
+@media (min-width: 990px) {
+  .tw-container {
+    max-width: 990px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .tw-container {
+    max-width: 1440px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .tw-container {
+    max-width: 1920px;
+  }
+}
+
 .accordion.product__accordion {
   --tw-border-opacity: 1;
   border-color: rgb(143 143 143 / var(--tw-border-opacity));
@@ -583,10 +617,6 @@ video {
   border-width: 0;
 }
 
-#app :is(.tw-visible) {
-  visibility: visible;
-}
-
 #app :is(.tw-absolute) {
   position: absolute;
 }
@@ -595,16 +625,16 @@ video {
   position: sticky;
 }
 
-#app :is(.tw-top-4) {
-  top: 1rem;
-}
-
 #app :is(.tw-right-0) {
   right: 0px;
 }
 
 #app :is(.tw-top-0) {
   top: 0px;
+}
+
+#app :is(.tw-top-4) {
+  top: 1rem;
 }
 
 #app :is(.tw-z-10) {
@@ -636,6 +666,14 @@ video {
   margin-bottom: 2rem;
 }
 
+#app :is(.tw-ml-1) {
+  margin-left: 0.25rem;
+}
+
+#app :is(.tw-mr-7) {
+  margin-right: 1.75rem;
+}
+
 #app :is(.tw-mt-16) {
   margin-top: 4rem;
 }
@@ -646,46 +684,6 @@ video {
 
 #app :is(.tw-mt-\[10px\]) {
   margin-top: 10px;
-}
-
-#app :is(.tw-mt-3) {
-  margin-top: 0.75rem;
-}
-
-#app :is(.tw-mr-3) {
-  margin-right: 0.75rem;
-}
-
-#app :is(.tw-mr-4) {
-  margin-right: 1rem;
-}
-
-#app :is(.tw-mr-5) {
-  margin-right: 1.25rem;
-}
-
-#app :is(.tw-mr-6) {
-  margin-right: 1.5rem;
-}
-
-#app :is(.tw-mr-7) {
-  margin-right: 1.75rem;
-}
-
-#app :is(.tw-ml-1) {
-  margin-left: 0.25rem;
-}
-
-#app :is(.tw-mb-20) {
-  margin-bottom: 5rem;
-}
-
-#app :is(.tw-mb-10) {
-  margin-bottom: 2.5rem;
-}
-
-#app :is(.tw-block) {
-  display: block;
 }
 
 #app :is(.tw-flex) {
@@ -707,18 +705,6 @@ video {
 #app :is(.tw-w-min) {
   width: -moz-min-content;
   width: min-content;
-}
-
-#app :is(.tw-w-1\/3) {
-  width: 33.333333%;
-}
-
-#app :is(.tw-w-2\/3) {
-  width: 66.666667%;
-}
-
-#app :is(.tw-max-w-2xl) {
-  max-width: 42rem;
 }
 
 #app :is(.tw-max-w-\[50\%\]) {
@@ -763,14 +749,6 @@ video {
   border-top-width: 1px;
 }
 
-#app :is(.tw-border-l) {
-  border-left-width: 1px;
-}
-
-#app :is(.tw-border-solid) {
-  border-style: solid;
-}
-
 #app :is(.tw-border-clickable-gray) {
   --tw-border-opacity: 1;
   border-color: rgb(120 110 110 / var(--tw-border-opacity));
@@ -786,10 +764,6 @@ video {
   border-color: rgb(143 143 143 / var(--tw-border-opacity));
 }
 
-#app :is(.tw-border-current) {
-  border-color: currentColor;
-}
-
 #app :is(.tw-bg-clickable-gray) {
   --tw-bg-opacity: 1;
   background-color: rgb(120 110 110 / var(--tw-bg-opacity));
@@ -800,20 +774,37 @@ video {
   object-fit: cover;
 }
 
-#app :is(.tw-pt-4) {
-  padding-top: 1rem;
-}
-
-#app :is(.tw-pl-5) {
+#app :is(.tw-px-5) {
   padding-left: 1.25rem;
+  padding-right: 1.25rem;
 }
 
-#app :is(.tw-pl-7) {
-  padding-left: 1.75rem;
+#app :is(.tw-px-10) {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
+#app :is(.tw-px-9) {
+  padding-left: 2.25rem;
+  padding-right: 2.25rem;
+}
+
+#app :is(.tw-px-8) {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+#app :is(.tw-px-4) {
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 #app :is(.tw-pl-8) {
   padding-left: 2rem;
+}
+
+#app :is(.tw-pt-4) {
+  padding-top: 1rem;
 }
 
 #app :is(.tw-text-center) {
@@ -858,34 +849,16 @@ video {
   letter-spacing: -0.04rem;
 }
 
-#app :is(.tw-text-2xl) {
-  font-size: 4.8rem;
-  line-height: 98%;
-  letter-spacing: 0;
-}
-
-#app :is(.tw-text-3xl) {
-  font-size: 7.2rem;
-  line-height: 90%;
-  letter-spacing: 0;
-}
-
-#app :is(.tw-text-4xl) {
-  font-size: 10rem;
-  line-height: 90%;
-  letter-spacing: 0;
-}
-
-#app :is(.tw-font-normal) {
-  font-weight: 400;
+#app :is(.tw-font-bold) {
+  font-weight: 700;
 }
 
 #app :is(.tw-font-light) {
   font-weight: 300;
 }
 
-#app :is(.tw-font-bold) {
-  font-weight: 700;
+#app :is(.tw-font-normal) {
+  font-weight: 400;
 }
 
 #app :is(.tw-uppercase) {
@@ -902,10 +875,6 @@ video {
 
 #app :is(.tw-tracking-normal) {
   letter-spacing: 0em;
-}
-
-#app :is(.tw-tracking-wide) {
-  letter-spacing: 0.025em;
 }
 
 #app :is(.tw-tracking-widest) {
@@ -928,11 +897,6 @@ video {
 
 #app :is(.tw-link) {
   text-decoration-line: underline;
-}
-
-#app :is(.before\:tw-content-\[\'_\2197\'\])::before {
-  --tw-content: ' ↗';
-  content: var(--tw-content);
 }
 
 #app :is(.before\:tw-content-\[\'_\|\'\])::before {
@@ -960,14 +924,6 @@ video {
     order: 2;
   }
 
-  #app :is(.max-md\:tw-w-1\/3) {
-    width: 33.333333%;
-  }
-
-  #app :is(.max-md\:tw-w-2\/3) {
-    width: 66.666667%;
-  }
-
   #app :is(.max-md\:tw-space-y-4 > :not([hidden]) ~ :not([hidden])) {
     --tw-space-y-reverse: 0;
     margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
@@ -991,40 +947,20 @@ video {
 }
 
 @media (min-width: 750px) {
-  #app :is(.md\:tw-invisible) {
-    visibility: hidden;
-  }
-
-  #app :is(.md\:tw-mt-0) {
-    margin-top: 0px;
-  }
-
-  #app :is(.md\:tw-mb-16) {
-    margin-bottom: 4rem;
-  }
-
-  #app :is(.md\:tw-mb-20) {
-    margin-bottom: 5rem;
+  #app :is(.md\:tw-col-span-4) {
+    grid-column: span 4 / span 4;
   }
 
   #app :is(.md\:tw-mb-24) {
     margin-bottom: 6rem;
   }
 
+  #app :is(.md\:tw-mt-0) {
+    margin-top: 0px;
+  }
+
   #app :is(.md\:tw-flex) {
     display: flex;
-  }
-
-  #app :is(.md\:tw-hidden) {
-    display: none;
-  }
-
-  #app :is(.md\:tw-w-full) {
-    width: 100%;
-  }
-
-  #app :is(.md\:tw-w-0) {
-    width: 0px;
   }
 
   #app :is(.md\:tw-grid-cols-2) {
@@ -1040,8 +976,9 @@ video {
     border-color: rgb(78 75 72 / var(--tw-border-opacity));
   }
 
-  #app :is(.md\:tw-pl-0) {
-    padding-left: 0px;
+  #app :is(.md\:tw-px-8) {
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 }
 
@@ -1064,6 +1001,10 @@ video {
 
   #app :is(.lg\:tw-col-span-9) {
     grid-column: span 9 / span 9;
+  }
+
+  #app :is(.lg\:tw-col-span-6) {
+    grid-column: span 6 / span 6;
   }
 
   #app :is(.lg\:tw-col-start-10) {
@@ -1094,12 +1035,12 @@ video {
     width: auto;
   }
 
-  #app :is(.lg\:tw-max-w-none) {
-    max-width: none;
-  }
-
   #app :is(.lg\:tw-max-w-\[33\.33\%\]) {
     max-width: 33.33%;
+  }
+
+  #app :is(.lg\:tw-max-w-none) {
+    max-width: none;
   }
 
   #app :is(.lg\:tw-grid-cols-16) {
@@ -1120,6 +1061,11 @@ video {
 
   #app :is(.lg\:tw-gap-8) {
     gap: 2rem;
+  }
+
+  #app :is(.lg\:tw-px-0) {
+    padding-left: 0px;
+    padding-right: 0px;
   }
 
   #app :is(.lg\:tw-pl-0) {
@@ -1168,11 +1114,6 @@ video {
   display: block;
 }
 
-#app :is(.\[\&_\:link\]\:tw-py-10 :link) {
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
-}
-
 #app :is(.\[\&_\:link\]\:tw-py-5 :link) {
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
@@ -1180,16 +1121,6 @@ video {
 
 #app :is(.\[\&_\:link\]\:tw-pr-3 :link) {
   padding-right: 0.75rem;
-}
-
-#app :is(.\[\&_\:link\]\:tw-pt-3 :link) {
-  padding-top: 0.75rem;
-}
-
-#app :is(.\[\&_\:link\]\:tw-text-xs :link) {
-  font-size: 1rem;
-  line-height: 180%;
-  letter-spacing: -0.04rem;
 }
 
 #app :is(.\[\&_\:link\]\:tw-text-sm :link) {
