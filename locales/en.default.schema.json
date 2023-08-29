@@ -1991,7 +1991,8 @@
           "name": "Pickup availability"
         },
         "description": {
-          "name": "Description"
+          "name": "Description",
+          "label": "Description"
         },
         "sku": {
           "name": "SKU",
