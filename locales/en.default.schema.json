@@ -704,9 +704,6 @@
         "title": {
           "label": "Heading"
         },
-        "description": {
-          "label": "Description"
-        },
         "show_description": {
           "label": "Show collection description from the admin"
         },
@@ -1991,7 +1988,12 @@
           "name": "Pickup availability"
         },
         "description": {
-          "name": "Description"
+          "name": "Description",
+          "settings": {
+            "heading": {
+              "label": "Block header"
+            }
+          }
         },
         "sku": {
           "name": "SKU",

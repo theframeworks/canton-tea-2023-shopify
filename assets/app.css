@@ -652,6 +652,18 @@ video {
   margin-top: 10px;
 }
 
+#app :is(.tw-mt-14) {
+  margin-top: 3.5rem;
+}
+
+#app :is(.tw-mt-5) {
+  margin-top: 1.25rem;
+}
+
+#app :is(.tw-mb-14) {
+  margin-bottom: 3.5rem;
+}
+
 #app :is(.tw-flex) {
   display: flex;
 }
