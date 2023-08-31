@@ -952,6 +952,11 @@ video {
     padding-left: 2rem;
     padding-right: 2rem;
   }
+
+  #app :is(.md\:tw-px-16) {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
 }
 
 @media (min-width: 990px) {
@@ -1046,6 +1051,16 @@ video {
   #app :is(.lg\:tw-px-0) {
     padding-left: 0px;
     padding-right: 0px;
+  }
+
+  #app :is(.lg\:tw-px-12) {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  #app :is(.lg\:tw-px-16) {
+    padding-left: 4rem;
+    padding-right: 4rem;
   }
 
   #app :is(.lg\:tw-text-2xl) {
