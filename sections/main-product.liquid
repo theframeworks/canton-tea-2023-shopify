@@ -69,7 +69,7 @@
     <div class="
       lg:tw-col-span-7
       {% if section.settings.media_position == 'right' %}
-        lg:tw-col-start-10
+        lg:tw-col-start-9
       {%- else -%}
         lg:tw-col-start-2
       {% endif %}
@@ -78,11 +78,11 @@
       {% render 'product-media-gallery', variant_images: variant_images %}
     </div>
     <div class="
-      lg:tw-col-span-5
+      lg:tw-col-span-5 x2lg:tw-col-span-3
       {% if section.settings.media_position == 'right' %}
-        lg:tw-col-start-2 lg:tw-order-first
+        lg:tw-col-start-2 x2lg:tw-col-start-3 lg:tw-order-first
       {%- else -%}
-        lg:tw-col-start-10
+        lg:tw-col-start-10 x2lg:tw-col-start-11
       {% endif %}
       lg:tw-px-0 product__info-wrapper grid__item
       {% if settings.page_width > 1400 and section.settings.media_size == "small" %}
