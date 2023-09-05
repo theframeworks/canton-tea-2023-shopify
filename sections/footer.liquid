@@ -135,7 +135,7 @@
                   lg:tw-col-span-4
                   lg:tw-gap-y-1">
                   {%- if section.settings.newsletter_heading != blank -%}
-                    <p class="tw-text-sm tw-w-3/4 lg:tw-w-full tw-max-h-[33px]">{{ section.settings.newsletter_heading }}</p>
+                    <p class="tw-text-sm tw-w-3/5 lg:tw-w-full tw-max-h-[33px]">{{ section.settings.newsletter_heading }}</p>
                   {%- endif -%}
                   {%- form 'customer', id: 'ContactFooter', class: 'footer__newsletter newsletter-form tw-max-w-full [&_div]:tw-max-w-full lg:tw-justify-start' -%}
                     <input type="hidden" name="contact[tags]" value="newsletter">
@@ -242,12 +242,12 @@
                   {%- case block.type -%}
                   {%- when 'link_list' -%}
                   {%- if block.settings.menu != blank -%}
-                    <ul class="footer-block__details-content list-unstyled tw-mb-0 [&_li]:tw-border-t [&_li:last-child]:tw-border-b [&_li]:tw-border-stroke-gray [&_li]:tw-mr-0 [&_li>a]:tw-py-4">
+                    <ul class="footer-block__details-content list-unstyled tw-mb-0 [&_li]:tw-border-t [&_li:last-child]:tw-border-b [&_li]:tw-border-stroke-gray [&_li]:tw-mr-0">
                       {%- for link in block.settings.menu.links -%}
                         <li>
                           <a
                             href="{{ link.url }}"
-                            class="link link--text list-menu__item list-menu__item--link{% if link.active %} list-menu__item--active{% endif %} tw-py-4 tw-uppercase tw-font-heading tw-tracking-widest"
+                            class="link link--text list-menu__item list-menu__item--link{% if link.active %} list-menu__item--active{% endif %} tw-py-5 tw-uppercase tw-font-heading tw-tracking-widest"
                           >
                             {{ link.title }}
                           </a>
@@ -266,7 +266,8 @@
                   max-md:tw-order-3
                   lg:tw-hidden 
                   md:tw-row-start-4
-                  tw-text-sm rte tw-text-balance tw-max-w-[50%]">{{ settings.brand_description }}
+                  tw-text-sm rte tw-text-balance [&_p]:tw-max-w-3/5">
+                    {{ settings.brand_description }}
                 </div>
               {%- endif -%}
             
@@ -302,10 +303,10 @@
                         <button class="button button--tertiary">{{ 'localization.update_country' | t }}</button>
                       {%- endform -%}
                     </noscript>
-                    <localization-form class="[&_form]:tw-p-0 [&_form]:tw-mr-0">
+                    <localization-form class="[&_form]:tw-p-0 [&_form]:tw-mr-0 [&_form]:tw-w-full">
                       {%- form 'localization', id: 'FooterCountryForm', class: 'localization-form' -%}
-                        <div class="no-js-hidden tw-grid tw-gap-y-1 [&_button]:tw-m-0">
-                          <p class="tw-text-sm tw-font-normal tw-font-body tw-min-h-[33px] tw-flex tw-items-end tw-relative tw-top-[-5px]" id="FooterCountryLabel">Subscribe to the newsletter for 20% off your first order.</p>
+                        <div class="no-js-hidden tw-grid tw-gap-y-1 [&_button]:tw-m-0 [&_button]:tw-bg-button-gray [&_button]:tw-text-blacker [&_button]:tw-font-heading">
+                          <p class="tw-text-sm tw-font-normal tw-font-body tw-min-h-[33px] tw-flex tw-items-end tw-relative tw-top-[-5px]" id="FooterCountryLabel">Currency</p>
                           {%- render 'country-localization', localPosition: 'FooterCountry' -%}
                         </div>
                       {%- endform -%}
@@ -338,132 +339,6 @@
   
   {%- endif -%}
 
-  <div
-    class="footer__content-bottom{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-    {% if settings.animations_reveal_on_scroll %}
-      data-cascade
-    {% endif %}
-  >
-    <div class="footer__content-bottom-wrapper page-width">
-      <div class="footer__column footer__localization isolate">
-        {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
-          <noscript>
-            {%- form 'localization', id: 'FooterCountryFormNoScript', class: 'localization-form' -%}
-              <div class="localization-form__select">
-                <h2 class="visually-hidden" id="FooterCountryLabelNoScript">{{ 'localization.country_label' | t }}</h2>
-                <select
-                  class="localization-selector link"
-                  name="country_code"
-                  aria-labelledby="FooterCountryLabelNoScript"
-                >
-                  {%- for country in localization.available_countries -%}
-                    <option
-                      value="{{ country.iso_code }}"
-                      {%- if country.iso_code == localization.country.iso_code %}
-                        selected
-                      {% endif %}
-                    >
-                      {{ country.name }} ({{ country.currency.iso_code }}
-                      {{ country.currency.symbol }})
-                    </option>
-                  {%- endfor -%}
-                </select>
-                {% render 'icon-caret' %}
-              </div>
-              <button class="button button--tertiary">{{ 'localization.update_country' | t }}</button>
-            {%- endform -%}
-          </noscript>
-          <localization-form>
-            {%- form 'localization', id: 'FooterCountryForm', class: 'localization-form' -%}
-              <div class="no-js-hidden">
-                <h2 class="caption-large text-body" id="FooterCountryLabel">{{ 'localization.country_label' | t }}</h2>
-                {%- render 'country-localization', localPosition: 'FooterCountry' -%}
-              </div>
-            {%- endform -%}
-          </localization-form>
-        {%- endif -%}
-
-        {%- if section.settings.enable_language_selector and localization.available_languages.size > 1 -%}
-          <noscript>
-            {%- form 'localization', id: 'FooterLanguageFormNoScript', class: 'localization-form' -%}
-              <div class="localization-form__select">
-                <h2 class="visually-hidden" id="FooterLanguageLabelNoScript">
-                  {{ 'localization.language_label' | t }}
-                </h2>
-                <select
-                  class="localization-selector link"
-                  name="locale_code"
-                  aria-labelledby="FooterLanguageLabelNoScript"
-                >
-                  {%- for language in localization.available_languages -%}
-                    <option
-                      value="{{ language.iso_code }}"
-                      lang="{{ language.iso_code }}"
-                      {%- if language.iso_code == localization.language.iso_code %}
-                        selected
-                      {% endif %}
-                    >
-                      {{ language.endonym_name | capitalize }}
-                    </option>
-                  {%- endfor -%}
-                </select>
-                {% render 'icon-caret' %}
-              </div>
-              <button class="button button--tertiary">{{ 'localization.update_language' | t }}</button>
-            {%- endform -%}
-          </noscript>
-
-          <localization-form>
-            {%- form 'localization', id: 'FooterLanguageForm', class: 'localization-form' -%}
-              <div class="no-js-hidden">
-                <h2 class="caption-large text-body" id="FooterLanguageLabel">
-                  {{ 'localization.language_label' | t }}
-                </h2>
-                {%- render 'language-localization', localPosition: 'FooterLanguage' -%}
-              </div>
-            {%- endform -%}
-          </localization-form>
-        {%- endif -%}
-      </div>
-      <div class="footer__column footer__column--info">
-        {%- if section.settings.payment_enable -%}
-          <div class="footer__payment">
-            <span class="visually-hidden">{{ 'sections.footer.payment' | t }}</span>
-            <ul class="list list-payment" role="list">
-              {%- for type in shop.enabled_payment_types -%}
-                <li class="list-payment__item">
-                  {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
-                </li>
-              {%- endfor -%}
-            </ul>
-          </div>
-        {%- endif -%}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </div>
-    </div>
-
-  </div>
 </footer>
 
 {%- if section.settings.enable_country_selector or section.settings.enable_language_selector -%}
