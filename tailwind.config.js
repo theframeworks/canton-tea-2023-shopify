@@ -31,9 +31,11 @@ module.exports = {
       inherit: 'inherit',
       transparent: 'transparent',
       black: '#292727',
+      blacker: '#000000',
       gray: '#4E4B48',
       'clickable-gray': '#786E6E',
       'stroke-gray': '#8F8F8F',
+      'button-gray': '#CFCFCF',
       white: '#ffffff',
     },
     fontSize: {
