@@ -54,98 +54,81 @@
       <div class="footer__content-top tw-px-4 tw-pb-0 md:tw-px-8">
         
         <div class="
-            footer__blocks-wrapper 
-            md:tw-grid md:tw-grid-cols-2
-            lg:tw-grid-cols-16
-            lg:tw-gap-x-4
-            
+            footer__blocks-wrapper
+            tw-grid
+            tw-gap-y-20
+            md:tw-grid-cols-16
+            lg:tw-gap-y-0
+
             {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
             {% if settings.animations_reveal_on_scroll %}
               data-cascade
             {% endif %}
           >
 
-            <div class="
-              lg:tw-col-span-7
-              tw-grid
-              tw-gap-y-4
-              md:tw-grid-rows-6
-              md:tw-auto-rows-fr
-              lg:tw-gap-x-4
-              lg:tw-grid-rows-3
-              lg:tw-grid-cols-7
-            ">
-              
-              {%- if settings.logo != blank -%}
-                <div class="
-                  header__heading-logo-wrapper
-                  [&_img]:tw-w-[56px]
-                  max-md:tw-mb-24
-                  md:tw-row-start-1 
-                  md:tw-row-span-3
-                  lg:tw-row-span-2
-                  lg:tw-col-span-3
-                  ">
-                  {%- assign logo_alt = settings.logo.alt | default: shop.name | escape -%}
-                  {%- assign logo_height = settings.logo_width | divided_by: settings.logo.aspect_ratio -%}
-                  {% capture sizes %}(max-width: {{ settings.logo_width | times: 2 }}px) 50vw, {{ settings.logo_width }}px{% endcapture %}
-                  {% capture widths %}{{ settings.logo_width }}, {{ settings.logo_width | times: 1.5 | round }}, {{ settings.logo_width | times: 2 }}{% endcapture %}
-                  {{ settings.logo | image_url: width: 600 | image_tag:
-                    class: 'header__heading-logo motion-reduce',
-                    widths: widths,
-                    height: logo_height,
-                    width: settings.logo_width,
-                    alt: logo_alt,
-                    sizes: sizes,
-                    preload: true
-                  }}
-                </div>
-              {%- else -%}
-                <span class="h2">{{ shop.name }}</span>
-              {%- endif -%}
-
+            <!-- LOGO -->
+            {%- if settings.logo != blank -%}
               <div class="
-                max-md:tw-mb-8
-                md:tw-row-start-4
-                lg:tw-hidden"
-                >
-                {%- if section.settings.show_social and has_social_icons -%}
-                  {%- render 'social-icons', class: 'lg:tw-hidden tw-justify-start [&_li:nth-child(1)>:link]:tw-pl-0 [&_:link]:tw-pt-2 [&_:link]:tw-text-clickable-gray' -%}
-              {%- endif -%}
+                header__heading-logo-wrapper
+                [&_img]:tw-w-[56px]
+                max-md:tw-mb-24
+                md:tw-col-span-8
+                md:tw-row-start-1
+                lg:tw-col-span-3
+              ">
+                {%- assign logo_alt = settings.logo.alt | default: shop.name | escape -%}
+                {%- assign logo_height = settings.logo_width | divided_by: settings.logo.aspect_ratio -%}
+                {% capture sizes %}(max-width: {{ settings.logo_width | times: 2 }}px) 50vw, {{ settings.logo_width }}px{% endcapture %}
+                {% capture widths %}{{ settings.logo_width }}, {{ settings.logo_width | times: 1.5 | round }}, {{ settings.logo_width | times: 2 }}{% endcapture %}
+                {{ settings.logo | image_url: width: 600 | image_tag:
+                  class: 'header__heading-logo motion-reduce',
+                  widths: widths,
+                  height: logo_height,
+                  width: settings.logo_width,
+                  alt: logo_alt,
+                  sizes: sizes,
+                  preload: true
+                }}
               </div>
-              
+            {%- else -%}
+              <div class="h2">{{ shop.name }}</div>
+            {%- endif -%}
+            
+            <!-- SOCIAL -->
+            {%- if section.settings.show_social and has_social_icons -%}
               <div class="
-                max-lg:tw-hidden
-                lg:tw-row-start-3
-                lg:tw-col-span-3">
-                {%- if settings.brand_description != blank -%}
-                <div class="max-lg:tw-hidden tw-text-sm rte">
-                  {{ settings.brand_description }}
-                </div>
-              {%- endif -%}
+                md:tw-col-span-8
+                md:tw-col-start-9
+                md:tw-row-start-2
+                lg:tw-row-start-4">
+                {%- render 'social-icons', class: 'tw-justify-start [&_li:nth-child(1)>:link]:tw-pl-0 [&_:link]:tw-pt-2 [&_:link]:tw-text-clickable-gray' -%}
               </div>
-              
-              {%- if section.settings.newsletter_enable -%}
-                <div class="
-                  md:tw-row-start-5 
-                  tw-grid 
-                  tw-gap-y-6
-                  lg:tw-row-start-1
-                  lg:tw-col-start-4
-                  lg:tw-col-span-4
-                  lg:tw-gap-y-1">
-                  {%- if section.settings.newsletter_heading != blank -%}
-                    <p class="tw-text-sm tw-w-3/5 lg:tw-w-full tw-max-h-[33px]">{{ section.settings.newsletter_heading }}</p>
-                  {%- endif -%}
-                  {%- form 'customer', id: 'ContactFooter', class: 'footer__newsletter newsletter-form tw-max-w-full [&_div]:tw-max-w-full lg:tw-justify-start' -%}
-                    <input type="hidden" name="contact[tags]" value="newsletter">
+            {%- endif -%}
+            
+            <!-- NEWSLETTER -->
+            {%- if section.settings.newsletter_enable -%}
+              <div class="
+                max-md:tw--mt-4
+                md:tw-col-span-8
+                md:tw-col-start-9
+                md:tw-row-start-3
+                lg:tw-row-start-1
+                lg:tw-col-span-7
+                lg:tw-col-start-4">
+                {%- if section.settings.newsletter_heading != blank -%}
+                  <p class="tw-text-sm tw-w-3/5 tw-mb-6 lg:tw-mb-10">
+                    {{ section.settings.newsletter_heading }}
+                  </p>
+                {%- endif -%}
+                {%- form 'customer', id: 'ContactFooter', class: 'footer__newsletter newsletter-form tw-max-w-full [&_div]:tw-max-w-full lg:tw-justify-start' -%}
+                  <input type="hidden" name="contact[tags]" value="newsletter">
                     <div class="newsletter-form__field-wrapper">
                       <div class="field">
                         <input
                           id="NewsletterForm--{{ section.id }}"
                           type="email"
                           name="contact[email]"
-                          class="field__input tw-bg-button-gray tw-text-blacker tw-font-heading"
+                          class="field__input tw-bg-button-gray placeholder:tw-text-blacker placeholder:tw-font-heading [&_div]:tw-font-heading"
                           value="{{ form.email }}"
                           aria-required="true"
                           autocorrect="off"
@@ -194,144 +177,80 @@
                       </h3>
                     {%- endif -%}
                   {%- endform -%}
-                </div>
-              {%- endif -%}
-
-              <div class="
-                tw-text-sm
-                max-md:tw-mt-4 
-                md:tw-row-start-6 
-                md:tw-flex
-                md:tw-items-center
-                lg:tw-col-span-3
-                lg:tw-col-start-4
-                lg:tw-row-start-2">Change your cookie consent</div>
-
-
-              <div class="
-                max-lg:tw-hidden
-                lg:tw-col-span-3
-                lg:tw-col-start-4
-                lg:tw-row-start-3">
-                <p class="tw-text-sm">Copyright Canton Tea {{ 'now' | date: '%Y' }}</p>
               </div>
+            {%- endif -%}
 
-            </div>
-
+            <!-- MENU -->
             <div class="
-              lg:tw-col-span-8
-              max-md:tw-mt-20
-              tw-grid
-              tw-gap-y-16
-              md:tw-gap-y-4
-              md:tw-grid-rows-6
-              md:tw-auto-rows-fr
-              lg:tw-gap-x-4
-              lg:tw-grid-rows-3
-              lg:tw-grid-cols-8
+              md:tw-col-span-8
+              md:tw-row-start-1
+              lg:tw-col-span-4
+              lg:tw-col-start-12
+              lg:tw-row-span-4
+              lg:tw-row-start-1">
+              {%- for block in section.blocks -%}
+                {%- case block.type -%}
+                {%- when 'link_list' -%}
+                {%- if block.settings.menu != blank -%}
+                  <ul class="footer-block__details-content list-unstyled tw-mb-0 [&_li]:tw-border-t [&_li:last-child]:tw-border-b [&_li]:tw-border-stroke-gray [&_li]:tw-mr-0">
+                    {%- for link in block.settings.menu.links -%}
+                      <li>
+                        <a
+                          href="{{ link.url }}"
+                          class="link link--text list-menu__item list-menu__item--link{% if link.active %} list-menu__item--active{% endif %} tw-py-5 tw-uppercase tw-font-heading tw-tracking-widest"
+                        >
+                          {{ link.title }}
+                        </a>
+                      </li>
+                    {%- endfor -%}
+                  </ul>
+                {%- endif -%}
+                {%- endcase -%}
+              {%- endfor -%}  
+            </div>
+            
+            <!-- TAGLINE -->
+            <div class="
+              md:tw-col-span-5
+              md:tw-row-start-3
+              md:tw-pr-3
+              md:tw-flex
+              lg:tw-row-start-4
+              lg:tw-col-span-3
             ">
-              
-              <div class="
-                max-md:tw-order-2
-                md:tw-row-start-1 
-                md:tw-row-span-2
-                lg:tw-col-span-4
-                lg:tw-row-start-1
-                lg:tw-col-start-5">
-                {%- for block in section.blocks -%}
-                  {%- case block.type -%}
-                  {%- when 'link_list' -%}
-                  {%- if block.settings.menu != blank -%}
-                    <ul class="footer-block__details-content list-unstyled tw-mb-0 [&_li]:tw-border-t [&_li:last-child]:tw-border-b [&_li]:tw-border-stroke-gray [&_li]:tw-mr-0">
-                      {%- for link in block.settings.menu.links -%}
-                        <li>
-                          <a
-                            href="{{ link.url }}"
-                            class="link link--text list-menu__item list-menu__item--link{% if link.active %} list-menu__item--active{% endif %} tw-py-5 tw-uppercase tw-font-heading tw-tracking-widest"
-                          >
-                            {{ link.title }}
-                          </a>
-                        </li>
-                      {%- endfor -%}
-                    </ul>
-                  {%- endif -%}
-
-                  {%- endcase -%}
-                  {%- endfor -%}  
-              </div>
-
-     
               {%- if settings.brand_description != blank -%}
                 <div class="
-                  max-md:tw-order-3
-                  lg:tw-hidden 
-                  md:tw-row-start-4
-                  tw-text-sm rte tw-text-balance [&_p]:tw-max-w-3/5">
-                    {{ settings.brand_description }}
+                  tw-text-sm 
+                  md:tw-flex-grow
+                  md:tw-flex
+                  md:tw-flex-col
+                  md:tw-justify-between
+                  md:tw-gap-0
+                  lg:tw-flex
+                  lg:tw-justify-end
+                  [&_p]:tw-my-0
+                ">
+                  {{ settings.brand_description }}
+                  <p class="tw-hidden md:max-lg:tw-block">
+                    Copyright Canton Tea {{ 'now' | date: '%Y' }}
+                  </p>
                 </div>
               {%- endif -%}
-            
-              <div class="
-                max-md:tw-order-1
-                md:tw-row-start-5
-                lg:tw-col-span-4
-                lg:tw-row-start-1">
-                  {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
-                    <noscript>
-                      {%- form 'localization', id: 'FooterCountryFormNoScript', class: 'localization-form' -%}
-                        <div class="localization-form__select">
-                          <h2 class="visually-hidden" id="FooterCountryLabelNoScript">{{ 'localization.country_label' | t }}</h2>
-                          <select
-                            class="localization-selector link"
-                            name="country_code"
-                            aria-labelledby="FooterCountryLabelNoScript"
-                          >
-                            {%- for country in localization.available_countries -%}
-                              <option
-                                value="{{ country.iso_code }}"
-                                {%- if country.iso_code == localization.country.iso_code %}
-                                  selected
-                                {% endif %}
-                              >
-                                {{ country.name }} ({{ country.currency.iso_code }}
-                                {{ country.currency.symbol }})
-                              </option>
-                            {%- endfor -%}
-                          </select>
-                          {% render 'icon-caret' %}
-                        </div>
-                        <button class="button button--tertiary">{{ 'localization.update_country' | t }}</button>
-                      {%- endform -%}
-                    </noscript>
-                    <localization-form class="[&_form]:tw-p-0 [&_form]:tw-mr-0 [&_form]:tw-w-full">
-                      {%- form 'localization', id: 'FooterCountryForm', class: 'localization-form' -%}
-                        <div class="no-js-hidden tw-grid tw-gap-y-1 [&_button]:tw-m-0 [&_button]:tw-bg-button-gray [&_button]:tw-text-blacker [&_button]:tw-font-heading">
-                          <p class="tw-text-sm tw-font-normal tw-font-body tw-min-h-[33px] tw-flex tw-items-end tw-relative tw-top-[-5px]" id="FooterCountryLabel">Currency</p>
-                          {%- render 'country-localization', localPosition: 'FooterCountry' -%}
-                        </div>
-                      {%- endform -%}
-                    </localization-form>
-                  {%- endif -%}
-                </div>
-              
-              <div class="
-                max-md:tw-order-4
-                max-md:tw-mt-20
-                lg:tw-hidden 
-                md:tw-row-start-6
-                md:tw-flex 
-                md:tw-items-center">
-                <p class="tw-text-sm">Copyright Canton Tea {{ 'now' | date: '%Y' }}</p>
-              </div>
-              
-              <div class="
-                max-lg:tw-hidden
-                lg:tw-col-span-4">
-                {%- if section.settings.show_social and has_social_icons -%}
-                  {%- render 'social-icons', class: 'tw-justify-start [&_li:nth-child(1)>:link]:tw-pl-0 [&_:link]:tw-pt-2 [&_:link]:tw-text-clickable-gray' -%}
-              {%- endif -%}
-              </div>
             </div>
+
+            <!-- COPYRIGHT -->
+            <div class="
+              max-md:tw--mt-4
+              md:tw-hidden
+              lg:tw-block
+              lg:tw-row-start-4
+              lg:tw-col-start-4
+              lg:tw-col-span-3
+              lg:tw-flex
+              lg:tw-items-end">
+              <p class="tw-text-sm">Copyright Canton Tea {{ 'now' | date: '%Y' }}</p>
+            </div>
+            
 
         </div>
 
