@@ -2314,7 +2314,7 @@ product-info .loading-overlay:not(.hidden) ~ *,
 }
 
 .header-wrapper--border-bottom {
-  border-bottom: 0.1rem solid #8f8f8f;
+  border-bottom: 0.05rem solid #8f8f8f;
 }
 
 .header {

@@ -799,8 +799,16 @@ video {
   margin-bottom: calc(1rem * var(--tw-space-y-reverse));
 }
 
+#app :is(.tw-border-\[0\.5px\]) {
+  border-width: 0.5px;
+}
+
 #app :is(.tw-border-t) {
   border-top-width: 1px;
+}
+
+#app :is(.tw-border-t-\[0\.5px\]) {
+  border-top-width: 0.5px;
 }
 
 #app :is(.tw-border-clickable-gray) {
@@ -1179,6 +1187,10 @@ video {
 
   #app :is(.md\:tw-border-t) {
     border-top-width: 1px;
+  }
+
+  #app :is(.md\:tw-border-t-\[0\.5px\]) {
+    border-top-width: 0.5px;
   }
 
   #app :is(.md\:tw-px-16) {
