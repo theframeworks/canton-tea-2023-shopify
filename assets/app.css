@@ -778,6 +778,10 @@ video {
   width: min-content;
 }
 
+#app :is(.tw-w-1\/2) {
+  width: 50%;
+}
+
 #app :is(.tw-max-w-\[50\%\]) {
   max-width: 50%;
 }
@@ -994,6 +998,14 @@ video {
 
 #app :is(.tw-font-normal) {
   font-weight: 400;
+}
+
+#app :is(.tw-font-medium) {
+  font-weight: 500;
+}
+
+#app :is(.tw-font-semibold) {
+  font-weight: 600;
 }
 
 #app :is(.tw-uppercase) {
@@ -1473,6 +1485,14 @@ video {
 
   #app :is(.lg\:tw-w-full) {
     width: 100%;
+  }
+
+  #app :is(.lg\:tw-w-4\/5) {
+    width: 80%;
+  }
+
+  #app :is(.lg\:tw-w-11\/12) {
+    width: 91.666667%;
   }
 
   #app :is(.lg\:tw-max-w-\[33\.33\%\]) {

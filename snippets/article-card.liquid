@@ -16,6 +16,10 @@
   {% render 'article-card' blog: blog, article: article, show_image: section.settings.show_image %}
 {% endcomment %}
 
+{%- if article.metafields.custom.title_suffix != blank -%}
+    {%- assign title-suffix = article.metafields.custom.title_suffix -%}
+  {%- endif -%}
+
 {%- if article and article != empty -%}
   {%- liquid
     assign ratio = 1
@@ -78,6 +82,7 @@
             <h3 class="card__heading{% if show_excerpt %} h2{% endif %}">
               <a href="{{ article.url }}" class="full-unstyled-link">
                 {{ article.title | truncate: 50 | escape }}
+                <span class="tw-block tw-block tw-font-semibold">{{ title-suffix }}</span>
               </a>
             </h3>
             <div class="article-card__info caption-with-letter-spacing h5">
@@ -113,9 +118,10 @@
         </div>
       </div>
       <div class="card__content">
-        <div class="card__information">
+        <div class="card__information tw-w-1/2 tw-text-balance lg:tw-w-11/12">
           <h3 class="card__heading tw-text-2xl tw-font-normal">
-            {{ article.title | escape }}
+            {{ article.title | truncate: 50 | escape }}
+            <span class="tw-block tw-block tw-font-semibold">{{ title-suffix }}</span>
           </h3>
           {%- if show_excerpt -%}
             {%- if article.excerpt.size > 0 or article.content.size > 0 -%}
