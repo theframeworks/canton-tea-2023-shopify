@@ -30,7 +30,7 @@
   }
 {%- endstyle -%}
 
-<footer class="footer color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
+<footer class="footer color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding tw-bg-light-gray tw-border-0 tw-text-black">
   {%- liquid
     assign has_social_icons = true
     if settings.social_facebook_link == blank and settings.social_instagram_link == blank and settings.social_youtube_link == blank and settings.social_tiktok_link == blank and settings.social_twitter_link == blank and settings.social_pinterest_link == blank and settings.social_snapchat_link == blank and settings.social_tumblr_link == blank and settings.social_vimeo_link == blank
@@ -66,7 +66,6 @@
             {% endif %}
           >
 
-            <!-- LOGO -->
             {%- if settings.logo != blank -%}
               <div class="
                 header__heading-logo-wrapper
@@ -94,7 +93,6 @@
               <div class="h2">{{ shop.name }}</div>
             {%- endif -%}
             
-            <!-- SOCIAL -->
             {%- if section.settings.show_social and has_social_icons -%}
               <div class="
                 md:tw-col-span-8
@@ -105,7 +103,6 @@
               </div>
             {%- endif -%}
             
-            <!-- NEWSLETTER -->
             {%- if section.settings.newsletter_enable -%}
               <div class="
                 max-md:tw--mt-4
@@ -123,7 +120,7 @@
                 {%- form 'customer', id: 'ContactFooter', class: 'footer__newsletter newsletter-form tw-max-w-full [&_div]:tw-max-w-full lg:tw-justify-start' -%}
                   <input type="hidden" name="contact[tags]" value="newsletter">
                     <div class="newsletter-form__field-wrapper">
-                      <div class="field">
+                      <div class="field [&_:after]:tw-content-none">
                         <input
                           id="NewsletterForm--{{ section.id }}"
                           type="email"
@@ -180,7 +177,6 @@
               </div>
             {%- endif -%}
 
-            <!-- MENU -->
             <div class="
               md:tw-col-span-8
               md:tw-row-start-1
@@ -197,7 +193,7 @@
                       <li>
                         <a
                           href="{{ link.url }}"
-                          class="link link--text list-menu__item list-menu__item--link{% if link.active %} list-menu__item--active{% endif %} tw-py-5 tw-uppercase tw-font-heading tw-tracking-widest"
+                          class="link link--text list-menu__item list-menu__item--link{% if link.active %} list-menu__item--active{% endif %} tw-py-8 tw-uppercase tw-font-heading tw-tracking-widest tw-text-sm tw-text-black"
                         >
                           {{ link.title }}
                         </a>
@@ -209,7 +205,6 @@
               {%- endfor -%}  
             </div>
             
-            <!-- TAGLINE -->
             <div class="
               md:tw-col-span-5
               md:tw-row-start-3
@@ -238,7 +233,6 @@
               {%- endif -%}
             </div>
 
-            <!-- COPYRIGHT -->
             <div class="
               max-md:tw--mt-4
               md:tw-hidden
@@ -251,7 +245,6 @@
               <p class="tw-text-sm">Copyright Canton Tea {{ 'now' | date: '%Y' }}</p>
             </div>
             
-
         </div>
 
       </div>
@@ -259,10 +252,6 @@
   {%- endif -%}
 
 </footer>
-
-{%- if section.settings.enable_country_selector or section.settings.enable_language_selector -%}
-  <script src="{{ 'localization-form.js' | asset_url }}" defer="defer"></script>
-{%- endif -%}
 
 {% schema %}
 {

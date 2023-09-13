@@ -36,6 +36,7 @@ module.exports = {
       'clickable-gray': '#786E6E',
       'stroke-gray': '#8F8F8F',
       'button-gray': '#CFCFCF',
+      'light-gray': '#E0E0E0',
       white: '#ffffff',
     },
     fontSize: {
