@@ -188,18 +188,36 @@
                 {%- case block.type -%}
                 {%- when 'link_list' -%}
                 {%- if block.settings.menu != blank -%}
-                  <ul class="footer-block__details-content list-unstyled tw-mb-0 [&_li]:tw-border-t [&_li:last-child]:tw-border-b [&_li]:tw-border-stroke-gray [&_li]:tw-mr-0">
+                  <div class="footer-block__details-content tw-mb-0 [&_details]:tw-border-t [&_details:last-child]:tw-border-b [&_details]:tw-border-stroke-gray [&_details]:tw-mr-0">
                     {%- for link in block.settings.menu.links -%}
-                      <li>
-                        <a
-                          href="{{ link.url }}"
-                          class="link link--text list-menu__item list-menu__item--link{% if link.active %} list-menu__item--active{% endif %} tw-py-8 tw-uppercase tw-font-heading tw-tracking-widest tw-text-sm tw-text-black"
-                        >
-                          {{ link.title }}
-                        </a>
-                      </li>
+                      <details id="Details-{{ block.id }}-{{ section.id }}">
+                         <summary class="tw-relative tw-z-10">
+                            <div class="summary__title">
+                                <a
+                                  href="{{ link.url }}"
+                                  class="link link--text list-menu__item list-menu__item--link{% if link.active %} list-menu__item--active{% endif %} tw-py-8 tw-uppercase tw-font-heading tw-tracking-widest tw-text-sm tw-text-black"
+                                >
+                                  {{ link.title }}
+                                </a>
+                            </div>
+                            {% if link.links != blank %}
+                              {% render 'icon-caret' %}
+                            {% endif %}
+                          </summary>
+                          {% if link.links != blank %}
+                            <div class="accordion__content rte tw-mb-8 tw-z-20 tw-relative tw-top-[-1rem]" id="ProductAccordion-{{ block.id }}-{{ section.id }}">
+                              <div class="">
+                                {% for child_link in link.links %}  
+                                  <a href= "{{ child_link.url }}" class="tw-uppercase tw-font-heading tw-tracking-widest tw-text-sm tw-text-black tw-pb-3 tw-block tw-w-full">{{ child_link.title }}</a>
+                                {% endfor %}
+                              </div>
+                            </div>
+                          {% endif %}
+                      </details>
+
                     {%- endfor -%}
-                  </ul>
+                  </div>
+
                 {%- endif -%}
                 {%- endcase -%}
               {%- endfor -%}  

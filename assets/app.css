@@ -587,6 +587,10 @@ video {
   position: absolute;
 }
 
+#app :is(.tw-relative) {
+  position: relative;
+}
+
 #app :is(.tw-sticky) {
   position: sticky;
 }
@@ -603,8 +607,16 @@ video {
   top: 11rem;
 }
 
+#app :is(.tw-top-\[-1rem\]) {
+  top: -1rem;
+}
+
 #app :is(.tw-z-10) {
   z-index: 10;
+}
+
+#app :is(.tw-z-20) {
+  z-index: 20;
 }
 
 #app :is(.tw-col-span-8) {
@@ -679,6 +691,10 @@ video {
 
 #app :is(.tw-mt-\[10px\]) {
   margin-top: 10px;
+}
+
+#app :is(.tw--mb-4) {
+  margin-bottom: -1rem;
 }
 
 #app :is(.tw-block) {
@@ -849,6 +865,14 @@ video {
   padding-top: 1rem;
 }
 
+#app :is(.tw-pb-4) {
+  padding-bottom: 1rem;
+}
+
+#app :is(.tw-pb-3) {
+  padding-bottom: 0.75rem;
+}
+
 #app :is(.tw-text-center) {
   text-align: center;
 }
@@ -933,14 +957,14 @@ video {
   letter-spacing: 0.1em;
 }
 
-#app :is(.tw-text-white) {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
 #app :is(.tw-text-black) {
   --tw-text-opacity: 1;
   color: rgb(41 39 39 / var(--tw-text-opacity));
+}
+
+#app :is(.tw-text-white) {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 #app :is(.tw-underline) {
@@ -1390,8 +1414,42 @@ video {
   color: rgb(120 110 110 / var(--tw-text-opacity));
 }
 
+#app :is(.\[\&_a\:first-child\]\:tw--mb-4 a:first-child) {
+  margin-bottom: -1rem;
+}
+
+#app :is(.\[\&_details\:last-child\]\:tw-border-b details:last-child) {
+  border-bottom-width: 1px;
+}
+
+#app :is(.\[\&_details\]\:tw-mr-0 details) {
+  margin-right: 0px;
+}
+
+#app :is(.\[\&_details\]\:tw-border-t details) {
+  border-top-width: 1px;
+}
+
+#app :is(.\[\&_details\]\:tw-border-stroke-gray details) {
+  --tw-border-opacity: 1;
+  border-color: rgb(143 143 143 / var(--tw-border-opacity));
+}
+
+#app :is(.\[\&_div\:last-child\]\:tw-border-b div:last-child) {
+  border-bottom-width: 1px;
+}
+
 #app :is(.\[\&_div\]\:tw-max-w-full div) {
   max-width: 100%;
+}
+
+#app :is(.\[\&_div\]\:tw-border-t div) {
+  border-top-width: 1px;
+}
+
+#app :is(.\[\&_div\]\:tw-border-stroke-gray div) {
+  --tw-border-opacity: 1;
+  border-color: rgb(143 143 143 / var(--tw-border-opacity));
 }
 
 #app :is(.\[\&_div\]\:tw-font-heading div) {
