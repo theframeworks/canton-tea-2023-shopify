@@ -16,7 +16,7 @@
   }
 {%- endstyle -%}
     
-{%- paginate blog.articles by 6 -%}
+{%- paginate blog.articles by 5 -%}
   <div class="main-blog tw-px-4 md:tw-px-16 tw-pt-4">
     <h1 class="title--primary{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %} tw-hidden">
       {{ blog.title | escape }}
