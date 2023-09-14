@@ -87,7 +87,7 @@
               {%- endif -%}
             </div>
             {%- if article.excerpt.size -%}
-              <span class="tw-block">
+              <span class="tw-block tw-leading-tight">
                 {{ article.excerpt | strip_html | truncatewords: 30 }}
               </span>
             {%- endif -%}
@@ -99,10 +99,14 @@
         <div
           class="
             article-template__content rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}
-            tw-grid [&_div>img]:tw-w-full [&_div+p]:tw-text-sm [&_blockquote]:tw-flex [&_blockquote]:tw-items-end [&_blockquote]:tw-not-italic [&_blockquote]:tw-p-0 [&_blockquote]:tw-m-0 [&_blockquote]:tw-border-0 [&_blockquote]:tw-text-xl [&_blockquote]:tw-font-heading
+            tw-grid  
+            [&_div>img]:tw-w-full [&_div+p]:tw-text-sm [&_img]:tw-w-full [&_img+p]:tw-text-sm
+            [&_blockquote]:tw-flex [&_blockquote]:tw-items-end [&_blockquote]:tw-not-italic [&_blockquote]:tw-p-0 [&_blockquote]:tw-m-0 [&_blockquote]:tw-border-0 [&_blockquote]:tw-text-xl [&_blockquote]:tw-font-heading
             max-md:[&_blockquote]:tw-mb-8
             md:tw-grid-cols-16 md:[&_div]:tw-col-span-8 md:[&_div]:tw-col-start-9 md:[&_p]:tw-col-span-8 md:[&_p]:tw-col-start-9 md:[&_blockquote]:tw-col-span-7
-            lg:[&_div]:tw-col-span-full lg:[&_div:first-of-type]:tw-col-span-10 lg:[&_div:first-of-type]:tw-col-start-7 lg:[&_p]:tw-col-span-10 lg:[&_p]:tw-col-start-7 lg:[&_blockquote]:tw-text-2xl lg:[&_blockquote]:tw-col-span-5
+            lg:[&_div]:tw-col-span-full lg:[&_div:first-of-type]:tw-col-span-10 lg:[&_div:first-of-type]:tw-col-start-7 
+            lg:[&_img]:tw-col-span-full lg:[&_img:first-of-type]:tw-col-span-10 lg:[&_img:first-of-type]:tw-col-start-7 [&_img:not(:first-of-type)]:tw-mt-8 
+            lg:[&_p]:tw-col-span-10 lg:[&_p]:tw-col-start-7 lg:[&_blockquote]:tw-text-2xl lg:[&_blockquote]:tw-col-span-5
             "
           itemprop="articleBody"
           {{ block.shopify_attributes }}
