@@ -1118,6 +1118,14 @@ video {
     grid-column-start: 9;
   }
 
+  #app :is(.md\:tw-col-start-8) {
+    grid-column-start: 8;
+  }
+
+  #app :is(.md\:tw-col-start-1) {
+    grid-column-start: 1;
+  }
+
   #app :is(.md\:tw-row-start-1) {
     grid-row-start: 1;
   }
@@ -1190,6 +1198,12 @@ video {
 
   #app :is(.md\:tw-pr-3) {
     padding-right: 0.75rem;
+  }
+
+  #app :is(.md\:tw-text-2xl) {
+    font-size: 4.8rem;
+    line-height: 98%;
+    letter-spacing: 0;
   }
 
   @media not all and (min-width: 990px) {
@@ -1913,8 +1927,24 @@ video {
   }
 }
 
+#app :is(.\[\&_span\]\:tw-hidden span) {
+  display: none;
+}
+
 #app :is(.\[\&_span\]\:tw-underline span) {
   text-decoration-line: underline;
+}
+
+@media not all and (min-width: 750px) {
+  #app :is(.max-md\:\[\&_span\]\:tw-hidden span) {
+    display: none;
+  }
+}
+
+@media (min-width: 750px) {
+  #app :is(.md\:\[\&_span\]\:tw-hidden span) {
+    display: none;
+  }
 }
 
 #app :is(.\[\&_svg\]\:tw-h-3 svg) {

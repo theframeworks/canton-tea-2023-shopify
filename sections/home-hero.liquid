@@ -26,14 +26,16 @@
   </div>
   <div class="
     tw-grid tw-gap-4
-    lg:tw-grid-cols-16
+    md:tw-grid-cols-16
   ">
-    <div class="lg:tw-col-span-10">
+    <div class="
+      md:tw-col-span-8 md:tw-col-start-1 md:tw-row-start-1
+      lg:tw-col-span-10">
 
       {%- assign product = all_products[shop.metaobjects['home_featured_product']['home-featured-product-selected'].product_link] -%}
       {% assign home_featured_product-limited = shop.metaobjects['home_featured_product']['home-featured-product-selected'].limited_edition.value %}
       
-      <div class="lg:tw-grid {% if home_featured_product-limited == true %}lg:tw-grid-cols-2{% endif %}">
+      <div class="tw-grid tw-gap-4 {% if home_featured_product-limited == true %}lg:tw-grid-cols-2{% endif %}">
         
         {% if home_featured_product-limited == true %}
           <div>
@@ -41,14 +43,17 @@
           </div>
         {% endif %}
 
-        <div class="tw-font-heading tw-text-2xl tw-font-semibold">
+        <div class="tw-font-heading tw-text-xl md:tw-text-2xl tw-font-semibold">
           {% assign home_featured_product-text = shop.metaobjects['home_featured_product']['home-featured-product-selected'].title | metafield_tag %}
           {{ home_featured_product-text }}
         </div>
       </div>
 
     </div>
-    <div class="lg:tw-col-span-6">
+
+    <div class="
+      md:tw-col-span-8 md:tw-col-start-8 md:tw-row-start-1
+      lg:tw-col-span-5 max-md:[&_span]:tw-hidden">
       {{ shop.metaobjects['home_featured_product']['home-featured-product-selected'].description | metafield_tag }}
       <a class="tw-block tw-underline hover:tw-no-underline" href={{ product.url }}>Shop now</a>
 
