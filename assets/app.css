@@ -854,6 +854,10 @@ video {
   object-fit: cover;
 }
 
+#app :is(.tw-p-0) {
+  padding: 0px;
+}
+
 #app :is(.tw-px-4) {
   padding-left: 1rem;
   padding-right: 1rem;
@@ -1288,6 +1292,10 @@ video {
 
   #app :is(.lg\:tw-col-start-6) {
     grid-column-start: 6;
+  }
+
+  #app :is(.lg\:tw-col-start-11) {
+    grid-column-start: 11;
   }
 
   #app :is(.lg\:tw-row-span-4) {

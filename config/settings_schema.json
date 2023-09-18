@@ -625,6 +625,15 @@
     "name": "t:settings_schema.collection_cards.name",
     "settings": [
       {
+        "type": "header",
+        "content": "t:settings_schema.collection_cards.settings.header.content"
+      },
+      {
+        "type": "inline_richtext",
+        "id": "featured_product_header_override_1",
+        "label": "t:settings_schema.collection_cards.settings.featured_product_header_override_1.label"
+      },
+      {
         "type": "select",
         "id": "collection_card_style",
         "options": [

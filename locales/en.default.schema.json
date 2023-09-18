@@ -60,6 +60,12 @@
     "collection_cards": {
       "name": "Collection cards",
       "settings": {
+        "header": {
+          "content": "Headings"
+        },
+        "featured_product_header_override_1": {
+          "label": "(Top listing) Header"
+        },
         "style": {
           "options__1": {
             "label": "Standard"
@@ -703,6 +709,9 @@
       "settings": {
         "title": {
           "label": "Heading"
+        },
+        "override_header": {
+          "label": "Override this heading with the global setting"
         },
         "show_description": {
           "label": "Show collection description from the admin"
