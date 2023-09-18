@@ -1135,6 +1135,14 @@
         }
       }
     },
+    "home-hero": {
+      "name": "Home Hero",
+      "settings": {
+        "home-hero_help": {
+          "content": "No settings available. This section is linked to the Home Featured Product metaobject"
+        }
+      }
+    },
     "image-banner": {
       "name": "Image banner",
       "settings": {

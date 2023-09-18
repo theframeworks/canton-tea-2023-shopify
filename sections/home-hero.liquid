@@ -1,0 +1,79 @@
+{% assign home_featured_product-image = shop.metaobjects['home_featured_product']['home-featured-product-selected'].media.value %}
+{% if home_featured_product-image != '' %}
+<section class="tw-px-4 md:tw-px-16 tw-mt-4">
+  <div class="tw-w-full tw-mb-4">
+    
+    <img
+      class="global-media-settings global-media-settings--no-shadow tw-w-full"
+      srcset="{{ home_featured_product-image | image_url: width: 550 }} 550w,
+              {{ home_featured_product-image | image_url: width: 1100 }} 1100w,
+              {{ home_featured_product-image | image_url: width: 1445 }} 1445w,
+              {{ home_featured_product-image | image_url: width: 1680 }} 1680w,
+              {{ home_featured_product-image | image_url: width: 2048 }} 2048w,
+              {{ home_featured_product-image | image_url: width: 2200 }} 2200w,
+              {{ home_featured_product-image | image_url: width: 2890 }} 2890w,
+              {{ home_featured_product-image | image_url: width: 4096 }} 4096w,
+              {{ home_featured_product-image | image_url }} {{ metaobject-image.width }}w"
+      sizes="(min-width: 750px) calc(100vw - 22rem), 1100px"
+      src="{{ home_featured_product-image | image_url: width: 1445 }}"
+      alt="{{ media.alt | escape }}"
+      loading="lazy"
+      width="1100"
+      height="{{ 1100 | divided_by: home_featured_product.aspect_ratio | ceil }}"
+      data-media-id="{{ media.id }}"
+    >
+
+  </div>
+  <div class="
+    tw-grid tw-gap-4
+    lg:tw-grid-cols-16
+  ">
+    <div class="lg:tw-col-span-10">
+
+      {%- assign product = all_products[shop.metaobjects['home_featured_product']['home-featured-product-selected'].product_link] -%}
+      {% assign home_featured_product-limited = shop.metaobjects['home_featured_product']['home-featured-product-selected'].limited_edition.value %}
+      
+      <div class="lg:tw-grid {% if home_featured_product-limited == true %}lg:tw-grid-cols-2{% endif %}">
+        
+        {% if home_featured_product-limited == true %}
+          <div>
+            <a class="tw-underline hover:tw-no-underline" href="/collections/limited-edition">Limited edition</a>
+          </div>
+        {% endif %}
+
+        <div class="tw-font-heading tw-text-2xl tw-font-semibold">
+          {% assign home_featured_product-text = shop.metaobjects['home_featured_product']['home-featured-product-selected'].title | metafield_tag %}
+          {{ home_featured_product-text }}
+        </div>
+      </div>
+
+    </div>
+    <div class="lg:tw-col-span-6">
+      {{ shop.metaobjects['home_featured_product']['home-featured-product-selected'].description | metafield_tag }}
+      <a class="tw-block tw-underline hover:tw-no-underline" href={{ product.url }}>Shop now</a>
+
+    </div>
+
+  </div>
+
+</section>
+ {% endif %}
+
+{% schema %}
+{
+  "name": "t:sections.home-hero.name",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "t:sections.home-hero.settings.home-hero_help.content"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.home-hero.name"
+    }
+  ]
+}
+{% endschema %}

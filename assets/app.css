@@ -957,6 +957,10 @@ video {
   font-weight: 600;
 }
 
+#app :is(.tw-font-medium) {
+  font-weight: 500;
+}
+
 #app :is(.tw-uppercase) {
   text-transform: uppercase;
 }
@@ -1402,6 +1406,24 @@ video {
   }
 }
 
+#app :is(.\[\&\+\:link\]\:tw-text-sm + :link) {
+  font-size: 1.2rem;
+  line-height: 120%;
+  letter-spacing: -0.06rem;
+}
+
+#app :is(.\[\&\+\>a\]\:tw-text-sm+>a) {
+  font-size: 1.2rem;
+  line-height: 120%;
+  letter-spacing: -0.06rem;
+}
+
+#app :is(.\[\&\+a\]\:tw-text-sm + a) {
+  font-size: 1.2rem;
+  line-height: 120%;
+  letter-spacing: -0.06rem;
+}
+
 #app :is(.\[\&\>\*\:not\(\:last-child\)\]\:tw-border-r > *:not(:last-child)) {
   border-right-width: 1px;
 }
@@ -1468,6 +1490,12 @@ video {
 
 #app :is(.\[\&_a\:first-child\]\:tw--mb-4 a:first-child) {
   margin-bottom: -1rem;
+}
+
+#app :is(.\[\&_a\]\:tw-text-sm a) {
+  font-size: 1.2rem;
+  line-height: 120%;
+  letter-spacing: -0.06rem;
 }
 
 #app :is(.\[\&_blockquote\]\:tw-col-span-5 blockquote) {
@@ -1891,4 +1919,16 @@ video {
 
 #app :is(.\[\&_svg\]\:tw-h-3 svg) {
   height: 0.75rem;
+}
+
+#app :is(.\[\&\~\:link\]\:tw-text-sm ~ :link) {
+  font-size: 1.2rem;
+  line-height: 120%;
+  letter-spacing: -0.06rem;
+}
+
+#app :is(.\[\&\~p\]\:tw-text-sm ~ p) {
+  font-size: 1.2rem;
+  line-height: 120%;
+  letter-spacing: -0.06rem;
 }
