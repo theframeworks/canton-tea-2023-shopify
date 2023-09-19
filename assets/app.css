@@ -754,6 +754,10 @@ video {
   width: min-content;
 }
 
+#app :is(.tw-w-7\/12) {
+  width: 58.333333%;
+}
+
 #app :is(.tw-max-w-\[50\%\]) {
   max-width: 50%;
 }

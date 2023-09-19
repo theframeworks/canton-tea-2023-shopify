@@ -1,0 +1,103 @@
+<div class="tw-px-4 md:tw-px-16">
+  <div class="tw-border-t tw-border-stroke-gray tw-mt-4 tw-pt-4 tw-grid md:tw-grid-cols-2 tw-gap-4 tw-mb-8 max-md:tw-space-y-4 max-md:tw-divide-y max-md:tw-divide-stroke-gray">
+
+    {% assign home_featured_content-image = shop.metaobjects['home_featured_content']['home-featured-content-selected'].media.value %}
+    {%- if home_featured_content-image != '' -%}
+      <div class="max-md:not-first:tw-pt-4 tw-flex tw-flex-col tw-gap-4 lg:tw-gap-10">
+        <a href="#">
+            <img
+              class="tw-mb-5 tw-object-cover tw-w-full tw-h-[695px]"
+              loading="lazy"
+              width="{{ home_featured_content-image.width }}"
+              height="{{ home_featured_content-image.height }}"
+              src=" {{ home_featured_content-image | image_url: width: '1640x' }}"
+              sizes="
+                  (min-width: 1600px) calc((1600px - 2 * 1.5rem) * 1 / 2),
+                  (min-width: 1440px) calc((1440px - 2 * 1.5rem) * 1 / 2),
+                  (min-width: 1024px) calc((1024px - 2 * 1.5rem) * 1 / 2),
+                  (min-width: 768px) calc((768px - 2 * 1.5rem) * 1 / 2),
+                  (min-width: 570px) calc(100vw - 2 * 1.5rem),
+                  100vw"
+              data-aspectratio="{{ home_featured_content-image.aspect_ratio }}"
+              data-sizes="auto"
+            />
+          <h3 class="tw-text-xl lg:tw-text-2xl tw-font-normal tw-text-balance tw-max-w-[50%] lg:tw-max-w-[33.33%]">
+            {% assign home_featured_content-title = shop.metaobjects['home_featured_content']['home-featured-content-selected'].title | metafield_tag %}
+              {{ home_featured_content-title }}
+          </h3>
+        </a>
+
+        <div class="tw-w-7/12">
+          {% assign home_featured_content-description = shop.metaobjects['home_featured_content']['home-featured-content-selected'].description | metafield_tag %}
+              {{ home_featured_content-description }}
+        </div>
+
+        <a class="tw-underline hover:tw-no-underline" href="/pages/ourt-story">Our story</a>
+
+      </div>
+    {%- endif -%}
+
+    {%- assign article = articles[section.settings.blogpost] -%}
+    {%- if article -%}
+      <div class="max-md:not-first:tw-pt-4 tw-flex tw-flex-col tw-gap-4 lg:tw-gap-10">
+        <a href="{{ article.url }}">
+          {%- if article.image -%}
+            <img
+              class="tw-mb-5 tw-object-cover tw-w-full tw-h-[695px]"
+              loading="lazy"
+              width="{{ article.image.width }}"
+              height="{{ article.image.height }}"
+              src=" {{ article.image | image_url: width: '1640x' }}"
+              sizes="
+                  (min-width: 1600px) calc((1600px - 2 * 1.5rem) * 1 / 2),
+                  (min-width: 1440px) calc((1440px - 2 * 1.5rem) * 1 / 2),
+                  (min-width: 1024px) calc((1024px - 2 * 1.5rem) * 1 / 2),
+                  (min-width: 768px) calc((768px - 2 * 1.5rem) * 1 / 2),
+                  (min-width: 570px) calc(100vw - 2 * 1.5rem),
+                  100vw"
+              data-aspectratio="{{ article.image.aspect_ratio }}"
+              data-sizes="auto"
+            />
+          {%- endif -%}
+          <h3 class="tw-text-xl lg:tw-text-2xl tw-font-normal tw-text-balance tw-max-w-[50%] lg:tw-max-w-[33.33%]">
+            {{ article.title }}
+          </h3>
+        </a>
+
+        {%- if article.excerpt.size > 0 -%}
+          <div class="tw-w-7/12">
+            {{ article.excerpt }}
+          </div>
+        {%- else -%}
+          <div class="tw-w-7/12">
+            {{ article.content | strip_html | truncate: 150 }}
+          </div>
+        {%- endif -%}
+
+        <a class="tw-underline hover:tw-no-underline" href="/blogs/journal">Journal</a>
+
+      </div>
+    {%- endif -%}
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Featured Content",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "id": "blogpost",
+      "type": "article",
+      "label": "Blog"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured Content"
+    }
+  ]
+}
+{% endschema %}
