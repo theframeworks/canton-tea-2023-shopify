@@ -713,6 +713,10 @@ video {
   margin-bottom: -1rem;
 }
 
+#app :is(.tw-mb-20) {
+  margin-bottom: 5rem;
+}
+
 #app :is(.tw-block) {
   display: block;
 }
