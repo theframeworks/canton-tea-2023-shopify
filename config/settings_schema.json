@@ -622,6 +622,21 @@
     ]
   },
   {
+    "name": "t:settings_schema.homepage.name",
+    "settings": [
+      {
+        "type": "collection",
+        "id": "collection_override_1",
+        "label": "t:settings_schema.homepage.settings.collection_override_1.label"
+      },
+      {
+        "type": "collection",
+        "id": "collection_override_2",
+        "label": "t:settings_schema.homepage.settings.collection_override_2.label"
+      }
+    ]
+  },
+  {
     "name": "t:settings_schema.collection_cards.name",
     "settings": [
       {

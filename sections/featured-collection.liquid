@@ -48,6 +48,23 @@
   endif
 
   assign featured_product_header_override_1 = settings.featured_product_header_override_1
+  
+  assign override_collection_source = settings.override_collection_source
+
+  if settings.override_collection_source == false
+
+    assign collection-to-query = section.settings.collection.products
+
+  else
+
+    if section.settings.second_home_listing == false 
+      assign collection-to-query = settings.collection_override_1
+    else
+      assign collection-to-query = settings.collection_override_2
+    endif
+
+  endif
+
 -%}
 
 <div class="color-{{ section.settings.color_scheme }} isolate gradient">
@@ -99,7 +116,8 @@
           role="list"
           aria-label="{{ 'general.slider.name' | t }}"
         >
-          {%- for product in section.settings.collection.products limit: section.settings.products_to_show -%}
+         
+          {%- for product in collection-to-query.products limit: section.settings.products_to_show -%}
             <li
               id="Slide-{{ section.id }}-{{ forloop.index }}"
               class="grid__item{% if show_mobile_slider or show_desktop_slider %} slider__slide{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
@@ -195,6 +213,12 @@
   },
   "settings": [
     {
+      "type": "checkbox",
+      "id": "second_home_listing",
+      "label": "t:sections.featured-collection.settings.second_home_listing.label",
+      "default": false
+    },
+    {
       "type": "inline_richtext",
       "id": "title",
       "default": "Featured collection",
@@ -261,6 +285,12 @@
       "type": "collection",
       "id": "collection",
       "label": "t:sections.featured-collection.settings.collection.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "override_collection_source",
+      "label": "t:sections.featured-collection.settings.override_collection_source.label",
+      "default": false
     },
     {
       "type": "range",

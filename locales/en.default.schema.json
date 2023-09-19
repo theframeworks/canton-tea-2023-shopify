@@ -61,10 +61,10 @@
       "name": "Collection cards",
       "settings": {
         "header": {
-          "content": "Headings"
+          "content": "Heading"
         },
         "featured_product_header_override_1": {
-          "label": "(Top listing) Header"
+          "label": "Header"
         },
         "style": {
           "options__1": {
@@ -349,6 +349,17 @@
             "label": "Collection",
             "info": "Visible when cart drawer is empty."
           }
+        }
+      }
+    },
+    "homepage": {
+      "name": "Homepage",
+      "settings": {
+        "collection_override_1": {
+          "label": "Collection (Top listing)"
+        },
+        "collection_override_2": {
+          "label": "Collection (Bottom listing)"
         }
       }
     },
@@ -707,6 +718,9 @@
     "featured-collection": {
       "name": "Featured collection",
       "settings": {
+        "second_home_listing": {
+          "label": "Select this if this Featured collection is the bottom listing on the homepage"
+        },
         "title": {
           "label": "Heading"
         },
@@ -730,6 +744,9 @@
         },
         "collection": {
           "label": "Collection"
+        },
+        "override_collection_source": {
+          "label": "Use the Global Setting to set the Collection"
         },
         "products_to_show": {
           "label": "Maximum products to show"
