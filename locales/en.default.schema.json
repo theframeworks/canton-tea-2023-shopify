@@ -360,6 +360,9 @@
         },
         "collection_override_2": {
           "label": "Collection (Bottom listing)"
+        },
+        "article_override_1": {
+          "label": "Article"
         }
       }
     },

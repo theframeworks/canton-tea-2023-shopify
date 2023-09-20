@@ -1,3 +1,5 @@
+{% assign featured_article = settings.article_override_1 %}
+
 <div class="tw-px-4 md:tw-px-16">
   <div class="tw-border-t tw-border-stroke-gray tw-mt-4 tw-pt-4 tw-grid md:tw-grid-cols-2 tw-gap-4 tw-mb-8 max-md:tw-space-y-4 max-md:tw-divide-y max-md:tw-divide-stroke-gray">
 
@@ -37,7 +39,12 @@
       </div>
     {%- endif -%}
 
-    {%- assign article = articles[section.settings.blogpost] -%}
+    {%- if settings.article_override_1 != blank -%}
+        {%- assign article = articles[featured_article] -%}
+    {%- else -%}
+        {%- assign article = articles[section.settings.blogpost] -%}
+    {%- endif -%}
+       
     {%- if article -%}
       <div class="max-md:not-first:tw-pt-4 tw-flex tw-flex-col tw-gap-4 lg:tw-gap-10">
         <a href="{{ article.url }}">
