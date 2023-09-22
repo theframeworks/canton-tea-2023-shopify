@@ -14,14 +14,112 @@
   }
 {%- endstyle -%}
 
-<div class="page-width page-width--narrow section-{{ section.id }}-padding">
-  <h1 class="main-page-title page-title h0{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
-    {{ page.title | escape }}
-  </h1>
-  <div class="rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-    {{ page.content }}
-  </div>
+<div class="tw-px-4 md:tw-px-16">
+
+    <h1 class="tw-font-body tw-font-normal tw-text-md tw-mt-4 {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+      {{ page.title | escape }}
+    </h1>
+    {% if page.content %}
+      <div class="rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+        {{ page.content }}
+      </div>
+    {% endif %}
+
+    {% for item in page.metafields.custom.page_content_blocks.value -%}
+    <div class="
+      tw-grid tw-gap-8 tw-border-b tw-border-stroke-gray tw-py-4
+      md:tw-grid-cols-2
+      lg:tw-grid-cols-16">
+
+      <div class="
+        tw-flex tw-flex-col
+        {% if item.layout %}lg:tw-col-span-6{% else %}lg:tw-col-span-8{% endif %}
+        {% if item.heading_alignment %} tw-justify-start {% else %} tw-justify-center {% endif %}
+        {% if item.description == blank %} tw-mb-4 {% endif %}">
+        <h2 class="
+          tw-text-xl tw-font-normal
+          {% if item.heading_size %}lg:tw-text-2xl{% else %}lg:tw-text-3xl{% endif %}
+          {% if item.heading_mobile %}[&_div>p]:tw-inline{% endif %}">
+          {{ item.headline | metafield_tag }}
+        </h2>
+      </div>
+
+      <div class="
+        max-lg:tw-order-first
+        {% if item.layout %} lg:tw-col-span-10 {% else %} lg:tw-col-span-8 {% endif %}">
+        {% assign medias = item.media.value %}
+
+        {% if medias %}
+          {% if item.collage %}
+            <div class="
+              tw-grid tw-grid-cols-2 tw-gap-4
+              [&_img:first-of-type]:tw-col-span-full [&_img:first-of-type]:tw-row-start-1 [&_img]:tw-col-span-1 [&_img]:tw-row-start-2">
+              {% for media in medias %}
+                <img
+                  class="global-media-settings global-media-settings--no-shadow tw-w-full"
+                  srcset="{{ media | image_url: width: 550 }} 550w,
+                          {{ media | image_url: width: 1100 }} 1100w,
+                          {{ media | image_url: width: 1445 }} 1445w,
+                          {{ media | image_url: width: 1680 }} 1680w,
+                          {{ media | image_url: width: 2048 }} 2048w,
+                          {{ media | image_url: width: 2200 }} 2200w,
+                          {{ media | image_url: width: 2890 }} 2890w,
+                          {{ media | image_url: width: 4096 }} 4096w,
+                          {{ media | image_url }} {{ media.width }}w"
+                  sizes="(min-width: 750px) calc(100vw - 22rem), 1100px"
+                  src="{{ media | image_url: width: 1445 }}"
+                  alt="{{ media.alt | escape }}"
+                  loading="lazy"
+                  width="1100"
+                  height="{{ 1100 | divided_by: home_featured_product.aspect_ratio | ceil }}"
+                  data-media-id="{{ media.id }}"
+                >
+              {% endfor %}
+            </div>
+          {% else %}
+            {% for media in medias %}
+              <img
+                class="global-media-settings global-media-settings--no-shadow tw-w-full [&_+img]:tw-mt-4"
+                srcset="{{ media | image_url: width: 550 }} 550w,
+                        {{ media | image_url: width: 1100 }} 1100w,
+                        {{ media | image_url: width: 1445 }} 1445w,
+                        {{ media | image_url: width: 1680 }} 1680w,
+                        {{ media | image_url: width: 2048 }} 2048w,
+                        {{ media | image_url: width: 2200 }} 2200w,
+                        {{ media | image_url: width: 2890 }} 2890w,
+                        {{ media | image_url: width: 4096 }} 4096w,
+                        {{ media | image_url }} {{ media.width }}w"
+                sizes="(min-width: 750px) calc(100vw - 22rem), 1100px"
+                src="{{ media | image_url: width: 1445 }}"
+                alt="{{ media.alt | escape }}"
+                loading="lazy"
+                width="1100"
+                height="{{ 1100 | divided_by: home_featured_product.aspect_ratio | ceil }}"
+                data-media-id="{{ media.id }}"
+              >
+            {% endfor %}
+          {% endif %}
+        {% endif %}
+
+        
+      </div>
+
+      {% if item.description %}
+        <div class="
+          max-lg:tw-order-last max-lg:tw-mb-4
+          lg:tw-col-span-8 lg:tw-col-start-9 lg:tw-pb-8">
+          {{ item.description | metafield_tag }}
+        </div>
+      {% endif %}
+
+    </div>
+    {%- endfor %}
+
+    
 </div>
+
+
+
 
 {% schema %}
 {
