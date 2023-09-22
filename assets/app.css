@@ -1104,12 +1104,20 @@ video {
     order: -9999;
   }
 
+  #app :is(.max-md\:tw-order-last) {
+    order: 9999;
+  }
+
   #app :is(.max-md\:tw--mt-4) {
     margin-top: -1rem;
   }
 
   #app :is(.max-md\:tw-mb-24) {
     margin-bottom: 6rem;
+  }
+
+  #app :is(.max-md\:tw-mb-4) {
+    margin-bottom: 1rem;
   }
 
   #app :is(.max-md\:tw-gap-y-8) {
