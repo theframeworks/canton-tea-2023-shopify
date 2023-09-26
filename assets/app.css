@@ -948,6 +948,10 @@ video {
   padding-top: 1rem;
 }
 
+#app :is(.tw-pl-2) {
+  padding-left: 0.5rem;
+}
+
 #app :is(.tw-text-center) {
   text-align: center;
 }
@@ -1887,6 +1891,10 @@ video {
   #app :is(.max-md\:\[\&_span\]\:tw-hidden span) {
     display: none;
   }
+}
+
+#app :is(.\[\&_svg\]\:tw-inline-block svg) {
+  display: inline-block;
 }
 
 #app :is(.\[\&_svg\]\:tw-h-3 svg) {

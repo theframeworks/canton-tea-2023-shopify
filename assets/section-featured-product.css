@@ -74,14 +74,6 @@
   }
 
   .featured-product.product--medium:not(.product--no-media)
-    .product__media-wrapper,
-  .featured-product.product--small:not(.product--no-media)
-    .product__info-wrapper {
-    max-width: 55%;
-    width: calc(55% - var(--grid-desktop-horizontal-spacing) / 2);
-  }
-
-  .featured-product.product--medium:not(.product--no-media)
     .product__info-wrapper,
   .featured-product.product--small:not(.product--no-media)
     .product__media-wrapper {

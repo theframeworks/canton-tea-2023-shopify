@@ -56,9 +56,17 @@
 {%- endif -%}
 
 <section class='color-{{ section.settings.color_scheme }} {% if section.settings.secondary_background %}background-secondary{% else %}gradient{% endif %}'>
-  <div class='page-width section-{{ section.id }}-padding{% if section.settings.secondary_background %} isolate{% endif %}'>
-    <div class='featured-product product product--{{ section.settings.media_size }} grid grid--1-col gradient color-{{ section.settings.color_scheme }} product--{{ section.settings.media_position }}{% if section.settings.secondary_background == false %} isolate{% endif %} {% if product.media.size > 0 or section.settings.product == blank %}grid--2-col-tablet{% else %}product--no-media{% endif %}'>
-      <div class='grid__item product__media-wrapper{% if section.settings.media_position == 'right' %} medium-hide large-up-hide{% endif %}'>
+  <div class='
+    tw-pt-4
+    section-{{ section.id }}-padding{% if section.settings.secondary_background %} isolate{% endif %}'>
+    <div class='
+      tw-px-4 md:tw-px-16
+      tw-grid tw-gap-4 md:tw-grid-cols-2 lg:tw-grid-cols-16
+      featured-product product product--{{ section.settings.media_size }} grid grid--1-col gradient color-{{ section.settings.color_scheme }} product--{{ section.settings.media_position }}{% if section.settings.secondary_background == false %} isolate{% endif %} {% if product.media.size > 0 or section.settings.product == blank %}grid--2-col-tablet{% else %}product--no-media{% endif %}'>
+      <div class='
+        tw-max-w-full tw-w-full
+        lg:tw-col-span-8
+        grid__item product__media-wrapper{% if section.settings.media_position == 'right' %} medium-hide large-up-hide{% endif %}'>
         <media-gallery
           id='MediaGallery-{{ section.id }}'
           role='region'
@@ -136,7 +144,12 @@
           {%- endif -%}
         </media-gallery>
       </div>
-      <div class='product__info-wrapper grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}'>
+      <div class='
+        tw-max-w-full tw-w-full
+        lg:tw-col-span-5 lg:tw-col-start-10
+        x2lg:tw-col-span-3 x2lg:tw-col-start-11
+        lg:tw-px-0  
+        product__info-wrapper grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}'>
         <product-info
           id='ProductInfo-{{ section.id }}'
           class='product__info-container'
@@ -164,6 +177,10 @@
                     {{ 'onboarding.product_title' | t }}
                   {%- endif -%}
                 </h2>
+                {%- when 'multiline-title' -%}
+                  <div class="product__title" {{ block.shopify_attributes }}>
+                    <h1 class="tw-text-balance tw-text-xl lg:tw-text-2xl tw-lowercase">{{- block.settings.multiline-title -}}</h1>
+                  </div>
               {%- when 'price' -%}
                 <div class='no-js-hidden' id='price-{{ section.id }}' role='status' {{ block.shopify_attributes }}>
                   {%- render 'price',
@@ -358,7 +375,7 @@
             {% else %}
               href='{{ product.url }}'
             {% endif %}
-            class='link product__view-details animate-arrow'
+            class='link product__view-details animate-arrow [&_svg]:tw-inline-block'
           >
             {{ 'products.product.view_full_details' | t }}
             {% render 'icon-arrow' %}
@@ -612,6 +629,17 @@
           ],
           "default": "h1",
           "label": "t:sections.all.heading_size.label"
+        }
+      ]
+    },
+    {
+      "type": "multiline-title",
+      "name": "Product Title",
+      "settings": [
+        {
+          "id": "multiline-title",
+          "type": "richtext",
+          "label": "Product title"
         }
       ]
     },
