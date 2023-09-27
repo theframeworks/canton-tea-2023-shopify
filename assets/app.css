@@ -619,6 +619,10 @@ video {
   z-index: 20;
 }
 
+#app :is(.tw-order-3) {
+  order: 3;
+}
+
 #app :is(.tw-col-span-8) {
   grid-column: span 8 / span 8;
 }
@@ -627,8 +631,20 @@ video {
   grid-column: 1 / -1;
 }
 
+#app :is(.tw-col-start-7) {
+  grid-column-start: 7;
+}
+
+#app :is(.tw-col-start-9) {
+  grid-column-start: 9;
+}
+
 #app :is(.tw-row-auto) {
   grid-row: auto;
+}
+
+#app :is(.tw-row-start-3) {
+  grid-row-start: 3;
 }
 
 #app :is(.tw-float-left) {
@@ -1381,6 +1397,14 @@ video {
     grid-row-start: 4;
   }
 
+  #app :is(.lg\:tw-row-start-3) {
+    grid-row-start: 3;
+  }
+
+  #app :is(.lg\:tw-row-start-2) {
+    grid-row-start: 2;
+  }
+
   #app :is(.lg\:tw-mb-10) {
     margin-bottom: 2.5rem;
   }
@@ -1692,6 +1716,12 @@ video {
   display: inline;
 }
 
+@media (min-width: 990px) {
+  #app :is(.lg\:\[\&_div\>p\]\:tw-block div > p) {
+    display: block;
+  }
+}
+
 #app :is(.\[\&_div\]\:tw-mb-12 div) {
   margin-bottom: 3rem;
 }
@@ -1858,9 +1888,25 @@ video {
   padding-left: 0px;
 }
 
+#app :is(.\[\&_p\:not-last-of-type\]\:tw-mb-12 p:not-last-of-type) {
+  margin-bottom: 3rem;
+}
+
 #app :is(.\[\&_p\]\:tw-my-0 p) {
   margin-top: 0px;
   margin-bottom: 0px;
+}
+
+#app :is(.\[\&_p\]\:tw-mb-12 p) {
+  margin-bottom: 3rem;
+}
+
+#app :is(.\[\&_p\]\:tw-block p) {
+  display: block;
+}
+
+#app :is(.\[\&_p\]\:tw-inline p) {
+  display: inline;
 }
 
 @media (min-width: 750px) {

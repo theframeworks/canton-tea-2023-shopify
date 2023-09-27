@@ -16,7 +16,7 @@
 
 <div class="tw-px-4 md:tw-px-16">
 
-    <h1 class="tw-font-body tw-font-normal tw-text-md tw-mt-4 {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+    <h1 class="tw-font-body tw-font-normal tw-text-md tw-py-4 tw-border-b tw-border-stroke-gray {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
       {{ page.title | escape }}
     </h1>
     {% if page.content %}
@@ -30,20 +30,37 @@
       tw-grid tw-gap-8 tw-border-b tw-border-stroke-gray tw-py-4
       lg:tw-grid-cols-16">
 
-      {% if item.quote_headline %}
+      {% if item.quote_content_placement %}
+        <div class="
+          tw-self-start
+          {% if item.layout %}lg:tw-col-span-6{% else %}lg:tw-col-span-8{% endif %}
+        ">
+          <h2 class="tw-text-xl tw-font-normal lg:tw-text-3xl">
+            {{ item.heading }}
+          </h2>
+        </div>
+      {% endif %}
+
+      {% if item.main_quote %}
       <div class="
         tw-grid tw-grid-cols-1 tw-grid-rows-1 tw-row-auto
         {% if item.layout %}lg:tw-col-span-6{% else %}lg:tw-col-span-8{% endif %}
+        {% if item.quote_content_placement %}
+          tw-order-3
+          {% if item.description %}lg:tw-row-start-3{% else %}lg:tw-row-start-2{% endif %}
+        {% endif %}
       ">
+            
             <div class="
-              {% if item.heading_alignment %}tw-self-start{% else %}tw-self-center{% endif %}
+              {% if item.vertical_alignment %}tw-self-start{% else %}tw-self-center{% endif %}
               [&_div]:tw-mb-12">
-              {{ item.quote | metafield_tag }}
+              {{ item.secondary_quote | metafield_tag }}
               <h2 class="
                 tw-text-xl tw-font-normal
-                {% if item.heading_size %}lg:tw-text-2xl{% else %}lg:tw-text-3xl{% endif %}
-                {% if item.heading_mobile %}max-lg:[&_div>p]:tw-inline{% endif %}">
-                {{ item.quote_headline | metafield_tag }}
+                {% if item.smaller_font_size %}lg:tw-text-2xl{% else %}lg:tw-text-3xl{% endif %}
+                {% if item.mobile_devices_display %}[&_div>p]:tw-inline lg:[&_div>p]:tw-block{% endif %}
+                {% if item.quote_content_placement %}[&_p]:tw-mb-12{% endif %}">
+                {{ item.main_quote | metafield_tag }}
               </h2>
             </div>
             <p>-{{ item.author }}</p>
@@ -54,21 +71,23 @@
         <div class="
           tw-flex tw-flex-col
           {% if item.layout %}lg:tw-col-span-5{% else %}lg:tw-col-span-8{% endif %}
-          {% if item.heading_alignment %}tw-justify-start{% else %}tw-justify-center{% endif %}
+          {% if item.vertical_alignment %}tw-justify-start{% else %}tw-justify-center{% endif %}
           {% if item.description == blank %} tw-mb-4 {% endif %}
         ">
           <h2 class="
             tw-text-xl tw-font-normal
-            {% if item.heading_size %}lg:tw-text-2xl{% else %}lg:tw-text-3xl{% endif %}
-            {% if item.heading_mobile %}[&_div>p]:tw-inline{% endif %}">
-              {{ item.headline | metafield_tag }}
+            {% if item.smaller_font_size %}lg:tw-text-2xl{% else %}lg:tw-text-3xl{% endif %}
+            {% if item.mobile_devices_display %}[&_div>p]:tw-inline lg:[&_div>p]:tw-block{% endif %}">
+              {{ item.heading | metafield_tag }}
           </h2>
         </div>
       {% endif %}
 
       <div class="
         max-lg:tw-order-first
-        {% if item.layout %}lg:tw-col-span-10 lg:tw-col-start-7{% else %}lg:tw-col-span-8{% endif %}">
+        {% if item.quote_content_placement %}lg:tw-col-start-9{% endif %}
+        {% if item.layout %}lg:tw-col-span-10 lg:tw-col-start-7{% else %}lg:tw-col-span-8{% endif %}
+      ">
         {% assign medias = item.media.value %}
 
         {% if medias %}
@@ -136,8 +155,11 @@
 
       {% if item.description %}
         <div class="
-          max-lg:tw-order-last max-lg:tw-mb-4
-          {% if item.layout %}lg:tw-col-span-10 lg:tw-col-start-7{% else %}lg:tw-col-span-8 lg:tw-col-start-9{% endif %} lg:tw-pb-8">
+          max-lg:tw-mb-4
+          lg:tw-pb-8
+          {% if item.layout %}lg:tw-col-span-10 lg:tw-col-start-7{% else %}lg:tw-col-span-8 lg:tw-col-start-9{% endif %}
+          {% if item.quote_content_placement %}max-lg:order-2{% else %}max-lg:tw-order-last{% endif %}
+        ">
           {{ item.description | metafield_tag }}
         </div>
       {% endif %}
