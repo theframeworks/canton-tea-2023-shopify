@@ -235,7 +235,11 @@
                     {% render 'icon-caret' %}
                   </summary>
                   <div class="accordion__content tw-mt-5 tw-mb-14 rte" id="ProductAccordion-{{ block.id }}-{{ section.id }}">
-                    {% render 'infusion-guidelines', show: block.settings.show_infusion_guidelines %}
+                    {% assign show_infusion_guidelines = block.settings.show_infusion_guidelines %}
+                    {% if show_infusion_guidelines %}
+                      {% render 'infusion-guidelines' %}
+                    {% endif %}
+
                     {{ block.settings.content }}
                     {{ block.settings.page.content }}
                   </div>
