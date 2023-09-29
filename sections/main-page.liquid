@@ -15,159 +15,211 @@
 {%- endstyle -%}
 
 <div class="tw-px-4 md:tw-px-16">
-
-    <h1 class="tw-font-body tw-font-normal tw-text-md tw-py-4 tw-border-b tw-border-stroke-gray {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+  <h1 class="tw-font-body tw-font-normal tw-text-md tw-py-4 tw-border-b tw-border-stroke-gray {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
       {{ page.title | escape }}
-    </h1>
-    {% if page.content %}
-      <div class="rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-        {{ page.content }}
+  </h1>
+
+  <div class="tw-grid tw-gap-8 lg:tw-grid-cols-16">
+
+    {% if page.metafields.custom.show_subpages_menu.value -%}
+      
+      <div class="tw-col-span-4">
+        {% assign subpages_menu = shop.metaobjects['subpages_menu']['subpages-menu'].menu_items.value %}
+        <ul class="{% if page.metafields.custom.select_faqs_blocks.value -%}tw-mt-[110px]{% else %}tw-mt-14{% endif%}">
+          {% for item in subpages_menu -%}
+            <li class="tw-mb-6">
+              <a href="{{ item.url }}">{{ item.title }}</a>
+            </li>
+          {%- endfor %}
+        </ul>
       </div>
-    {% endif %}
-
-    {% for item in page.metafields.custom.page_content_blocks.value -%}
-    <div class="
-      tw-grid tw-gap-8 tw-border-b tw-border-stroke-gray tw-py-4
-      lg:tw-grid-cols-16">
-
-      {% if item.quote_content_placement %}
-        <div class="
-          tw-self-start
-          {% if item.layout %}lg:tw-col-span-6{% else %}lg:tw-col-span-8{% endif %}
-        ">
-          <h2 class="tw-text-xl tw-font-normal lg:tw-text-3xl">
-            {{ item.heading }}
-          </h2>
-        </div>
-      {% endif %}
-
-      {% if item.main_quote %}
       <div class="
-        tw-grid tw-grid-cols-1 tw-grid-rows-1 tw-row-auto
-        {% if item.layout %}lg:tw-col-span-6{% else %}lg:tw-col-span-8{% endif %}
-        {% if item.quote_content_placement %}
-          tw-order-3
-          {% if item.description %}lg:tw-row-start-3{% else %}lg:tw-row-start-2{% endif %}
-        {% endif %}
+        tw-col-span-8
+        {% if page.metafields.custom.select_faqs_blocks.value -%}tw-flex tw-flex-col tw-flex-col [&_details[open]]:tw-border-black [&_details[open]>*]:tw-text-black{% endif %}
       ">
+          {% if page.content %}
+            <div class="tw-pt-12 rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+              {{ page.content }}
+            </div>
+          {% endif %}
+
+          {% if page.metafields.custom.select_faqs_blocks.value -%}
+            {% for item in page.metafields.custom.select_faqs_blocks.value -%}
+              <h2 class="tw-font-heading tw-font-normal tw-text-xl {% if forloop.first %}tw-pb-24{% else %}tw-py-24{% endif %}">
+                {{ item.title }}
+              </h2>
             
+              {% for faq in item.faqs.value -%}
+                <details id="Details-{{ block.id }}-{{ section.id }}" class="{% if forloop.first %}tw-border-t{% endif %} tw-border-stroke-gray tw-border-b">
+                  <summary class="tw-text-stroke-gray tw-py-6">
+                    {{ faq.question }}
+                  </summary>
+                  <div class="accordion__content tw-mt-5 tw-mb-10 rte tw-text-stroke-gray" id="faqs-{{ block.id }}-{{ section.id }}">
+                    {{ faq.answer | metafield_tag }}
+                  </div>
+                </details>
+              {%- endfor %} 
+            {%- endfor %}
+          {% endif %}
+      </div>
+
+    {% else %}
+
+      <div class="tw-col-span-full">
+        {% for item in page.metafields.custom.select_content_blocks.value -%}
+        <div class="
+          tw-grid tw-gap-8 tw-border-b tw-border-stroke-gray tw-py-4
+          lg:tw-grid-cols-16">
+
+          {% if item.quote_content_placement %}
             <div class="
-              {% if item.vertical_alignment %}tw-self-start{% else %}tw-self-center{% endif %}
-              [&_div]:tw-mb-12">
-              {{ item.secondary_quote | metafield_tag }}
+              tw-self-start
+              {% if item.layout %}lg:tw-col-span-6{% else %}lg:tw-col-span-8{% endif %}
+            ">
+              <h2 class="tw-text-xl tw-font-normal lg:tw-text-3xl">
+                {{ item.heading }}
+              </h2>
+            </div>
+          {% endif %}
+
+          {% if item.main_quote %}
+          <div class="
+            tw-grid tw-grid-cols-1 tw-grid-rows-1 tw-row-auto
+            {% if item.layout %}lg:tw-col-span-6{% else %}lg:tw-col-span-8{% endif %}
+            {% if item.quote_content_placement %}
+              tw-order-3
+              {% if item.description %}lg:tw-row-start-3{% else %}lg:tw-row-start-2{% endif %}
+            {% endif %}
+          ">
+                
+                <div class="
+                  {% if item.vertical_alignment %}tw-self-start{% else %}tw-self-center{% endif %}
+                  [&_div]:tw-mb-12">
+                  {{ item.secondary_quote | metafield_tag }}
+                  <h2 class="
+                    tw-text-xl tw-font-normal
+                    {% if item.smaller_font_size %}lg:tw-text-2xl{% else %}lg:tw-text-3xl{% endif %}
+                    {% if item.mobile_devices_display %}[&_div>p]:tw-inline lg:[&_div>p]:tw-block{% endif %}
+                    {% if item.quote_content_placement %}[&_p]:tw-mb-12{% endif %}">
+                    {{ item.main_quote | metafield_tag }}
+                  </h2>
+                </div>
+                <p>-{{ item.author }}</p>
+          </div>
+
+          {% else %}
+
+            <div class="
+              tw-flex tw-flex-col
+              {% if item.layout %}lg:tw-col-span-5{% else %}lg:tw-col-span-8{% endif %}
+              {% if item.vertical_alignment %}tw-justify-start{% else %}tw-justify-center{% endif %}
+              {% if item.description == blank %} tw-mb-4 {% endif %}
+            ">
               <h2 class="
                 tw-text-xl tw-font-normal
                 {% if item.smaller_font_size %}lg:tw-text-2xl{% else %}lg:tw-text-3xl{% endif %}
-                {% if item.mobile_devices_display %}[&_div>p]:tw-inline lg:[&_div>p]:tw-block{% endif %}
-                {% if item.quote_content_placement %}[&_p]:tw-mb-12{% endif %}">
-                {{ item.main_quote | metafield_tag }}
+                {% if item.mobile_devices_display %}[&_div>p]:tw-inline lg:[&_div>p]:tw-block{% endif %}">
+                  {{ item.heading | metafield_tag }}
               </h2>
             </div>
-            <p>-{{ item.author }}</p>
-      </div>
-
-      {% else %}
-
-        <div class="
-          tw-flex tw-flex-col
-          {% if item.layout %}lg:tw-col-span-5{% else %}lg:tw-col-span-8{% endif %}
-          {% if item.vertical_alignment %}tw-justify-start{% else %}tw-justify-center{% endif %}
-          {% if item.description == blank %} tw-mb-4 {% endif %}
-        ">
-          <h2 class="
-            tw-text-xl tw-font-normal
-            {% if item.smaller_font_size %}lg:tw-text-2xl{% else %}lg:tw-text-3xl{% endif %}
-            {% if item.mobile_devices_display %}[&_div>p]:tw-inline lg:[&_div>p]:tw-block{% endif %}">
-              {{ item.heading | metafield_tag }}
-          </h2>
-        </div>
-      {% endif %}
-
-      <div class="
-        max-lg:tw-order-first
-        {% if item.quote_content_placement %}lg:tw-col-start-9{% endif %}
-        {% if item.layout %}lg:tw-col-span-10 lg:tw-col-start-7{% else %}lg:tw-col-span-8{% endif %}
-      ">
-        {% assign medias = item.media.value %}
-
-        {% if medias %}
-
-          {% if item.collage %}
-            <div class="
-              tw-grid tw-grid-cols-2 tw-gap-4
-              [&_img:first-of-type]:tw-col-span-full [&_img:first-of-type]:tw-row-start-1 [&_img]:tw-col-span-1 [&_img]:tw-row-start-2">
-              {% for media in medias %}
-                <img
-                  class="global-media-settings global-media-settings--no-shadow tw-w-full"
-                  srcset="{{ media | image_url: width: 550 }} 550w,
-                          {{ media | image_url: width: 1100 }} 1100w,
-                          {{ media | image_url: width: 1445 }} 1445w,
-                          {{ media | image_url: width: 1680 }} 1680w,
-                          {{ media | image_url: width: 2048 }} 2048w,
-                          {{ media | image_url: width: 2200 }} 2200w,
-                          {{ media | image_url: width: 2890 }} 2890w,
-                          {{ media | image_url: width: 4096 }} 4096w,
-                          {{ media | image_url }} {{ media.width }}w"
-                  sizes="(min-width: 750px) calc(100vw - 22rem), 1100px"
-                  src="{{ media | image_url: width: 1445 }}"
-                  alt="{{ media.alt | escape }}"
-                  loading="lazy"
-                  width="1100"
-                  height="{{ 1100 | divided_by: home_featured_product.aspect_ratio | ceil }}"
-                  data-media-id="{{ media.id }}"
-                >
-              {% endfor %}
-            </div>
-
-          {% else %}
-            
-            <div class="
-              tw-grid tw-gap-4
-              {% if item.media_column %}tw-grid tw-grid-cols-2{% elsif item.grid %}tw-grid-cols-3 tw-items-center tw-justify-center tw-py-12{% else %}[&_img]:tw-w-full{% endif %}">
-              {% for media in medias %}
-                <img class="{% if item.grid %}tw-w-5/6 tw-mx-auto{% endif %}"
-                  srcset="{{ media | image_url: width: 550 }} 550w,
-                          {{ media | image_url: width: 1100 }} 1100w,
-                          {{ media | image_url: width: 1445 }} 1445w,
-                          {{ media | image_url: width: 1680 }} 1680w,
-                          {{ media | image_url: width: 2048 }} 2048w,
-                          {{ media | image_url: width: 2200 }} 2200w,
-                          {{ media | image_url: width: 2890 }} 2890w,
-                          {{ media | image_url: width: 4096 }} 4096w,
-                          {{ media | image_url }} {{ media.width }}w"
-                  sizes="(min-width: 750px) calc(100vw - 22rem), 1100px"
-                  src="{{ media | image_url: width: 1445 }}"
-                  alt="{{ media.alt | escape }}"
-                  loading="lazy"
-                  width="1100"
-                  height="{{ 1100 | divided_by: home_featured_product.aspect_ratio | ceil }}"
-                  data-media-id="{{ media.id }}"
-                >
-              {% endfor %}
-            </div>
-
           {% endif %}
 
-        {% endif %}
+          <div class="
+            max-lg:tw-order-first
+            {% if item.quote_content_placement %}lg:tw-col-start-9{% endif %}
+            {% if item.layout %}lg:tw-col-span-10 lg:tw-col-start-7{% else %}lg:tw-col-span-8{% endif %}
+          ">
+            {% assign medias = item.media.value %}
 
-        
+            {% if medias %}
+
+              {% if item.collage %}
+                <div class="
+                  tw-grid tw-grid-cols-2 tw-gap-4
+                  [&_img:first-of-type]:tw-col-span-full [&_img:first-of-type]:tw-row-start-1 [&_img]:tw-col-span-1 [&_img]:tw-row-start-2">
+                  {% for media in medias %}
+                    <img
+                      class="global-media-settings global-media-settings--no-shadow tw-w-full"
+                      srcset="{{ media | image_url: width: 550 }} 550w,
+                              {{ media | image_url: width: 1100 }} 1100w,
+                              {{ media | image_url: width: 1445 }} 1445w,
+                              {{ media | image_url: width: 1680 }} 1680w,
+                              {{ media | image_url: width: 2048 }} 2048w,
+                              {{ media | image_url: width: 2200 }} 2200w,
+                              {{ media | image_url: width: 2890 }} 2890w,
+                              {{ media | image_url: width: 4096 }} 4096w,
+                              {{ media | image_url }} {{ media.width }}w"
+                      sizes="(min-width: 750px) calc(100vw - 22rem), 1100px"
+                      src="{{ media | image_url: width: 1445 }}"
+                      alt="{{ media.alt | escape }}"
+                      loading="lazy"
+                      width="1100"
+                      height="{{ 1100 | divided_by: home_featured_product.aspect_ratio | ceil }}"
+                      data-media-id="{{ media.id }}"
+                    >
+                  {% endfor %}
+                </div>
+
+              {% else %}
+                
+                <div class="
+                  tw-grid tw-gap-4
+                  {% if item.media_column %}tw-grid tw-grid-cols-2{% elsif item.grid %}tw-grid-cols-3 tw-items-center tw-justify-center tw-py-12{% else %}[&_img]:tw-w-full{% endif %}">
+                  {% for media in medias %}
+                    <img class="{% if item.grid %}tw-w-5/6 tw-mx-auto{% endif %}"
+                      srcset="{{ media | image_url: width: 550 }} 550w,
+                              {{ media | image_url: width: 1100 }} 1100w,
+                              {{ media | image_url: width: 1445 }} 1445w,
+                              {{ media | image_url: width: 1680 }} 1680w,
+                              {{ media | image_url: width: 2048 }} 2048w,
+                              {{ media | image_url: width: 2200 }} 2200w,
+                              {{ media | image_url: width: 2890 }} 2890w,
+                              {{ media | image_url: width: 4096 }} 4096w,
+                              {{ media | image_url }} {{ media.width }}w"
+                      sizes="(min-width: 750px) calc(100vw - 22rem), 1100px"
+                      src="{{ media | image_url: width: 1445 }}"
+                      alt="{{ media.alt | escape }}"
+                      loading="lazy"
+                      width="1100"
+                      height="{{ 1100 | divided_by: home_featured_product.aspect_ratio | ceil }}"
+                      data-media-id="{{ media.id }}"
+                    >
+                  {% endfor %}
+                </div>
+
+              {% endif %}
+
+            {% endif %}
+
+            
+          </div>
+
+          {% if item.description %}
+            <div class="
+              max-lg:tw-mb-4
+              lg:tw-pb-8
+              {% if item.layout %}lg:tw-col-span-10 lg:tw-col-start-7{% else %}lg:tw-col-span-8 lg:tw-col-start-9{% endif %}
+              {% if item.quote_content_placement %}max-lg:order-2{% else %}max-lg:tw-order-last{% endif %}
+            ">
+              {{ item.description | metafield_tag }}
+            </div>
+          {% endif %}
+
+        </div>
+        {%- endfor %}
       </div>
 
-      {% if item.description %}
-        <div class="
-          max-lg:tw-mb-4
-          lg:tw-pb-8
-          {% if item.layout %}lg:tw-col-span-10 lg:tw-col-start-7{% else %}lg:tw-col-span-8 lg:tw-col-start-9{% endif %}
-          {% if item.quote_content_placement %}max-lg:order-2{% else %}max-lg:tw-order-last{% endif %}
-        ">
-          {{ item.description | metafield_tag }}
-        </div>
-      {% endif %}
 
-    </div>
-    {%- endfor %}
+    {% endif %}
 
-    {% if page.metafields.custom.page_content_faqs_blocks.value -%}
+  </div>
+
+    
+    
+
+    
+
+    <!-- {% if page.metafields.custom.select_faqs_blocks.value -%}
     <div class="tw-grid tw-gap-8 lg:tw-grid-cols-16 tw-pt-16">
       <div class="tw-col-span-4">
         
@@ -184,25 +236,25 @@
       <div class="
         tw-col-span-8 tw-flex tw-flex-col tw-flex-col
         [&_details[open]]:tw-border-black [&_details[open]>*]:tw-text-black">
-        {% for item in page.metafields.custom.page_content_faqs_blocks.value -%}
+        {% for item in page.metafields.custom.select_faqs_blocks.value -%}
           <h2 class="tw-font-heading tw-font-normal tw-text-xl {% if forloop.first %}tw-pb-24{% else %}tw-py-24{% endif %}">
             {{ item.title }}
           </h2>
           
-          {% for item in item.faqs.value -%}
+          {% for faq in item.faqs.value -%}
             <details id="Details-{{ block.id }}-{{ section.id }}" class="{% if forloop.first %}tw-border-t{% endif %} tw-border-stroke-gray tw-border-b">
               <summary class="tw-text-stroke-gray tw-py-6">
-                {{ item.question }}
+                {{ faq.question }}
               </summary>
               <div class="accordion__content tw-mt-5 tw-mb-10 rte tw-text-stroke-gray" id="faqs-{{ block.id }}-{{ section.id }}">
-                {{ item.answer | metafield_tag }}
+                {{ faq.answer | metafield_tag }}
               </div>
             </details>
           {%- endfor %} 
         {%- endfor %}
       </div>
     </div>
-    {% endif %}
+    {% endif %} -->
 
     <script>
     // Details element
