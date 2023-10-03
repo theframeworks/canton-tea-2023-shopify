@@ -9,7 +9,7 @@
         </div>
       {%- when 'featured_image' -%}
         {%- if article.image -%}
-          <div class="tw-grid md:tw-grid-cols-16 tw-mt-4 tw-gap-4">
+          <div class="lg:tw-grid lg:tw-grid-cols-16 tw-mt-4 tw-gap-4 tw-mb-[60px]">
             <div
             class="
               article-template__hero-container{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}
@@ -56,7 +56,7 @@
           {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}
           tw-m-0
           md:tw-col-span-8
-          lg:tw-col-span-5 lg:tw-flex lg:tw-flex-col lg:tw-justify-between"
+          lg:tw-col-span-6 lg:tw-flex lg:tw-flex-col lg:tw-justify-between"
           {{ block.shopify_attributes }}
         >
           <h1
@@ -74,42 +74,91 @@
               
           </h1>
           <div class="tw-flex tw-flex-col tw-gap-8">
-            <div>
-              {%- if block.settings.blog_show_date -%}
-                <div class="tw-block tw-leading-tight" itemprop="dateCreated pubdate datePublished">
-                  {{- article.published_at | time_tag: format: 'date' -}}
+
+            {% if blog.handle == 'brew-guides' %}
+
+              {% assign brew_guide_time = article.metafields.custom.brew_guide_time.value %}
+              {% assign brew_guide_list = article.metafields.custom.brew_guide_list %}
+              {% if brew_guide_time -%} 
+                <div class="
+                  tw-w-full tw-border-t-[0.5px] tw-border-t-stroke-gray
+                  [&_>div]:tw-border-b-[0.5px] [&_>div]:tw-border-b-stroke-gray [&_>div]:tw-py-4
+                  [&_div]:tw-flex [&_div]:tw-justify-between
+                  [&_p]:block">
+                  <div>
+                    <p>time:</p>
+                    <p class="tw-text-right tw-pr-4">{{ brew_guide_time}}</p>
+                  </div>
+                  <div class="
+                    tw-pr-4
+                    [&_div]:tw-flex-col [&_div]:tw-text-right [&_div>p:first-of-type]:tw-mb-2">
+                    <p>you'll need</p>
+                    {{ brew_guide_list | metafield_tag }}
+                  </div>
                 </div>
+              {% endif %}
+
+            {% else %}
+
+              <div>
+                {%- if block.settings.blog_show_date -%}
+                  <div class="tw-block tw-leading-tight" itemprop="dateCreated pubdate datePublished">
+                    {{- article.published_at | time_tag: format: 'date' -}}
+                  </div>
+                {%- endif -%}
+                {%- if block.settings.blog_show_author -%}
+                  <div class="tw-block tw-leading-tight" itemprop="author" itemscope itemtype="http://schema.org/Person">
+                    <span itemprop="name">{{ article.author }}</span>
+                  </div>
+                {%- endif -%}
+              </div>
+              {%- if article.excerpt.size -%}
+                <span class="tw-block tw-leading-tight">
+                  {{ article.excerpt | strip_html | truncatewords: 30 }}
+                </span>
               {%- endif -%}
-              {%- if block.settings.blog_show_author -%}
-                <div class="tw-block tw-leading-tight" itemprop="author" itemscope itemtype="http://schema.org/Person">
-                  <span itemprop="name">{{ article.author }}</span>
-                </div>
-              {%- endif -%}
-            </div>
-            {%- if article.excerpt.size -%}
-              <span class="tw-block tw-leading-tight">
-                {{ article.excerpt | strip_html | truncatewords: 30 }}
-              </span>
-            {%- endif -%}
-          </div>
+              
+            {% endif %}
+
+          </div>    
         </header>
       </div>
 
       {%- when 'content' -%}
         <div
           class="
-            article-template__content rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}
-            tw-grid  
+            {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}
+            tw-grid
+            
+            {% if blog.handle == 'brew-guides' %}
+            
+            lg:tw-grid lg:tw-grid-cols-16
+            [&_h2]:tw-font-normal [&_h2]:tw-text-xl lg:[&_h2]:tw-text-2xl [&_img]:tw-my-4 [&_*]:tw-mb-8
+            lg:[&_*]:tw-col-span-full lg:[&_*]:tw-m-0 lg:[&_*:not(img)]:tw-col-end-7 lg:[&_*]:tw-mb-16
+            
+            
+            {% else %}
+            
             [&_div>img]:tw-w-full [&_div+p]:tw-text-sm [&_img]:tw-w-full [&_img+p]:tw-text-sm
             [&_blockquote]:tw-flex [&_blockquote]:tw-items-end [&_blockquote]:tw-not-italic [&_blockquote]:tw-p-0 [&_blockquote]:tw-m-0 [&_blockquote]:tw-border-0 [&_blockquote]:tw-text-xl [&_blockquote]:tw-font-heading
+            [&_*:not(img)]:tw-mb-8 [&_img+p]:tw-mt-4
             max-md:[&_blockquote]:tw-mb-8
-            md:tw-grid-cols-16 md:[&_div]:tw-col-span-8 md:[&_div]:tw-col-start-9 md:[&_p]:tw-col-span-8 md:[&_p]:tw-col-start-9 md:[&_blockquote]:tw-col-span-7
-            md:[&_h3]:tw-col-span-8 md:[&_h3]:tw-col-start-9 md:[&_h4]:tw-col-span-8 md:[&_h4]:tw-col-start-9 md:[&_h5]:tw-col-span-8 md:[&_h5]:tw-col-start-9 md:[&_h6]:tw-col-span-8 md:[&_h6]:tw-col-start-9
+            md:tw-grid-cols-16 
+            md:[&_div]:tw-col-span-8 md:[&_div]:tw-col-start-9
+            md:[&_img]:tw-col-span-8 md:[&_img]:tw-col-start-9
+            md:[&_p]:tw-col-span-8 md:[&_p]:tw-col-start-9 
+            md:[&_blockquote]:tw-col-span-7
+            md:[&_h3]:tw-col-span-8 md:[&_h3]:tw-col-start-9
+            md:[&_h4]:tw-col-span-8 md:[&_h4]:tw-col-start-9
+            md:[&_h5]:tw-col-span-8 md:[&_h5]:tw-col-start-9
+            md:[&_h6]:tw-col-span-8 md:[&_h6]:tw-col-start-9
             lg:[&_div]:tw-col-span-full lg:[&_div:first-of-type]:tw-col-span-10 lg:[&_div:first-of-type]:tw-col-start-7 
             lg:[&_img]:tw-col-span-full lg:[&_img:first-of-type]:tw-col-span-10 lg:[&_img:first-of-type]:tw-col-start-7 [&_img:not(:first-of-type)]:tw-mt-8 
             lg:[&_p]:tw-col-span-10 lg:[&_p]:tw-col-start-7 lg:[&_blockquote]:tw-text-2xl lg:[&_blockquote]:tw-col-span-5
             lg:[&_h3]:tw-col-span-10 lg:[&_h3]:tw-col-start-7 lg:[&_h4]:tw-col-span-10 lg:[&_h4]:tw-col-start-7 lg:[&_h5]:tw-col-span-10 lg:[&_h5]:tw-col-start-7 lg:[&_h6]:tw-col-span-10 lg:[&_h6]:tw-col-start-7
-            "
+            
+            {% endif %}
+          "
           itemprop="articleBody"
           {{ block.shopify_attributes }}
         >
