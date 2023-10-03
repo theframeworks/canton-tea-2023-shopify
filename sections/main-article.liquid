@@ -1,6 +1,18 @@
 {{ 'section-blog-post.css' | asset_url | stylesheet_tag }}
 
 <article class="article-template tw-px-4 md:tw-px-16" itemscope itemtype="http://schema.org/BlogPosting">
+
+  {% if blog.handle == 'brew-guides' %}
+    <div class="tw-mt-0 tw-py-4 tw-border-b-[0.5px] tw-border-b-stroke-gray">
+      <div class="tw-block tw-leading-tight" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">{{ article.author }}</span>
+      </div>
+      <div class="tw-block tw-leading-tight" itemprop="dateCreated pubdate datePublished">
+        {{- article.published_at | time_tag: format: 'date' -}}
+      </div>
+    </div>
+  {% endif %}
+
   {%- for block in section.blocks -%}
     {%- case block.type -%}
       {%- when '@app' -%}
