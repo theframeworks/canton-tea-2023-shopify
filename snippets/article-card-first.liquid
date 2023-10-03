@@ -29,6 +29,18 @@
   -%}
   <div class="article-card-wrapper card-wrapper underline-links-hover tw-block">
     {% comment %} <article aria-labelledby="Article-{{ article.id }}"> {% endcomment %}
+
+    {% if blog.handle == 'brew-guides' %}
+      <div class="tw-mt-0 tw-py-4 tw-mb-4 tw-border-b-[0.5px] tw-border-b-stroke-gray">
+        <div class="tw-block tw-leading-tight" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <span itemprop="name">{{ article.author }}</span>
+        </div>
+        <div class="tw-block tw-leading-tight" itemprop="dateCreated pubdate datePublished">
+          {{- article.published_at | time_tag: format: 'date' -}}
+        </div>
+      </div>
+    {% endif %}
+
     <div
       class="
         card article-card
@@ -40,7 +52,7 @@
         tw-grid tw-grid-cols-16 tw-gap-4
         max-md:tw-gap-y-8
       "
-      style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
+      style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%; height: auto"
     >
       <div
         class="card__inner {% if settings.blog_card_style == 'standard' %} color-{{ settings.blog_card_color_scheme }} gradient{% endif %}{% if article.image and show_image or settings.blog_card_style == 'standard' %} ratio{% endif %}
@@ -83,13 +95,14 @@
         {%- endif -%}
         <div class="card__content">
           <div class="card__information">
-            <h3 class="card__heading{% if show_excerpt %} h2{% endif %}">
+            <h2 class="card__heading{% if show_excerpt %} h2{% endif %}">
               <a href="{{ article.url }}" class="full-unstyled-link">
                 {{ article.title | truncate: 50 | escape }}
                 <span class="tw-block tw-block tw-font-semibold">{{ title-suffix }}</span>
               </a>
             </h3>
             <div class="article-card__info caption-with-letter-spacing h5">
+
               {%- if show_date -%}
                 <span class="circle-divider">{{ article.published_at | time_tag: format: 'date' }}</span>
               {%- endif -%}
@@ -123,24 +136,26 @@
       </div>
       <div class="card__content
         max-md:tw-order-first
-        tw-col-span-8 lg:tw-col-span-5 lg:tw-col-start-1 lg:tw-row-start-1">
+        tw-col-span-8 lg:tw-col-span-6 lg:tw-col-start-1 lg:tw-row-start-1">
         <div class="card__information tw-py-0 tw-flex tw-flex-col tw-justify-between">
           
-          <h3 class="card__heading tw-text-2xl tw-font-normal">
+          <h2 class="card__heading {% if blog.handle == 'brew-guides' %}tw-font-semibold{% else %}tw-font-normal{% endif %} tw-text-2xl">
             {{ article.title | escape }}
-            <span class="tw-block tw-font-semibold">{{ title-suffix }}</span>
-          </h3>
+            <span class="tw-block {% if blog.handle == 'brew-guides' %}tw-font-normal{% else %}tw-font-semibold{% endif %}">{{ title-suffix }}</span>
+          </h2>
 
           <div>
             <div class="article-card__info tw-flex tw-flex-col tw-gap-8">
-              <div>
-                {%- if show_author -%}
-                  <div class="tw-block">{{ article.author }}</div>
-                {%- endif -%}
-                {%- if show_date -%}
-                  <div class="tw-block">{{ article.published_at | time_tag: format: 'date' }}</div>
-                {%- endif -%}
-              </div>
+              {% if blog.handle != 'brew-guides' %}
+                <div>
+                  {%- if show_author -%}
+                    <div class="tw-block">{{ article.author }}</div>
+                  {%- endif -%}
+                  {%- if show_date -%}
+                    <div class="tw-block">{{ article.published_at | time_tag: format: 'date' }}</div>
+                  {%- endif -%}
+                </div>
+              {% endif %}
               
               {%- if show_excerpt -%}
                 {%- if article.excerpt.size > 0 or article.content.size > 0 -%}

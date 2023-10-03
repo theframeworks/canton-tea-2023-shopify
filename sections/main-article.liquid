@@ -72,7 +72,9 @@
           {{ block.shopify_attributes }}
         >
           <h1
-            class="article-template__title tw-text-2xl tw-font-normal"
+            class="article-template__title
+            tw-text-2xl
+            {% if blog.handle == 'brew-guides' %}tw-font-semibold{% else %}tw-font-normal{% endif %}"
             itemprop="headline"
           >
             <span class="lg:tw-block lg:tw-w-1/2">
@@ -81,7 +83,7 @@
 
             {%- if block.settings.title-suffix -%}
               {%- assign title-suffix = article.metafields.custom.title_suffix -%}
-                <span class="tw-block tw-font-semibold">{{title-suffix}}</span>
+                <span class="tw-block {% if blog.handle == 'brew-guides' %}tw-font-normal{% else %}tw-font-semibold{% endif %}">{{title-suffix}}</span>
             {%- endif -%}
               
           </h1>
@@ -145,7 +147,7 @@
             {% if blog.handle == 'brew-guides' %}
             
             lg:tw-grid lg:tw-grid-cols-16
-            [&_h2]:tw-font-normal [&_h2]:tw-text-xl lg:[&_h2]:tw-text-2xl [&_img]:tw-my-4 [&_*]:tw-mb-8
+            [&_h2]:tw-font-normal [&_h2]:tw-text-xl lg:[&_h2]:tw-text-2xl [&_img]:tw-w-full [&_img]:tw-my-4 [&_*]:tw-mb-8
             lg:[&_*]:tw-col-span-full lg:[&_*]:tw-m-0 lg:[&_*:not(img)]:tw-col-end-7 lg:[&_*]:tw-mb-16
             
             
