@@ -877,6 +877,10 @@ video {
   align-self: center;
 }
 
+#app :is(.tw-overflow-hidden) {
+  overflow: hidden;
+}
+
 #app :is(.tw-border-0) {
   border-width: 0px;
 }
@@ -1014,6 +1018,10 @@ video {
 
 #app :is(.tw-pr-4) {
   padding-right: 1rem;
+}
+
+#app :is(.tw-pb-10) {
+  padding-bottom: 2.5rem;
 }
 
 #app :is(.tw-text-center) {
@@ -1158,13 +1166,49 @@ video {
   color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
+#app :is(.before\:tw-absolute)::before {
+  content: var(--tw-content);
+  position: absolute;
+}
+
+#app :is(.before\:tw-top-\[-10px\])::before {
+  content: var(--tw-content);
+  top: -10px;
+}
+
+#app :is(.before\:tw-h-\[0\.5px\])::before {
+  content: var(--tw-content);
+  height: 0.5px;
+}
+
+#app :is(.before\:tw-w-\[100vw\])::before {
+  content: var(--tw-content);
+  width: 100vw;
+}
+
+#app :is(.before\:tw-bg-stroke-gray)::before {
+  content: var(--tw-content);
+  --tw-bg-opacity: 1;
+  background-color: rgb(143 143 143 / var(--tw-bg-opacity));
+}
+
 #app :is(.before\:tw-content-\[\'_\|\'\])::before {
   --tw-content: ' |';
   content: var(--tw-content);
 }
 
+#app :is(.before\:tw-content-\[\'_\2197\'\])::before {
+  --tw-content: ' ↗';
+  content: var(--tw-content);
+}
+
 #app :is(.after\:tw-content-none)::after {
   --tw-content: none;
+  content: var(--tw-content);
+}
+
+#app :is(.after\:tw-content-\[\'_\2197\'\])::after {
+  --tw-content: ' ↗';
   content: var(--tw-content);
 }
 
@@ -1862,6 +1906,62 @@ video {
   letter-spacing: -0.06rem;
 }
 
+#app
+  :is(
+    .\[\&_div\.blog-articles__article\:after\]\:tw-content-\[\'_\2197\'\]
+      div.blog-articles
+      article
+  ):after {
+  --tw-content: ' ↗';
+  content: var(--tw-content);
+}
+
+#app
+  :is(
+    .\[\&_div\.blog-articles__article\:nth-child\(3\)\]\:after\:tw-content-\[\'_\2197\'\]
+      div.blog-articles
+      article:nth-child(3)
+  )::after {
+  --tw-content: ' ↗';
+  content: var(--tw-content);
+}
+
+#app
+  :is(
+    .\[\&_div\.blog-articles__article\]\:after\:tw-content-\[\'_\2197\'\]
+      div.blog-articles
+      article
+  )::after {
+  --tw-content: ' ↗';
+  content: var(--tw-content);
+}
+
+#app :is(.\[\&_div\:before\]\:tw-absolute div):before {
+  position: absolute;
+}
+
+#app :is(.\[\&_div\:before\]\:tw-top-\[-10px\] div):before {
+  top: -10px;
+}
+
+#app :is(.\[\&_div\:before\]\:tw-h-\[0\.5px\] div):before {
+  height: 0.5px;
+}
+
+#app :is(.\[\&_div\:before\]\:tw-w-\[100vw\] div):before {
+  width: 100vw;
+}
+
+#app :is(.\[\&_div\:before\]\:tw-bg-stroke-gray div):before {
+  --tw-bg-opacity: 1;
+  background-color: rgb(143 143 143 / var(--tw-bg-opacity));
+}
+
+#app :is(.\[\&_div\:before\]\:tw-content-\[\'\'\] div):before {
+  --tw-content: '';
+  content: var(--tw-content);
+}
+
 #app :is(.\[\&_div\:first-of-type\]\:tw-border-\[0\.5px\] div:first-of-type) {
   border-width: 0.5px;
 }
@@ -1903,6 +2003,55 @@ video {
 #app :is(.\[\&_div\:not\:last-of-type\]\:tw-py-4 div:not:last-of-type) {
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+
+#app
+  :is(
+    .\[\&_div\:nth-child\(2n\)\]\:before\:tw-absolute div:nth-child(2n)
+  )::before {
+  content: var(--tw-content);
+  position: absolute;
+}
+
+#app
+  :is(
+    .\[\&_div\:nth-child\(2n\)\]\:before\:tw-top-\[-10px\] div:nth-child(2n)
+  )::before {
+  content: var(--tw-content);
+  top: -10px;
+}
+
+#app
+  :is(
+    .\[\&_div\:nth-child\(2n\)\]\:before\:tw-h-\[0\.5px\] div:nth-child(2n)
+  )::before {
+  content: var(--tw-content);
+  height: 0.5px;
+}
+
+#app
+  :is(
+    .\[\&_div\:nth-child\(2n\)\]\:before\:tw-w-\[100vw\] div:nth-child(2n)
+  )::before {
+  content: var(--tw-content);
+  width: 100vw;
+}
+
+#app
+  :is(
+    .\[\&_div\:nth-child\(2n\)\]\:before\:tw-bg-stroke-gray div:nth-child(2n)
+  )::before {
+  content: var(--tw-content);
+  --tw-bg-opacity: 1;
+  background-color: rgb(143 143 143 / var(--tw-bg-opacity));
+}
+
+#app
+  :is(
+    .\[\&_div\:nth-child\(2n\)\]\:before\:tw-content-\[\'\'\] div:nth-child(2n)
+  )::before {
+  --tw-content: '';
+  content: var(--tw-content);
 }
 
 #app :is(.\[\&_div\>img\]\:tw-w-full div > img) {
@@ -1984,6 +2133,37 @@ video {
 
 #app :is(.\[\&_div\]\:tw-font-heading div) {
   font-family: var(--font-heading-family);
+}
+
+#app :is(.\[\&_div\]\:before\:tw-absolute div)::before {
+  content: var(--tw-content);
+  position: absolute;
+}
+
+#app :is(.\[\&_div\]\:before\:tw-top-\[-10px\] div)::before {
+  content: var(--tw-content);
+  top: -10px;
+}
+
+#app :is(.\[\&_div\]\:before\:tw-h-\[0\.5px\] div)::before {
+  content: var(--tw-content);
+  height: 0.5px;
+}
+
+#app :is(.\[\&_div\]\:before\:tw-w-\[100vw\] div)::before {
+  content: var(--tw-content);
+  width: 100vw;
+}
+
+#app :is(.\[\&_div\]\:before\:tw-bg-stroke-gray div)::before {
+  content: var(--tw-content);
+  --tw-bg-opacity: 1;
+  background-color: rgb(143 143 143 / var(--tw-bg-opacity));
+}
+
+#app :is(.\[\&_div\]\:before\:tw-content-\[\'\'\] div)::before {
+  --tw-content: '';
+  content: var(--tw-content);
 }
 
 @media (min-width: 750px) {

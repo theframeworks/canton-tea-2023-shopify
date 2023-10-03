@@ -15,16 +15,22 @@
     }
   }
 {%- endstyle -%}
-    
+
 {%- paginate blog.articles by 5 -%}
   <div class="main-blog tw-px-4 md:tw-px-16 tw-pt-4">
     <h1 class="title--primary{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %} tw-hidden">
       {{ blog.title | escape }}
     </h1>
-    <div class="blog-articles {% if section.settings.layout == 'collage' %}blog-articles--collage{% endif %}">
+    <div class="blog-articles relative tw-overflow-hidden
+      {% if section.settings.layout == 'collage' %}blog-articles--collage{% endif %}
+      [&_div:nth-child(2n)]:before:tw-content-[''] [&_div:nth-child(2n)]:before:tw-absolute [&_div:nth-child(2n)]:before:tw-top-[-10px] [&_div:nth-child(2n)]:before:tw-h-[0.5px] [&_div:nth-child(2n)]:before:tw-h-[0.5px] [&_div:nth-child(2n)]:before:tw-w-[100vw] [&_div:nth-child(2n)]:before:tw-bg-stroke-gray
+    ">
+
       {%- for article in blog.articles -%}
         <div
-          class="blog-articles__article article{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %} {% if forloop.index == 1 and paginate.current_page == 1 %}md:tw-col-span-2 md:tw-block tw-mb-10{% endif %}"
+          class="blog-articles__article 
+          article{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %} 
+          {% if forloop.index == 1 and paginate.current_page == 1 %}md:tw-col-span-2 md:tw-block tw-pb-10{% endif %}"
           {% if settings.animations_reveal_on_scroll %}
             data-cascade
             style="--animation-order: {{ forloop.index }};"
