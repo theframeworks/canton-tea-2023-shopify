@@ -240,8 +240,10 @@
                       {% render 'infusion-guidelines' %}
                     {% endif %}
 
-                    {{ block.settings.content }}
-                    {{ block.settings.page.content }}
+                    {% assign heading_value = block.settings.heading %}
+                    {% assign default_copy = block.settings.content %}
+                    {% render 'product-collapsible-content', copy: heading_value, default: default_copy %}
+   
                   </div>
                 </details>
               </div>

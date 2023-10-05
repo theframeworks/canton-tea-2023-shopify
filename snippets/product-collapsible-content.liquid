@@ -1,0 +1,23 @@
+{%- assign product-details-copy = product.metafields.custom.product_details.value -%}
+{%- assign infusion-copy = product.metafields.custom.infusion_details.value -%}
+{%- assign delivery-copy = product.metafields.custom.delivery_and_returns.value -%}
+{%- assign default_copy = default -%}
+
+
+{%- case copy -%}
+  
+  {%- when 'Product details' -%}
+    {{ product-details-copy }}
+
+  {%- when 'Infusion' -%}
+    {{ infusion-copy }}
+  
+  {%- when 'Delivery/Returns' -%}
+    
+    {%- if delivery-copy != blank -%}
+      {{ delivery-copy }}
+    {%- else -%}
+      {{ default_copy }}
+    {%- endif -%}
+
+{%- endcase -%}
