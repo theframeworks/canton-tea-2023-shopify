@@ -2,8 +2,10 @@
 
 <div class="tw-px-4 md:tw-px-16">
   <div class="tw-border-t tw-border-stroke-gray tw-mt-4 tw-pt-4 tw-grid md:tw-grid-cols-2 tw-gap-4 tw-mb-8 max-md:tw-space-y-4 max-md:tw-divide-y max-md:tw-divide-stroke-gray">
-
-    {% assign home_featured_content-image = shop.metaobjects['home_featured_content']['home-featured-content-selected'].media.value %}
+    
+    {% assign home_featured_content = shop.metaobjects['home_featured_content']['home-featured-content'] %}
+    
+    {% assign home_featured_content-image = home_featured_content.media.value %}
     {%- if home_featured_content-image != '' -%}
       <div class="max-md:not-first:tw-pt-4 tw-flex tw-flex-col tw-gap-4 lg:tw-gap-10">
         <a href="#">
@@ -24,17 +26,20 @@
               data-sizes="auto"
             />
           <h3 class="tw-text-xl lg:tw-text-2xl tw-font-normal tw-text-balance tw-max-w-[50%] lg:tw-max-w-[33.33%]">
-            {% assign home_featured_content-title = shop.metaobjects['home_featured_content']['home-featured-content-selected'].title | metafield_tag %}
-              {{ home_featured_content-title }}
+            {% assign home_featured_content-title = home_featured_content.title | metafield_tag %}
+            {{ home_featured_content-title }}
           </h3>
         </a>
 
         <div class="tw-w-7/12">
-          {% assign home_featured_content-description = shop.metaobjects['home_featured_content']['home-featured-content-selected'].description | metafield_tag %}
-              {{ home_featured_content-description }}
+          {% assign home_featured_content-description = home_featured_content.description | metafield_tag %}
+          {{ home_featured_content-description }}
         </div>
 
-        <a class="tw-underline hover:tw-no-underline" href="/pages/ourt-story">Our story</a>
+        {% assign home_featured_content-click-through = home_featured_content.click_through_link_page.value %}
+        <a class="tw-underline hover:tw-no-underline" href="/pages/{{ home_featured_content-click-through.handle }}">
+          {{ home_featured_content-click-through.title }}
+        </a>
 
       </div>
     {%- endif -%}
