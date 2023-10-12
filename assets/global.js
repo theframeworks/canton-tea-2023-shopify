@@ -13,9 +13,12 @@ document.querySelectorAll('[id^="Details-"] summary').forEach((summary) => {
     summary.parentNode.hasAttribute('open'),
   );
 
-  if (summary.nextElementSibling.getAttribute('id')) {
-    summary.setAttribute('aria-controls', summary.nextElementSibling.id);
-  }
+  // PIERRICK : for some odd reason, this returns an error on product page
+  // and breaks the quantity increase/decrease
+  // Existing collapsible elements still work
+  // if (summary.nextElementSibling.getAttribute('id')) {
+  //   summary.setAttribute('aria-controls', summary.nextElementSibling.id);
+  // }
 
   summary.addEventListener('click', (event) => {
     event.currentTarget.setAttribute(

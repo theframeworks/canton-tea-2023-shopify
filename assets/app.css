@@ -1394,6 +1394,10 @@ video {
     grid-column: span 9 / span 9;
   }
 
+  #app :is(.lg\:tw-col-span-1) {
+    grid-column: span 1 / span 1;
+  }
+
   #app :is(.lg\:tw-col-start-1) {
     grid-column-start: 1;
   }
@@ -1458,6 +1462,10 @@ video {
     margin-bottom: 5rem;
   }
 
+  #app :is(.lg\:tw-mb-0) {
+    margin-bottom: 0px;
+  }
+
   #app :is(.lg\:tw-block) {
     display: block;
   }
@@ -1486,12 +1494,20 @@ video {
     width: auto;
   }
 
+  #app :is(.lg\:tw-min-w-0) {
+    min-width: 0px;
+  }
+
   #app :is(.lg\:tw-max-w-\[33\.33\%\]) {
     max-width: 33.33%;
   }
 
   #app :is(.lg\:tw-max-w-none) {
     max-width: none;
+  }
+
+  #app :is(.lg\:tw-max-w-\[25px\]) {
+    max-width: 25px;
   }
 
   #app :is(.lg\:tw-grid-cols-16) {
@@ -1504,6 +1520,10 @@ video {
 
   #app :is(.lg\:tw-grid-cols-3) {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  #app :is(.lg\:tw-grid-cols-5) {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 
   #app :is(.lg\:tw-flex-col) {
@@ -1532,6 +1552,10 @@ video {
 
   #app :is(.lg\:tw-gap-8) {
     gap: 2rem;
+  }
+
+  #app :is(.lg\:tw-gap-4) {
+    gap: 1rem;
   }
 
   #app :is(.lg\:tw-gap-y-0) {
