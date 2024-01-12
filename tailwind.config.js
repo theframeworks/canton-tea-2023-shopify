@@ -100,13 +100,7 @@ module.exports = {
   },
   plugins: [
     require('tailwindcss-debug-screens'),
-    function ({ addUtilities, addVariant, matchUtilities, theme }) {
-      addUtilities({
-        '.text-wrap': { 'text-wrap': 'wrap' },
-        '.text-nowrap': { 'text-wrap': 'nowrap' },
-        '.text-balance': { 'text-wrap': 'balance' },
-      });
-
+    function ({ addVariant }) {
       addVariant('js', ':root.js &');
       addVariant('parent', ':has(>&)');
       addVariant('not-first', '&:not(:first-child)');
