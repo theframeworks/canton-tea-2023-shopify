@@ -194,7 +194,7 @@
             {%- when 'description' -%}
               {%- if product.description != blank -%}
 
-                <div class="product__accordion accordion quick-add-hidden tw-mt-0" {{ block.shopify_attributes }}>
+                <div class="product__accordion accordion quick-add-hidden tw-mt-0 tw-border-stroke-gray" {{ block.shopify_attributes }}>
                   <details id="Details-{{ block.id }}-{{ section.id }}" open>
                      <summary>
                     <div class="summary__title">
@@ -223,7 +223,7 @@
             {%- when 'custom_liquid' -%}
               {{ block.settings.custom_liquid }}
             {%- when 'collapsible_tab' -%}
-              <div class="product__accordion accordion quick-add-hidden" {{ block.shopify_attributes }}>
+              <div class="product__accordion accordion quick-add-hidden tw-border-stroke-gray" {{ block.shopify_attributes }}>
                 <details id="Details-{{ block.id }}-{{ section.id }}">
                   <summary>
                     <div class="summary__title">
@@ -248,13 +248,13 @@
               </div>
 
             {%- when 'quantity_selector' -%}
-              <div class="lg:tw-grid lg:tw-grid-cols-5 lg:tw-gap-4">
+              <div class="lg:tw-flex lg:tw-gap-4">
               <div
                 id="Quantity-Form-{{ section.id }}"
                 class="
-                  tw-mb-5 lg:tw-mb-0 
-                  lg:tw-col-span-1 lg:tw-min-w-0 tw-mb-0
-                  product-form__input product-form__quantity {% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} product-form__quantity-top{% endif %}
+                  tw-mb-5  
+                  lg:tw-mb-0 lg:tw-col-span-1 lg:tw-min-w-0 lg:tw-flex-auto
+                  product-form__input product-form__quantity {% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} product-form__quantity-top {% endif %}
                 "
                 {{ block.shopify_attributes }}
               >
@@ -420,7 +420,7 @@
             {%- when 'complementary' -%}
               <product-recommendations class="complementary-products quick-add-hidden no-js-hidden{% if block.settings.make_collapsible_row %} is-accordion{% endif %}{% if block.settings.enable_quick_add %} complementary-products-contains-quick-add{% endif %}" data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit={{ block.settings.product_list_limit }}&intent=complementary">
                 {%- if recommendations.performed and recommendations.products_count > 0 -%}
-                  <aside aria-label="{{ 'accessibility.complementary_products' | t }}" {{ block.shopify_attributes }}{% if block.settings.make_collapsible_row %} class="product__accordion accordion"{% endif %}>
+                  <aside aria-label="{{ 'accessibility.complementary_products' | t }}" {{ block.shopify_attributes }}{% if block.settings.make_collapsible_row %} class="product__accordion accordion tw-border-stroke-gray"{% endif %}>
                     <div class="complementary-products__container">
                       {%- if block.settings.make_collapsible_row -%}
                         <details id="Details-{{ block.id }}-{{ section.id }}" open>

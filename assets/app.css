@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.3.3 | MIT License | https://tailwindcss.com
+! tailwindcss v3.4.1 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -32,9 +32,11 @@
 4. Use the user's configured `sans` font-family by default.
 5. Use the user's configured `sans` font-feature-settings by default.
 6. Use the user's configured `sans` font-variation-settings by default.
+7. Disable tap highlights on iOS
 */
 
-html {
+html,
+:host {
   line-height: 1.5;
   /* 1 */
   -webkit-text-size-adjust: 100%;
@@ -44,14 +46,15 @@ html {
   -o-tab-size: 4;
   tab-size: 4;
   /* 3 */
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
-    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  font-family: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   /* 4 */
   font-feature-settings: normal;
   /* 5 */
   font-variation-settings: normal;
   /* 6 */
+  -webkit-tap-highlight-color: transparent;
+  /* 7 */
 }
 
 /*
@@ -123,8 +126,10 @@ strong {
 }
 
 /*
-1. Use the user's configured `mono` font family by default.
-2. Correct the odd `em` font sizing in all browsers.
+1. Use the user's configured `mono` font-family by default.
+2. Use the user's configured `mono` font-feature-settings by default.
+3. Use the user's configured `mono` font-variation-settings by default.
+4. Correct the odd `em` font sizing in all browsers.
 */
 
 code,
@@ -134,8 +139,12 @@ pre {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
     'Liberation Mono', 'Courier New', monospace;
   /* 1 */
-  font-size: 1em;
+  font-feature-settings: normal;
   /* 2 */
+  font-variation-settings: normal;
+  /* 3 */
+  font-size: 1em;
+  /* 4 */
 }
 
 /*
@@ -438,16 +447,16 @@ video {
   display: none;
 }
 
-#app {
-  :is(:link) {
-    text-decoration-color: #8f8f8f;
-  }
-  :is(:link) {
-    text-decoration-thickness: 1px;
-  }
-  :is(:link) {
-    text-underline-offset: 2px;
-  }
+:-moz-any-link {
+  text-decoration-color: #8f8f8f;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+:any-link {
+  text-decoration-color: #8f8f8f;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
 }
 
 *,
@@ -550,11 +559,6 @@ video {
   --tw-backdrop-opacity: ;
   --tw-backdrop-saturate: ;
   --tw-backdrop-sepia: ;
-}
-
-.accordion.product__accordion {
-  --tw-border-opacity: 1;
-  border-color: rgb(143 143 143 / var(--tw-border-opacity));
 }
 
 /**
@@ -722,10 +726,6 @@ video {
   margin-top: 1.25rem;
 }
 
-#app :is(.tw-mt-\[10px\]) {
-  margin-top: 10px;
-}
-
 #app :is(.tw-mt-\[110px\]) {
   margin-top: 110px;
 }
@@ -867,6 +867,10 @@ video {
 
 #app :is(.tw-overflow-hidden) {
   overflow: hidden;
+}
+
+#app :is(.tw-text-balance) {
+  text-wrap: balance;
 }
 
 #app :is(.tw-border-0) {
@@ -1128,14 +1132,6 @@ video {
   -moz-osx-font-smoothing: grayscale;
 }
 
-#app :is(.tw-text-balance) {
-  text-wrap: balance;
-}
-
-#app :is(.tw-link) {
-  text-decoration-line: underline;
-}
-
 #app :is(.placeholder\:tw-font-heading)::-moz-placeholder {
   font-family: var(--font-heading-family);
 }
@@ -1358,6 +1354,10 @@ video {
     order: 9999;
   }
 
+  #app :is(.lg\:tw-col-span-1) {
+    grid-column: span 1 / span 1;
+  }
+
   #app :is(.lg\:tw-col-span-10) {
     grid-column: span 10 / span 10;
   }
@@ -1392,10 +1392,6 @@ video {
 
   #app :is(.lg\:tw-col-span-9) {
     grid-column: span 9 / span 9;
-  }
-
-  #app :is(.lg\:tw-col-span-1) {
-    grid-column: span 1 / span 1;
   }
 
   #app :is(.lg\:tw-col-start-1) {
@@ -1454,16 +1450,16 @@ video {
     grid-row-start: 4;
   }
 
+  #app :is(.lg\:tw-mb-0) {
+    margin-bottom: 0px;
+  }
+
   #app :is(.lg\:tw-mb-10) {
     margin-bottom: 2.5rem;
   }
 
   #app :is(.lg\:tw-mb-20) {
     margin-bottom: 5rem;
-  }
-
-  #app :is(.lg\:tw-mb-0) {
-    margin-bottom: 0px;
   }
 
   #app :is(.lg\:tw-block) {
@@ -1498,6 +1494,10 @@ video {
     min-width: 0px;
   }
 
+  #app :is(.lg\:tw-max-w-\[25px\]) {
+    max-width: 25px;
+  }
+
   #app :is(.lg\:tw-max-w-\[33\.33\%\]) {
     max-width: 33.33%;
   }
@@ -1506,8 +1506,16 @@ video {
     max-width: none;
   }
 
-  #app :is(.lg\:tw-max-w-\[25px\]) {
-    max-width: 25px;
+  #app :is(.lg\:tw-flex-auto) {
+    flex: 1 1 auto;
+  }
+
+  #app :is(.lg\:tw-flex-1) {
+    flex: 1 1 0%;
+  }
+
+  #app :is(.lg\:tw-grow) {
+    flex-grow: 1;
   }
 
   #app :is(.lg\:tw-grid-cols-16) {
@@ -1550,16 +1558,20 @@ video {
     gap: 2.5rem;
   }
 
-  #app :is(.lg\:tw-gap-8) {
-    gap: 2rem;
-  }
-
   #app :is(.lg\:tw-gap-4) {
     gap: 1rem;
   }
 
+  #app :is(.lg\:tw-gap-8) {
+    gap: 2rem;
+  }
+
   #app :is(.lg\:tw-gap-y-0) {
     row-gap: 0px;
+  }
+
+  #app :is(.lg\:tw-whitespace-nowrap) {
+    white-space: nowrap;
   }
 
   #app :is(.lg\:tw-px-0) {
