@@ -10,7 +10,7 @@
   Usage:
   {% render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true %}
 {% endcomment %}
-<div {{ block.shopify_attributes }} class="lg:tw-col-span-4">
+<div {{ block.shopify_attributes }} class="lg:tw-whitespace-nowrap lg:tw-flex-1">
   {%- if product != blank -%}
     {%- liquid
       assign gift_card_recipient_feature_active = false

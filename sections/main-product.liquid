@@ -253,8 +253,11 @@
                 id="Quantity-Form-{{ section.id }}"
                 class="
                   tw-mb-5  
-                  lg:tw-mb-0 lg:tw-col-span-1 lg:tw-min-w-0 lg:tw-flex-auto
-                  product-form__input product-form__quantity {% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} product-form__quantity-top {% endif %}
+                  lg:tw-mb-0 lg:tw-flex-none
+                  product-form__input product-form__quantity
+                  {% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %}
+                    product-form__quantity-top
+                  {% endif %}
                 "
                 {{ block.shopify_attributes }}
               >
@@ -282,22 +285,22 @@
                   </span>
                 </label>
 
-                <div class="quantity tw-flex tw-items-center">
+                <div class="quantity tw-flex tw-items-center tw-justify-between tw-gap-8">
                   <div class="
                     quantity 
-                    tw-font-heading tw-text-sm tw-uppercase tw-tracking-widest tw-flex tw-items-center tw-pl-8 [&_:after]:tw-shadow-none
-                    max-lg:tw-w-2/3 
-                    lg:tw-hidden
+                    tw-font-heading tw-text-sm tw-uppercase tw-tracking-widest tw-flex tw-items-center tw-pl-8
+                    after:tw-shadow-none
+                    lg:tw-sr-only
                     ">Amount</div>
-                  <quantity-input class="quantity max-lg:tw-w-1/3 tw-w-full [&_:after]:tw-shadow-none">
-                    <button class="quantity__button no-js-hidden lg:tw-max-w-[25px]" name="minus" type="button">
+                  <quantity-input class="quantity tw-flex-none after:tw-shadow-none">
+                    <button class="quantity__button no-js-hidden tw-w-min tw-px-4" name="minus" type="button">
                       <span class="visually-hidden">
                         {{- 'products.product.quantity.decrease' | t: product: product.title | escape -}}
                       </span>
                       {% render 'icon-minus' %}
                     </button>
                     <input
-                      class="quantity__input"
+                      class="quantity__input tw-w-12 tw-p-0"
                       type="number"
                       name="quantity"
                       id="Quantity-{{ section.id }}"
@@ -312,7 +315,7 @@
                       value="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
                       form="{{ product_form_id }}"
                     />
-                    <button class="quantity__button no-js-hidden lg:tw-max-w-[25px]" name="plus" type="button">
+                    <button class="quantity__button no-js-hidden tw-w-min tw-px-4" name="plus" type="button">
                       <span class="visually-hidden">
                         {{- 'products.product.quantity.increase' | t: product: product.title | escape -}}
                       </span>
