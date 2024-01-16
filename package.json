@@ -1,0 +1,24 @@
+{
+  "name": "canton-tea-2023-shopify",
+  "version": "1.0.0",
+  "description": "[![Build status](https://github.com/shopify/dawn/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/Shopify/dawn/actions/workflows/ci.yml?query=branch%3Amain) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?color=informational)](/.github/CONTRIBUTING.md)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theframeworks/shopify-tailwind-starter-base.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/theframeworks/shopify-tailwind-starter-base/issues"
+  },
+  "homepage": "https://github.com/theframeworks/shopify-tailwind-starter-base#readme",
+  "volta": {
+    "node": "20.11.0",
+    "npm": "10.3.0"
+  }
+}
