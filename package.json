@@ -20,5 +20,8 @@
   "volta": {
     "node": "20.11.0",
     "npm": "10.3.0"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
   }
 }
