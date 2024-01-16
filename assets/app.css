@@ -570,3 +570,9 @@ video {
     content: 'screen: lg';
   }
 }
+
+@media not all and (min-width: 750px) {
+  #app :is(.max-md\:tw-max-w-12) {
+    max-width: 3rem;
+  }
+}
