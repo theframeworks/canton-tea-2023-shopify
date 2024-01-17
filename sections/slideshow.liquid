@@ -32,7 +32,7 @@
   aria-label="{{ section.settings.accessibility_info | escape }}"
 >
   {%- if section.settings.auto_rotate and section.blocks.size > 1 -%}
-    <div class="slideshow__controls slideshow__controls--top slider-buttons no-js-hidden{% if section.settings.show_text_below %} slideshow__controls--border-radius-mobile{% endif %}">
+    <div class="slideshow__controls slideshow__controls--top slider-buttons no-js-hidden{% if section.settings.show_text_below %} slideshow__controls--border-radius-mobile{% endif %} tw-absolute tw-top-4 tw-right-8 tw-z-10">
       <button
         type="button"
         class="slider-button slider-button--prev"
@@ -88,7 +88,7 @@
       {%- endif -%}
     </div>
     <noscript>
-      <div class="slider-buttons">
+      <div class="slider-buttons tw-absolute tw-top-4 tw-right-8 tw-z-10">
         <div class="slider-counter">
           {%- for block in section.blocks -%}
             <a
@@ -198,7 +198,7 @@
   </div>
 
   {%- if section.blocks.size > 1 and section.settings.auto_rotate == false -%}
-    <div class="slideshow__controls slider-buttons no-js-hidden{% if section.settings.show_text_below %} slideshow__controls--border-radius-mobile{% endif %}">
+    <div class="slideshow__controls slider-buttons no-js-hidden{% if section.settings.show_text_below %} slideshow__controls--border-radius-mobile{% endif %} tw-absolute tw-top-4 tw-right-8 tw-z-10">
       <button
         type="button"
         class="slider-button slider-button--prev"
@@ -254,7 +254,7 @@
       {%- endif -%}
     </div>
     <noscript>
-      <div class="slider-buttons">
+      <div class="slider-buttons tw-absolute tw-top-4 tw-right-8 tw-z-10">
         <div class="slider-counter">
           {%- for block in section.blocks -%}
             <a
