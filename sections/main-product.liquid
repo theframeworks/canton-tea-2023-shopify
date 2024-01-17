@@ -84,6 +84,14 @@
           {%- case block.type -%}
             {%- when '@app' -%}
               {% render block %}
+            {%- when 'collections' -%}
+              {% if product.collections %}
+                <nav class="tw-lowercase tw-flex tw-gap-4 tw-divide-x tw-leading-none" role="navigation" aria-label="product collections">
+                  {% for collection in product.collections %}
+                    <a href="{{ collection.url }}" class="hover:tw-underline tw-pl-4 first:tw-pl-0">{{ collection.title }}</a>
+                  {% endfor %}
+                </nav>
+              {% endif %}
             {%- when 'text' -%}
               <p
                 class="product__text inline-richtext{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
@@ -681,6 +689,11 @@
   "blocks": [
     {
       "type": "@app"
+    },
+    {
+      "type": "collections",
+      "name": "t:sections.main-product.blocks.collections.name",
+      "limit": 1
     },
     {
       "type": "text",

@@ -1949,6 +1949,9 @@
             }
           }
         },
+        "collections": {
+          "name": "Collections"
+        },
         "title": {
           "name": "Title"
         },
