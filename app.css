@@ -40,5 +40,16 @@
 @layer components {
     .shopify-payment-button__button--unbranded {
         @apply tf-type-button;
+
+        &:not(:root) {
+            @apply after:tw-content-none;
+        }
+    }
+}
+
+/* the following classes are dawn classes which are broadly used in html, so we use @apply to style them */
+@layer components {
+    .page-width:not(:root) {
+        @apply max-xl:tw-container;
     }
 }

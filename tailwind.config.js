@@ -20,8 +20,10 @@ module.exports = {
       'clickable-grey': '#786E6E',
     },
     screens: {
+      sm: '500px',
       md: '750px',
       lg: '990px',
+      xl: '1200px',
     },
     extend: {
       fontFamily: {
