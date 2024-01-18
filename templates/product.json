@@ -3,11 +3,6 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "collections": {
-          "type": "collections",
-          "settings": {
-          }
-        },
         "title": {
           "type": "title",
           "settings": {
@@ -93,7 +88,6 @@
         }
       },
       "block_order": [
-        "collections",
         "title",
         "caption",
         "price",
@@ -115,7 +109,7 @@
         "media_fit": "contain",
         "gallery_layout": "stacked",
         "media_position": "left",
-        "image_zoom": "lightbox",
+        "image_zoom": "none",
         "mobile_thumbnails": "hide",
         "hide_variants": true,
         "enable_video_looping": false,
