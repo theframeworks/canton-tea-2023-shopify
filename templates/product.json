@@ -3,6 +3,11 @@
     "main": {
       "type": "main-product",
       "blocks": {
+        "collections": {
+          "type": "collections",
+          "settings": {
+          }
+        },
         "title": {
           "type": "title",
           "settings": {
@@ -88,6 +93,7 @@
         }
       },
       "block_order": [
+        "collections",
         "title",
         "caption",
         "price",
