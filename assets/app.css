@@ -571,6 +571,56 @@ video {
   }
 }
 
+.tf-type-body-sm:not(:root) {
+  font-family: var(--font-body-family);
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: -0.05em;
+}
+
+.tf-type-body-md:not(:root) {
+  font-family: var(--font-body-family);
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: -0.05em;
+}
+
+.tf-type-button:not(:root) {
+  font-family: var(--font-heading-family);
+  font-size: 12px;
+  line-height: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.tf-type-heading-sm:not(:root) {
+  font-family: var(--font-heading-family);
+  font-size: 28px;
+  line-height: 28px;
+  letter-spacing: 0em;
+}
+
+@media (min-width: 750px) {
+  .tf-type-heading-sm:not(:root) {
+    font-size: 32px;
+    line-height: 36px;
+  }
+}
+
+.tf-type-heading-lg:not(:root) {
+  font-family: var(--font-heading-family);
+  font-size: 44px;
+  line-height: 36px;
+  letter-spacing: 0em;
+}
+
+@media (min-width: 750px) {
+  .tf-type-heading-lg:not(:root) {
+    font-size: 60px;
+    line-height: 50px;
+  }
+}
+
 #app :is(.tw-absolute) {
   position: absolute;
 }
