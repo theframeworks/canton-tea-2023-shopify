@@ -621,6 +621,14 @@ video {
   }
 }
 
+.shopify-payment-button__button--unbranded:not(:root) {
+  font-family: var(--font-heading-family);
+  font-size: 12px;
+  line-height: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
 #app :is(.tw-absolute) {
   position: absolute;
 }
@@ -637,28 +645,48 @@ video {
   z-index: 10;
 }
 
+#app :is(.tw-mb-0) {
+  margin-bottom: 0px;
+}
+
 #app :is(.tw-flex) {
   display: flex;
 }
 
-#app :is(.tw-gap-3) {
-  gap: 0.75rem;
+#app :is(.tw-min-h-0) {
+  min-height: 0px;
+}
+
+#app :is(.tw-w-12) {
+  width: 3rem;
+}
+
+#app :is(.tw-w-auto) {
+  width: auto;
+}
+
+#app :is(.tw-w-full) {
+  width: 100%;
+}
+
+#app :is(.tw-max-w-xs) {
+  max-width: 20rem;
+}
+
+#app :is(.tw-flex-1) {
+  flex: 1 1 0%;
+}
+
+#app :is(.tw-flex-none) {
+  flex: none;
+}
+
+#app :is(.tw-items-center) {
+  align-items: center;
 }
 
 #app :is(.tw-gap-4) {
   gap: 1rem;
-}
-
-#app :is(.tw-divide-y-2 > :not([hidden]) ~ :not([hidden])) {
-  --tw-divide-y-reverse: 0;
-  border-top-width: calc(2px * calc(1 - var(--tw-divide-y-reverse)));
-  border-bottom-width: calc(2px * var(--tw-divide-y-reverse));
-}
-
-#app :is(.tw-divide-x-2 > :not([hidden]) ~ :not([hidden])) {
-  --tw-divide-x-reverse: 0;
-  border-right-width: calc(2px * var(--tw-divide-x-reverse));
-  border-left-width: calc(2px * calc(1 - var(--tw-divide-x-reverse)));
 }
 
 #app :is(.tw-divide-x > :not([hidden]) ~ :not([hidden])) {
@@ -667,12 +695,36 @@ video {
   border-left-width: calc(1px * calc(1 - var(--tw-divide-x-reverse)));
 }
 
-#app :is(.tw-pl-3) {
-  padding-left: 0.75rem;
+#app :is(.tw-text-balance) {
+  text-wrap: balance;
+}
+
+#app :is(.tw-break-normal) {
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+#app :is(.tw-bg-clickable-grey) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(120 110 110 / var(--tw-bg-opacity));
+}
+
+#app :is(.tw-px-4) {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+#app :is(.tw-py-5) {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
 }
 
 #app :is(.tw-pl-4) {
   padding-left: 1rem;
+}
+
+#app :is(.tw-font-bold) {
+  font-weight: 700;
 }
 
 #app :is(.tw-lowercase) {
@@ -683,11 +735,26 @@ video {
   line-height: 1;
 }
 
-#app :is(.first\:tw-pl-0:first-child) {
-  padding-left: 0px;
+#app :is(.tw-text-canton-black) {
+  --tw-text-opacity: 1;
+  color: rgb(41 39 39 / var(--tw-text-opacity));
 }
 
-#app :is(.last\:tw-pl-0:last-child) {
+#app :is(.tw-text-white) {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+/* using :not(:root) slightly increases specificity to override the style coming from the dawn theme */
+
+/* the following classes are not found in any html, so we use @apply to style them */
+
+#app :is(.after\:tw-content-none)::after {
+  --tw-content: none;
+  content: var(--tw-content);
+}
+
+#app :is(.first\:tw-pl-0:first-child) {
   padding-left: 0px;
 }
 
@@ -699,4 +766,14 @@ video {
   #app :is(.max-md\:tw-max-w-12) {
     max-width: 3rem;
   }
+}
+
+@media (min-width: 750px) {
+  #app :is(.md\:tw-max-w-sm) {
+    max-width: 24rem;
+  }
+}
+
+#app :is(.\[\&_\.icon-caret\]\:tw-right-4 .icon-caret) {
+  right: 1rem;
 }

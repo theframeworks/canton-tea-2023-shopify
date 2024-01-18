@@ -86,7 +86,7 @@
               {% render block %}
             {%- when 'collections' -%}
               {% if product.collections %}
-                <nav class="tw-lowercase tw-flex tw-gap-4 tw-divide-x tw-leading-none" role="navigation" aria-label="product collections">
+                <nav class="tf-type-body-sm tw-lowercase tw-flex tw-gap-4 tw-divide-x tw-leading-none" role="navigation" aria-label="product collections">
                   {% for collection in product.collections %}
                     <a href="{{ collection.url }}" class="hover:tw-underline tw-pl-4 first:tw-pl-0">{{ collection.title }}</a>
                   {% endfor %}
@@ -101,7 +101,7 @@
               </p>
             {%- when 'title' -%}
               <div class="product__title" {{ block.shopify_attributes }}>
-                <h1>{{ product.title | escape }}</h1>
+                <h1 class="tf-type-heading-lg tw-font-bold tw-break-normal tw-text-balance tw-max-w-xs md:tw-max-w-sm">{{ product.title | escape }}</h1>
                 <a href="{{ product.url }}" class="product__title">
                   <h2 class="h1">
                     {{ product.title | escape }}
@@ -229,23 +229,23 @@
                 {% # theme-check-disable %}
                 {%- assign cart_qty = cart | item_count_for_variant: product.selected_or_first_available_variant.id -%}
                 {% # theme-check-enable %}
-                <label class="quantity__label form__label" for="Quantity-{{ section.id }}">
-                  {{ 'products.product.quantity.label' | t }}
-                  <span class="quantity__rules-cart no-js-hidden{% if cart_qty == 0 %} hidden{% endif %}">
-                    {%- render 'loading-spinner' -%}
-                    <span>({{- 'products.product.quantity.in_cart_html' | t: quantity: cart_qty -}})</span>
-                  </span>
-                </label>
                 <div class="price-per-item__container">
-                  <quantity-input class="quantity" data-url="{{ product.url }}" data-section="{{ section.id }}">
-                    <button class="quantity__button no-js-hidden" name="minus" type="button">
+                  <quantity-input class="quantity tw-w-full tw-items-center tw-gap-4 tw-px-4 tw-py-5 tw-min-h-0" data-url="{{ product.url }}" data-section="{{ section.id }}">
+                    <label class="quantity__label form__label tf-type-button tw-flex-1 tw-mb-0" for="Quantity-{{ section.id }}">
+                      {{ 'products.product.quantity.label' | t }}
+                      <span class="quantity__rules-cart no-js-hidden{% if cart_qty == 0 %} hidden{% endif %}">
+                        {%- render 'loading-spinner' -%}
+                        <span>({{- 'products.product.quantity.in_cart_html' | t: quantity: cart_qty -}})</span>
+                      </span>
+                    </label>
+                    <button class="quantity__button no-js-hidden tf-type-button tw-w-auto" name="minus" type="button">
                       <span class="visually-hidden">
                         {{- 'products.product.quantity.decrease' | t: product: product.title | escape -}}
                       </span>
                       {% render 'icon-minus' %}
                     </button>
                     <input
-                      class="quantity__input"
+                      class="quantity__input tw-flex-none tw-w-12"
                       type="number"
                       name="quantity"
                       id="Quantity-{{ section.id }}"
@@ -260,7 +260,7 @@
                       value="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
                       form="{{ product_form_id }}"
                     />
-                    <button class="quantity__button no-js-hidden" name="plus" type="button">
+                    <button class="quantity__button no-js-hidden tw-w-auto" name="plus" type="button">
                       <span class="visually-hidden">
                         {{- 'products.product.quantity.increase' | t: product: product.title | escape -}}
                       </span>

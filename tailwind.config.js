@@ -2,13 +2,22 @@
 module.exports = {
   prefix: 'tw-',
   important: '#app',
-  content: ['./layout/**/*.liquid', './templates/**/*.liquid', './sections/**/*.liquid', './snippets/**/*.liquid'],
+  content: [
+    './assets/base.css',
+    './layout/**/*.liquid',
+    './templates/**/*.liquid',
+    './sections/**/*.liquid',
+    './snippets/**/*.liquid',
+  ],
   theme: {
     colors: {
       current: 'currentColor',
       inherit: 'inherit',
       transparent: 'transparent',
       black: '#000000',
+      white: '#FFFFFF',
+      'canton-black': '#292727',
+      'clickable-grey': '#786E6E',
     },
     screens: {
       md: '750px',

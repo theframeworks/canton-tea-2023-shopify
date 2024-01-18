@@ -237,15 +237,15 @@
                     </span>
                   </label>
                   <div class="price-per-item__container">
-                    <quantity-input class="quantity">
-                      <button class="quantity__button no-js-hidden" name="minus" type="button">
+                    <quantity-input class="quantity tw-w-full tw-items-center tw-gap-4 tw-px-4 tw-py-5 tw-min-h-0">
+                      <button class="quantity__button no-js-hidden tf-type-button tw-w-auto" name="minus" type="button">
                         <span class="visually-hidden">
                           {{- 'products.product.quantity.decrease' | t: product: product.title | escape -}}
                         </span>
                         {% render 'icon-minus' %}
                       </button>
                       <input
-                        class="quantity__input"
+                        class="quantity__input tw-flex-none tw-w-12"
                         type="number"
                         name="quantity"
                         id="Quantity-{{ section.id }}"
@@ -260,7 +260,7 @@
                         value="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
                         form="{{ product_form_id }}"
                       >
-                      <button class="quantity__button no-js-hidden" name="plus" type="button">
+                      <button class="quantity__button no-js-hidden tw-w-auto" name="plus" type="button">
                         <span class="visually-hidden">
                           {{- 'products.product.quantity.increase' | t: product: product.title | escape -}}
                         </span>

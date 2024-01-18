@@ -35,3 +35,10 @@
         @apply tw-font-heading tw-tracking-normal tw-text-[50px]/[52px] md:tw-text-[100px]/[96px];
     }
 }
+
+/* the following classes are not found in any html, so we use @apply to style them */
+@layer components {
+    .shopify-payment-button__button--unbranded {
+        @apply tf-type-button;
+    }
+}

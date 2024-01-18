@@ -60,10 +60,10 @@
         </fieldset>
       {%- else -%}
         <div class="product-form__input product-form__input--dropdown">
-          <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
+          <label class="form__label visually-hidden" for="Option-{{ section.id }}-{{ forloop.index0 }}">
             {{ option.name }}
           </label>
-          <div class="select">
+          <div class="select [&_.icon-caret]:tw-right-4">
             {%- if picker_type == 'swatch_dropdown' -%}
               <span
                 data-selected-dropdown-swatch="options[{{ option.name | escape }}]"
@@ -74,7 +74,7 @@
             {%- endif -%}
             <select
               id="Option-{{ section.id }}-{{ forloop.index0 }}"
-              class="select__select"
+              class="select__select tf-type-button tw-px-4 tw-py-5 tw-text-canton-black"
               name="options[{{ option.name | escape }}]"
               form="{{ product_form_id }}"
             >
