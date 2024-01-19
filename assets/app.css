@@ -766,10 +766,6 @@ video {
   width: 100%;
 }
 
-#app :is(.tw-max-w-xs) {
-  max-width: 20rem;
-}
-
 #app :is(.tw-flex-1) {
   flex: 1 1 0%;
 }
@@ -790,15 +786,6 @@ video {
   --tw-divide-x-reverse: 0;
   border-right-width: calc(1px * var(--tw-divide-x-reverse));
   border-left-width: calc(1px * calc(1 - var(--tw-divide-x-reverse)));
-}
-
-#app :is(.tw-text-balance) {
-  text-wrap: balance;
-}
-
-#app :is(.tw-break-normal) {
-  overflow-wrap: normal;
-  word-break: normal;
 }
 
 #app :is(.tw-bg-clickable-grey) {
@@ -864,12 +851,6 @@ video {
 @media not all and (min-width: 750px) {
   #app :is(.max-md\:tw-max-w-12) {
     max-width: 3rem;
-  }
-}
-
-@media (min-width: 750px) {
-  #app :is(.md\:tw-max-w-sm) {
-    max-width: 24rem;
   }
 }
 

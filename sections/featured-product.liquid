@@ -164,9 +164,16 @@
                   {{- block.settings.text -}}
                 </p>
               {%- when 'title' -%}
-                <h2 class="product__title {{ block.settings.heading_size }}" {{ block.shopify_attributes }}>
-                  {%- if product.title != blank -%}
-                    {{ product.title | escape }}
+                {% liquid
+                  if product.metafields.global.title
+                    assign title = product.metafields.global.title
+                  else 
+                    assign title = product.title | escape
+                  endif
+                %}
+                <h2 class="product__title tf-type-heading-lg tw-font-bold tw-lowercase {{ block.settings.heading_size }}" {{ block.shopify_attributes }}>
+                  {%- if title != blank -%}
+                    {{ title }}
                   {%- else -%}
                     {{ 'onboarding.product_title' | t }}
                   {%- endif -%}
