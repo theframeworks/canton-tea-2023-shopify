@@ -742,6 +742,11 @@ video {
   z-index: 10;
 }
 
+#app :is(.tw-my-0) {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
 #app :is(.tw-mb-0) {
   margin-bottom: 0px;
 }
@@ -791,6 +796,11 @@ video {
 #app :is(.tw-bg-clickable-grey) {
   --tw-bg-opacity: 1;
   background-color: rgb(120 110 110 / var(--tw-bg-opacity));
+}
+
+#app :is(.tw-px-0) {
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
 #app :is(.tw-px-4) {
@@ -857,6 +867,10 @@ video {
   #app :is(.xl\:tw-pl-36) {
     padding-left: 9rem;
   }
+}
+
+#app :is(.\[\&_\.icon-caret\]\:tw-right-0 .icon-caret) {
+  right: 0px;
 }
 
 #app :is(.\[\&_\.icon-caret\]\:tw-right-4 .icon-caret) {
