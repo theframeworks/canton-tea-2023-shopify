@@ -52,6 +52,15 @@
         "collapsible-row-0": {
           "type": "collapsible_tab",
           "settings": {
+            "heading": "Description",
+            "icon": "none",
+            "content": "{{ product.metafields.custom.details | metafield_tag }}",
+            "page": ""
+          }
+        },
+        "collapsible_tab_MMaBdC": {
+          "type": "collapsible_tab",
+          "settings": {
             "heading": "Materials",
             "icon": "leather",
             "content": "",
@@ -103,6 +112,7 @@
         "buy_buttons",
         "description",
         "collapsible-row-0",
+        "collapsible_tab_MMaBdC",
         "collapsible-row-1",
         "collapsible-row-2",
         "collapsible-row-3",
