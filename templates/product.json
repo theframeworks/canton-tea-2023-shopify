@@ -8,6 +8,13 @@
           "settings": {
           }
         },
+        "vendor": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
         "title": {
           "type": "title",
           "settings": {
@@ -95,6 +102,7 @@
       },
       "block_order": [
         "collections",
+        "vendor",
         "title",
         "caption",
         "price",
