@@ -16,7 +16,7 @@ module.exports = {
       transparent: 'transparent',
       black: '#000000',
       white: '#FFFFFF',
-      'canton-black': '#292727',
+      foreground: 'var(--color-foreground)',
       'clickable-grey': '#786E6E',
     },
     screens: {
