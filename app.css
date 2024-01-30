@@ -2,36 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
-/* using :not(:root) slightly increases specificity to override the style coming from the dawn theme */
+/* using :not(#app) increases specificity to override the style coming from the dawn theme */
 @layer components {
-    .tf-type-body-sm:not(:root) {
+    .tf-type-body-sm:not(#app) {
         @apply tw-font-body tw-tracking-tighter tw-text-[12px]/[14px];
     }
-    .tf-type-body-md:not(:root) {
+    .tf-type-body-md:not(#app) {
         @apply tw-font-body tw-tracking-tighter tw-text-[16px]/[20px];
     }
 
-    .tf-type-button:not(:root) {
+    .tf-type-button:not(#app) {
         @apply tw-font-heading tw-tracking-widest tw-uppercase tw-text-[12px]/[16px];
     }
 
-    .tf-type-smallcaps:not(:root) {
+    .tf-type-smallcaps:not(#app) {
         @apply tw-font-heading tw-tracking-widest tw-uppercase tw-text-[10px]/[18px];
     }
 
-    .tf-type-heading-xs:not(:root) {
+    .tf-type-heading-xs:not(#app) {
         @apply tw-font-heading tw-tracking-normal tw-text-[22px]/[24px];
     }
-    .tf-type-heading-sm:not(:root) {
+    .tf-type-heading-sm:not(#app) {
         @apply tw-font-heading tw-tracking-normal tw-text-[28px]/[28px] md:tw-text-[32px]/[36px];
     }
-    .tf-type-heading-md:not(:root) {
+    .tf-type-heading-md:not(#app) {
         @apply tw-font-heading tw-tracking-normal tw-text-[32px]/[32px] md:tw-text-[48px]/[44px];
     }
-    .tf-type-heading-lg:not(:root) {
+    .tf-type-heading-lg:not(#app) {
         @apply tw-font-heading tw-tracking-normal tw-text-[44px]/[36px] md:tw-text-[60px]/[50px];
     }
-    .tf-type-heading-xl:not(:root) {
+    .tf-type-heading-xl:not(#app) {
         @apply tw-font-heading tw-tracking-normal tw-text-[50px]/[52px] md:tw-text-[100px]/[96px];
     }
 }
@@ -41,7 +41,7 @@
     .shopify-payment-button__button--unbranded {
         @apply tf-type-button;
 
-        &:not(:root) {
+        &:not(#app) {
             @apply after:tw-content-none;
         }
     }
@@ -49,7 +49,7 @@
 
 /* the following classes are dawn classes which are broadly used in html, so we use @apply to style them */
 @layer components {
-    .page-width:not(:root) {
+    .page-width:not(#app) {
         @apply max-xl:tw-container;
     }
 }

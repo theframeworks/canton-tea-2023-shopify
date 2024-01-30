@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   prefix: 'tw-',
-  important: '#app',
+  important: '#app:is(#app)', // adding double id specificity to the tailwind classes
   content: [
     './assets/base.css',
     './layout/**/*.liquid',

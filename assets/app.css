@@ -583,21 +583,21 @@ video {
   }
 }
 
-.tf-type-body-sm:not(:root) {
+.tf-type-body-sm:not(#app) {
   font-family: var(--font-body-family);
   font-size: 12px;
   line-height: 14px;
   letter-spacing: -0.05em;
 }
 
-.tf-type-body-md:not(:root) {
+.tf-type-body-md:not(#app) {
   font-family: var(--font-body-family);
   font-size: 16px;
   line-height: 20px;
   letter-spacing: -0.05em;
 }
 
-.tf-type-button:not(:root) {
+.tf-type-button:not(#app) {
   font-family: var(--font-heading-family);
   font-size: 12px;
   line-height: 16px;
@@ -605,7 +605,7 @@ video {
   letter-spacing: 0.1em;
 }
 
-.tf-type-heading-sm:not(:root) {
+.tf-type-heading-sm:not(#app) {
   font-family: var(--font-heading-family);
   font-size: 28px;
   line-height: 28px;
@@ -613,13 +613,13 @@ video {
 }
 
 @media (min-width: 750px) {
-  .tf-type-heading-sm:not(:root) {
+  .tf-type-heading-sm:not(#app) {
     font-size: 32px;
     line-height: 36px;
   }
 }
 
-.tf-type-heading-lg:not(:root) {
+.tf-type-heading-lg:not(#app) {
   font-family: var(--font-heading-family);
   font-size: 44px;
   line-height: 36px;
@@ -627,13 +627,13 @@ video {
 }
 
 @media (min-width: 750px) {
-  .tf-type-heading-lg:not(:root) {
+  .tf-type-heading-lg:not(#app) {
     font-size: 60px;
     line-height: 50px;
   }
 }
 
-.shopify-payment-button__button--unbranded:not(:root) {
+.shopify-payment-button__button--unbranded:not(#app) {
   font-family: var(--font-heading-family);
   font-size: 12px;
   line-height: 16px;
@@ -642,278 +642,261 @@ video {
 }
 
 .shopify-payment-button__button--unbranded {
-  &:not(:root)::after {
+  &:not(#app)::after {
     --tw-content: none;
     content: var(--tw-content);
   }
 }
 
 @media not all and (min-width: 1200px) {
-  .page-width:not(:root) {
+  .page-width:not(#app) {
     width: 100%;
   }
 
   @media (min-width: 500px) {
-    .page-width:not(:root) {
+    .page-width:not(#app) {
       max-width: 500px;
     }
   }
 
-  .page-width:not(:root) {
+  .page-width:not(#app) {
     width: 100%;
   }
 
   @media (min-width: 500px) {
-    .page-width:not(:root) {
+    .page-width:not(#app) {
       max-width: 500px;
     }
   }
 
   @media (min-width: 750px) {
-    .page-width:not(:root) {
+    .page-width:not(#app) {
       max-width: 750px;
     }
   }
 
-  .page-width:not(:root) {
+  .page-width:not(#app) {
     width: 100%;
   }
 
   @media (min-width: 500px) {
-    .page-width:not(:root) {
+    .page-width:not(#app) {
       max-width: 500px;
     }
   }
 
   @media (min-width: 750px) {
-    .page-width:not(:root) {
+    .page-width:not(#app) {
       max-width: 750px;
     }
   }
 
   @media (min-width: 990px) {
-    .page-width:not(:root) {
+    .page-width:not(#app) {
       max-width: 990px;
     }
   }
 
-  .page-width:not(:root) {
+  .page-width:not(#app) {
     width: 100%;
   }
 
   @media (min-width: 500px) {
-    .page-width:not(:root) {
+    .page-width:not(#app) {
       max-width: 500px;
     }
   }
 
   @media (min-width: 750px) {
-    .page-width:not(:root) {
+    .page-width:not(#app) {
       max-width: 750px;
     }
   }
 
   @media (min-width: 990px) {
-    .page-width:not(:root) {
+    .page-width:not(#app) {
       max-width: 990px;
     }
   }
 
   @media (min-width: 1200px) {
-    .page-width:not(:root) {
+    .page-width:not(#app) {
       max-width: 1200px;
     }
   }
 }
 
-#app :is(.tw-absolute) {
+#app:is(#app) :is(.tw-absolute) {
   position: absolute;
 }
 
-#app :is(.tw-right-8) {
+#app:is(#app) :is(.tw-right-8) {
   right: 2rem;
 }
 
-#app :is(.tw-top-4) {
+#app:is(#app) :is(.tw-top-4) {
   top: 1rem;
 }
 
-#app :is(.tw-z-10) {
+#app:is(#app) :is(.tw-z-10) {
   z-index: 10;
 }
 
-#app :is(.tw-my-0) {
+#app:is(#app) :is(.tw-my-0) {
   margin-top: 0px;
   margin-bottom: 0px;
 }
 
-#app :is(.tw-mb-0) {
+#app:is(#app) :is(.tw-mb-0) {
   margin-bottom: 0px;
 }
 
-#app :is(.tw-flex) {
+#app:is(#app) :is(.tw-mr-0) {
+  margin-right: 0px;
+}
+
+#app:is(#app) :is(.tw-flex) {
   display: flex;
 }
 
-#app :is(.tw-min-h-0) {
+#app:is(#app) :is(.tw-min-h-0) {
   min-height: 0px;
 }
 
-#app :is(.tw-w-12) {
+#app:is(#app) :is(.tw-w-12) {
   width: 3rem;
 }
 
-#app :is(.tw-w-auto) {
+#app:is(#app) :is(.tw-w-auto) {
   width: auto;
 }
 
-#app :is(.tw-w-full) {
+#app:is(#app) :is(.tw-w-full) {
   width: 100%;
 }
 
-#app :is(.tw-flex-1) {
+#app:is(#app) :is(.tw-flex-1) {
   flex: 1 1 0%;
 }
 
-#app :is(.tw-flex-none) {
+#app:is(#app) :is(.tw-flex-none) {
   flex: none;
 }
 
-#app :is(.tw-items-center) {
+#app:is(#app) :is(.tw-items-center) {
   align-items: center;
 }
 
-#app :is(.tw-gap-4) {
-  gap: 1rem;
+#app:is(#app) :is(.tw-justify-end) {
+  justify-content: flex-end;
 }
 
-#app :is(.tw-gap-2) {
+#app:is(#app) :is(.tw-gap-2) {
   gap: 0.5rem;
 }
 
-#app :is(.tw-divide-x > :not([hidden]) ~ :not([hidden])) {
+#app:is(#app) :is(.tw-gap-4) {
+  gap: 1rem;
+}
+
+#app:is(#app) :is(.tw-divide-x > :not([hidden]) ~ :not([hidden])) {
   --tw-divide-x-reverse: 0;
   border-right-width: calc(1px * var(--tw-divide-x-reverse));
   border-left-width: calc(1px * calc(1 - var(--tw-divide-x-reverse)));
 }
 
-#app :is(.tw-bg-clickable-grey) {
+#app:is(#app) :is(.tw-bg-clickable-grey) {
   --tw-bg-opacity: 1;
   background-color: rgb(120 110 110 / var(--tw-bg-opacity));
 }
 
-#app :is(.tw-px-0) {
+#app:is(#app) :is(.tw-px-0) {
   padding-left: 0px;
   padding-right: 0px;
 }
 
-#app :is(.tw-px-4) {
+#app:is(#app) :is(.tw-px-4) {
   padding-left: 1rem;
   padding-right: 1rem;
 }
 
-#app :is(.tw-py-5) {
+#app:is(#app) :is(.tw-py-5) {
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
 }
 
-#app :is(.tw-py-2) {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-}
-
-#app :is(.tw-pl-4) {
+#app:is(#app) :is(.tw-pl-4) {
   padding-left: 1rem;
 }
 
-#app :is(.tw-font-bold) {
+#app:is(#app) :is(.tw-font-bold) {
   font-weight: 700;
 }
 
-#app :is(.tw-lowercase) {
+#app:is(#app) :is(.tw-lowercase) {
   text-transform: lowercase;
 }
 
-#app :is(.tw-leading-none) {
+#app:is(#app) :is(.tw-leading-none) {
   line-height: 1;
 }
 
-#app :is(.tw-text-white) {
+#app:is(#app) :is(.tw-text-white) {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-#app :is(.tw-text-inherit) {
-  color: inherit;
-}
-
-#app :is(.tw-opacity-75) {
-  opacity: 0.75;
-}
-
-#app :is(.tw-opacity-50) {
+#app:is(#app) :is(.tw-opacity-50) {
   opacity: 0.5;
 }
 
-/* using :not(:root) slightly increases specificity to override the style coming from the dawn theme */
+/* using :not(#app) increases specificity to override the style coming from the dawn theme */
 
 /* the following classes are not found in any html, so we use @apply to style them */
 
 /* the following classes are dawn classes which are broadly used in html, so we use @apply to style them */
 
-#app :is(.\*\:tw-pl-4 > *) {
-  padding-left: 1rem;
-}
-
-#app :is(.\*\:tw-pl-2 > *) {
+#app:is(#app) :is(.\*\:tw-pl-2 > *) {
   padding-left: 0.5rem;
 }
 
-#app :is(.after\:tw-content-none)::after {
+#app:is(#app) :is(.after\:tw-content-none)::after {
   --tw-content: none;
   content: var(--tw-content);
 }
 
-#app :is(.first\:tw-pl-0:first-child) {
+#app:is(#app) :is(.first\:tw-pl-0:first-child) {
   padding-left: 0px;
 }
 
-#app :is(.\*\:first\:tw-pl-2:first-child > *) {
-  padding-left: 0.5rem;
-}
-
-#app :is(.\*\:first\:tw-pl-0:first-child > *) {
+#app:is(#app) :is(.first\:\*\:tw-pl-0 > *:first-child) {
   padding-left: 0px;
 }
 
-#app :is(.first\:\*\:tw-pl-0 > *:first-child) {
-  padding-left: 0px;
-}
-
-#app :is(.hover\:tw-underline:hover) {
+#app:is(#app) :is(.hover\:tw-underline:hover) {
   text-decoration-line: underline;
 }
 
 @media not all and (min-width: 750px) {
-  #app :is(.max-md\:tw-max-w-12) {
+  #app:is(#app) :is(.max-md\:tw-max-w-12) {
     max-width: 3rem;
   }
 }
 
 @media (min-width: 1200px) {
-  #app :is(.xl\:tw-max-w-screen-xl) {
+  #app:is(#app) :is(.xl\:tw-max-w-screen-xl) {
     max-width: 1200px;
   }
 
-  #app :is(.xl\:tw-pl-36) {
+  #app:is(#app) :is(.xl\:tw-pl-36) {
     padding-left: 9rem;
   }
 }
 
-#app :is(.\[\&_\.icon-caret\]\:tw-right-0 .icon-caret) {
+#app:is(#app) :is(.\[\&_\.icon-caret\]\:tw-right-0 .icon-caret) {
   right: 0px;
 }
 
-#app :is(.\[\&_\.icon-caret\]\:tw-right-4 .icon-caret) {
+#app:is(#app) :is(.\[\&_\.icon-caret\]\:tw-right-4 .icon-caret) {
   right: 1rem;
 }
