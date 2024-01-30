@@ -104,8 +104,8 @@
               </p>
             {%- when 'title' -%}
               {% liquid
-                if product.metafields.global.title
-                  assign title = product.metafields.global.title
+                if product.metafields.custom.display_title
+                  assign title = product.metafields.custom.display_title | escape | newline_to_br
                 else 
                   assign title = product.title | escape
                 endif
