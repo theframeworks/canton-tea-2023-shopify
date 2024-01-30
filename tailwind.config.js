@@ -18,6 +18,7 @@ module.exports = {
       white: '#FFFFFF',
       foreground: 'var(--color-foreground)',
       'clickable-grey': '#786E6E',
+      'canton-grey': '#4E4B48',
     },
     screens: {
       sm: '500px',

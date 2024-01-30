@@ -1147,6 +1147,11 @@ class VariantSelects extends HTMLElement {
         const qtyRules = document.getElementById(`Quantity-Rules-${this.dataset.section}`);
         const volumeNote = document.getElementById(`Volume-Note-${this.dataset.section}`);
 
+        const priceButtonDestination = document.getElementById(`price-button-${this.dataset.section}`);
+        const priceButtonSource = html.getElementById(
+          `price-button-${this.dataset.originalSection ? this.dataset.originalSection : this.dataset.section}`
+        );
+
         if (volumeNote) volumeNote.classList.remove('hidden');
         if (volumePricingDestination) volumePricingDestination.classList.remove('hidden');
         if (qtyRules) qtyRules.classList.remove('hidden');
@@ -1165,6 +1170,10 @@ class VariantSelects extends HTMLElement {
         if (pricePerItemSource && pricePerItemDestination) {
           pricePerItemDestination.innerHTML = pricePerItemSource.innerHTML;
           pricePerItemDestination.classList.toggle('hidden', pricePerItemSource.classList.contains('hidden'));
+        }
+
+        if (priceButtonDestination && priceButtonSource) {
+          priceButtonDestination.innerHTML = priceButtonSource.innerHTML;
         }
 
         const price = document.getElementById(`price-${this.dataset.section}`);

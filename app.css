@@ -45,6 +45,13 @@
             @apply after:tw-content-none;
         }
     }
+    .price__regular:not(#app),
+    .price--on-sale .price__sale:not(#app) {
+        @apply tw-flex tw-gap-2 tw-items-center;
+    }
+    .price--on-sale .price__regular:not(#app) {
+        @apply tw-hidden;
+    }
 }
 
 /* the following classes are dawn classes which are broadly used in html, so we use @apply to style them */
