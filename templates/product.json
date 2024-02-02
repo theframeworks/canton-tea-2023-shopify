@@ -71,7 +71,7 @@
           "settings": {
             "heading": "Infusion",
             "icon": "none",
-            "content": "<p>%%infusion_icons%%<\/p>{{ product.metafields.custom.infusion | metafield_tag }}",
+            "content": "<p>[[ infusion_icons ]]<\/p>{{ product.metafields.custom.infusion | metafield_tag }}",
             "page": ""
           }
         },
