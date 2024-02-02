@@ -66,29 +66,20 @@
             "page": ""
           }
         },
-        "collapsible-row-1": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Shipping & Returns",
-            "icon": "truck",
-            "content": "",
-            "page": ""
-          }
-        },
         "collapsible-row-2": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Dimensions",
-            "icon": "ruler",
+            "heading": "Infusion",
+            "icon": "none",
             "content": "",
             "page": ""
           }
         },
-        "collapsible-row-3": {
+        "collapsible-row-1": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Care Instructions",
-            "icon": "heart",
+            "heading": "Delivery & Returns",
+            "icon": "none",
             "content": "",
             "page": ""
           }
@@ -112,9 +103,8 @@
         "buy_buttons",
         "description",
         "collapsible_tab_MMaBdC",
-        "collapsible-row-1",
         "collapsible-row-2",
-        "collapsible-row-3",
+        "collapsible-row-1",
         "share"
       ],
       "settings": {
