@@ -60,9 +60,9 @@
         "collapsible_tab_MMaBdC": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Materials",
-            "icon": "leather",
-            "content": "",
+            "heading": "Product details",
+            "icon": "none",
+            "content": "<p>Doming intellegebat torquatos mei eruditi assueverit ne legendos eruditi eam vitae vim duo officiis moderatius saperet habemus.<\/p>",
             "page": ""
           }
         },
