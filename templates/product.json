@@ -62,7 +62,7 @@
           "settings": {
             "heading": "Product details",
             "icon": "none",
-            "content": "{{ block.settings.page.metafields.custom.product_details | metafield_tag }}",
+            "content": "{{ product.metafields.custom.details | metafield_tag }}",
             "page": ""
           }
         },
