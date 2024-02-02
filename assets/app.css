@@ -822,6 +822,12 @@ video {
   gap: 1rem;
 }
 
+#app:is(#app) :is(.tw-space-y-6 > :not([hidden]) ~ :not([hidden])) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
+}
+
 #app:is(#app) :is(.tw-divide-x > :not([hidden]) ~ :not([hidden])) {
   --tw-divide-x-reverse: 0;
   border-right-width: calc(1px * var(--tw-divide-x-reverse));
@@ -850,6 +856,10 @@ video {
 
 #app:is(#app) :is(.tw-pl-4) {
   padding-left: 1rem;
+}
+
+#app:is(#app) :is(.tw-pt-6) {
+  padding-top: 1.5rem;
 }
 
 #app:is(#app) :is(.tw-font-bold) {
@@ -888,8 +898,18 @@ video {
 
 /* the following classes are dawn classes which are broadly used in html, so we use @apply to style them */
 
+#app:is(#app) :is(.\*\:tw-space-y-6 > * > :not([hidden]) ~ :not([hidden])) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
+}
+
 #app:is(#app) :is(.\*\:tw-pl-2 > *) {
   padding-left: 0.5rem;
+}
+
+#app:is(#app) :is(.\*\:tw-pt-6 > *) {
+  padding-top: 1.5rem;
 }
 
 #app:is(#app) :is(.after\:tw-content-none)::after {
