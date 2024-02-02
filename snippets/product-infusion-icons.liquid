@@ -1,0 +1,22 @@
+<span class="tw-inline-grid tw-grid-cols-3 tw-gap-12">
+    <span class="tw-gap-4 tw-items-center tw-justify-items-center tw-grid tw-grid-rows-[1fr_auto]">
+        {% render 'icon-infusion-amount' %}
+        <span class="tf-type-smallcaps">
+            {{ product.metafields.custom.infusion_amount }}
+        </span>
+    </span>
+    <span class="tw-gap-4 tw-items-center tw-justify-items-center tw-grid tw-grid-rows-[1fr_auto]">
+        <span class="tw-text-5xl tw-whitespace-nowrap">
+            {{ product.metafields.custom.infusion_temperature }}<span class="-tw-mx-2">°</span>
+        </span>
+        <span class="tf-type-smallcaps">
+            {{ product.metafields.custom.infusion_volume }}
+        </span>
+    </span>
+    <span class="tw-gap-4 tw-items-center tw-justify-items-center tw-grid tw-grid-rows-[1fr_auto]">
+        {% render 'icon-infusion-time' %}
+        <span class="tf-type-smallcaps">
+            {{ product.metafields.custom.infusion_time }}
+        </span>
+    </span>
+</span>

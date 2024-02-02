@@ -605,6 +605,14 @@ video {
   letter-spacing: 0.1em;
 }
 
+.tf-type-smallcaps:not(#app) {
+  font-family: var(--font-heading-family);
+  font-size: 10px;
+  line-height: 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
 .tf-type-heading-sm:not(#app) {
   font-family: var(--font-heading-family);
   font-size: 28px;
@@ -761,6 +769,11 @@ video {
   z-index: 10;
 }
 
+#app:is(#app) :is(.-tw-mx-2) {
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
+}
+
 #app:is(#app) :is(.tw-my-0) {
   margin-top: 0px;
   margin-bottom: 0px;
@@ -776,6 +789,14 @@ video {
 
 #app:is(#app) :is(.tw-flex) {
   display: flex;
+}
+
+#app:is(#app) :is(.tw-grid) {
+  display: grid;
+}
+
+#app:is(#app) :is(.tw-inline-grid) {
+  display: inline-grid;
 }
 
 #app:is(#app) :is(.tw-min-h-0) {
@@ -802,12 +823,28 @@ video {
   flex: none;
 }
 
+#app:is(#app) :is(.tw-grid-cols-3) {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+#app:is(#app) :is(.tw-grid-rows-\[1fr_auto\]) {
+  grid-template-rows: 1fr auto;
+}
+
 #app:is(#app) :is(.tw-items-center) {
   align-items: center;
 }
 
 #app:is(#app) :is(.tw-justify-end) {
   justify-content: flex-end;
+}
+
+#app:is(#app) :is(.tw-justify-items-center) {
+  justify-items: center;
+}
+
+#app:is(#app) :is(.tw-gap-12) {
+  gap: 3rem;
 }
 
 #app:is(#app) :is(.tw-gap-2) {
@@ -832,6 +869,10 @@ video {
   --tw-divide-x-reverse: 0;
   border-right-width: calc(1px * var(--tw-divide-x-reverse));
   border-left-width: calc(1px * calc(1 - var(--tw-divide-x-reverse)));
+}
+
+#app:is(#app) :is(.tw-whitespace-nowrap) {
+  white-space: nowrap;
 }
 
 #app:is(#app) :is(.tw-bg-clickable-grey) {
@@ -860,6 +901,11 @@ video {
 
 #app:is(#app) :is(.tw-pt-6) {
   padding-top: 1.5rem;
+}
+
+#app:is(#app) :is(.tw-text-5xl) {
+  font-size: 3rem;
+  line-height: 1;
 }
 
 #app:is(#app) :is(.tw-font-bold) {
