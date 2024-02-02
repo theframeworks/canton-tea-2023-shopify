@@ -78,9 +78,9 @@
         "collapsible-row-1": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Delivery & Returns",
+            "heading": "Delivery\/Returns",
             "icon": "none",
-            "content": "",
+            "content": "{{ product.metafields.custom.delivery_returns | metafield_tag }}",
             "page": ""
           }
         },
