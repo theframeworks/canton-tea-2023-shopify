@@ -62,7 +62,7 @@
           "settings": {
             "heading": "Product details",
             "icon": "none",
-            "content": "<p>Doming intellegebat torquatos mei eruditi assueverit ne legendos eruditi eam vitae vim duo officiis moderatius saperet habemus.<\/p>",
+            "content": "{{ block.settings.page.metafields.custom.product_details | metafield_tag }}",
             "page": ""
           }
         },
