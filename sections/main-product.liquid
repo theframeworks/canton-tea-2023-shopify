@@ -202,7 +202,7 @@
             {%- when 'description' -%}
               {%- if product.description != blank -%}
                 <div class="product__accordion accordion quick-add-hidden" {{ block.shopify_attributes }}>
-                  <details id="Details-{{ block.id }}-{{ section.id }}" open>
+                  <details id="Details-{{ block.id }}-{{ section.id }}" open data-details-group="product-accordion">
                     <summary class="[&_.icon-caret]:tw-right-0">
                       <div class="summary__title">
                         <h2 class="h4 accordion__title inline-richtext tf-type-button">
@@ -232,7 +232,7 @@
               {{ block.settings.custom_liquid }}
             {%- when 'collapsible_tab' -%}
               <div class="product__accordion accordion quick-add-hidden" {{ block.shopify_attributes }}>
-                <details id="Details-{{ block.id }}-{{ section.id }}">
+                <details id="Details-{{ block.id }}-{{ section.id }}" data-details-group="product-accordion">
                   <summary class="[&_.icon-caret]:tw-right-0">
                     <div class="summary__title">
                       {% render 'icon-accordion', icon: block.settings.icon %}
