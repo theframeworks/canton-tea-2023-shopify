@@ -1,0 +1,30 @@
+{%- for block in section.blocks -%}
+    <section class="page-width">
+
+    </section>
+{% endfor %}
+
+{% schema %}
+    {
+      "name": "t:sections.product-sections.name",
+      "class": "section",
+      "tag": "section",
+      "disabled_on": {
+        "groups": ["header", "footer"]
+      },
+      "settings": [],
+      "blocks": [
+        {
+          "type": "product-section",
+          "name": "t:sections.product-sections.blocks.product-section.name",
+          "settings": [
+            {
+              "type": "richtext",
+              "id": "text",
+              "label": "t:sections.product-sections.blocks.product-section.settings.text.label"
+            }
+          ]
+        }
+      ]
+    }
+    {% endschema %}
