@@ -1,0 +1,49 @@
+{%- for block in section.blocks -%}
+    <section class="page-width">
+      <div class="tw-grid tw-gap-8 md:tw-grid-cols-2">
+        <div>
+          {{ block.settings.text }}
+        </div>
+        <div>
+          {%- for media in block.media.blocks -%}
+            {{ media }}
+          {%- endfor -%}
+        </div>
+      </div>
+    </section>
+{% endfor %}
+
+{% schema %}
+    {
+      "name": "t:sections.product-features.name",
+      "class": "section",
+      "tag": "section",
+      "disabled_on": {
+        "groups": ["header", "footer"]
+      },
+      "settings": [],
+      "blocks": [
+        {
+          "type": "product-feature",
+          "name": "t:sections.product-features.blocks.product-feature.name",
+          "settings": [
+            {
+              "type": "text",
+              "id": "title",
+              "label": "t:sections.product-features.blocks.product-feature.settings.title.label"
+            },
+            {
+              "type": "textarea",
+              "id": "heading",
+              "label": "t:sections.product-features.blocks.product-feature.settings.heading.label"
+            },
+            {
+              "type": "richtext",
+              "id": "text",
+              "label": "t:sections.product-features.blocks.product-feature.settings.text.label"
+            }
+          ]
+        }
+      ]
+    }
+{% endschema %}

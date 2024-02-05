@@ -2771,14 +2771,28 @@
         "name": "Quick order list"
       }
     },
-    "product-sections": {
-      "name": "Product sections",
+    "product-features": {
+      "name": "Product features",
       "blocks": {
-        "product-section": {
-          "name": "Product section",
+        "product-feature": {
+          "name": "Product feature",
           "settings": {
+            "title": {
+              "label": "Title"
+            },
+            "heading": {
+              "label": "Heading"
+            },
             "text": {
               "label": "Text"
+            },
+            "media": {
+              "label": "Media",
+              "blocks": {
+                "image": {
+                  "label": "Image"
+                }
+              }
             }
           }
         }
