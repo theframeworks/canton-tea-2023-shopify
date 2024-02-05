@@ -2771,6 +2771,28 @@
         "name": "Quick order list"
       }
     },
+    "product-sections": {
+      "name": "Product sections",
+      "blocks": {
+        "product-section": {
+          "name": "Product section",
+          "settings": {
+            "title": {
+              "label": "Title"
+            },
+            "heading": {
+              "label": "Heading"
+            },
+            "content": {
+              "label": "Content"
+            },
+            "media": {
+              "label": "Media"
+            }
+          }
+        }
+      }
+    },
     "related-products": {
       "name": "Related products",
       "settings": {
