@@ -1,5 +1,5 @@
-{% capture infusion_icons %}
-  {% render 'product-infusion-icons' %}
+{% capture infusion_guidelines %}
+  {% render 'product-infusion-guidelines' %}
 {% endcapture %}
 
 <section
@@ -243,7 +243,7 @@
                     {% render 'icon-caret' %}
                   </summary>
                   <div class="accordion__content rte tw-px-0 *:tw-space-y-6 *:tw-pt-6" id="ProductAccordion-{{ block.id }}-{{ section.id }}">
-                    {{ block.settings.content | replace: '[[ infusion_icons ]]', infusion_icons }}
+                    {{ block.settings.content | replace: '[[ infusion-guidelines ]]', infusion_guidelines }}
                     {{ block.settings.page.content }}
                   </div>
                 </details>
