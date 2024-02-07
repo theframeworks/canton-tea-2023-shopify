@@ -2777,22 +2777,8 @@
         "product-feature": {
           "name": "Product feature",
           "settings": {
-            "title": {
-              "label": "Title"
-            },
-            "heading": {
-              "label": "Heading"
-            },
-            "text": {
-              "label": "Text"
-            },
-            "media": {
-              "label": "Media",
-              "blocks": {
-                "image": {
-                  "label": "Image"
-                }
-              }
+            "metafield-namespace": {
+              "label": "Metafield namespace"
             }
           }
         }

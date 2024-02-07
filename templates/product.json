@@ -212,7 +212,7 @@
           "type": "product-feature",
           "settings": {
             "title": "{{ product.metafields.custom.flavour_title.value }}",
-            "heading": "",
+            "heading": "{{ product.metafields.custom.flavour_heading | metafield_tag }}",
             "text": "{{ product.metafields.custom.flavour_text | metafield_tag }}"
           }
         }
