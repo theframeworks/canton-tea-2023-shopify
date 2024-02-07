@@ -211,10 +211,7 @@
         "product_feature_MDHDbR": {
           "type": "product-feature",
           "settings": {
-            "title": "{{ product.metafields.custom.flavour_title.value }}",
-            "heading": "{{ product.metafields.custom.flavour_heading | metafield_text }}",
-            "text": "{{ product.metafields.custom.flavour_text | metafield_tag }}",
-            "media": "shopify:\/\/shop_images\/jade-green-tips-leaves.jpg"
+            "metafield-namespace": "product-features-flavour"
           }
         }
       },
