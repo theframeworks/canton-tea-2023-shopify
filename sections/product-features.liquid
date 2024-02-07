@@ -1,14 +1,31 @@
 {%- for block in section.blocks -%}
-    <section class="page-width">
-      <div class="tw-grid tw-gap-8 md:tw-grid-cols-2">
-        <div>
-          {{ block.settings.text }}
+    {% assign fields = product.metafields[block.settings.metafield-namespace] %}
+    <section class="tw-mb-16 page-width">
+      <div class="tw-pt-8 tw-border-t tw-border-stroke-grey tw-grid tw-gap-8 md:tw-items-start md:tw-grid-cols-2 xl:tw-grid-cols-16">
+        <div class="tw-space-y-8 xl:tw-col-span-5 md:tw-sticky md:tw-top-8">
+          {% if fields.title %}
+            <h2 class="tf-type-body-sm tw-text-canton-grey">
+              {{ fields.title | escape }}
+            </h2>
+          {% endif %}
+          {% if fields.heading %}
+            <p class="tf-type-heading-md {% if fields.text %}tw-pb-8{% endif %}">
+              {{ fields.heading | escape | newline_to_br }}
+            </p>
+          {% endif %}
+          {% if fields.text %}
+            <div class="*:tw-space-y-6">
+              {{ fields.text | metafield_tag }}
+            </div>
+          {% endif %}
         </div>
-        <div>
-          {%- for media in block.media.blocks -%}
-            {{ media }}
-          {%- endfor -%}
-        </div>
+        {% if fields.images %}
+          <div class="tw-space-y-6 xl:tw-col-start-8 xl:tw-col-span-9">
+            {%- for image in fields.images.value -%}
+              {{ image | image_url: width: 1600 | image_tag }}
+            {%- endfor -%}
+          </div>
+        {% endif  %}
       </div>
     </section>
 {% endfor %}

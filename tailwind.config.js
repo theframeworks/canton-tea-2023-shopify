@@ -19,6 +19,7 @@ module.exports = {
       foreground: 'var(--color-foreground)',
       'clickable-grey': '#786E6E',
       'canton-grey': '#4E4B48',
+      'stroke-grey': '#8F8F8F',
     },
     screens: {
       sm: '500px',
@@ -30,6 +31,9 @@ module.exports = {
       fontFamily: {
         body: 'var(--font-body-family)',
         heading: 'var(--font-heading-family)',
+      },
+      gridTemplateColumns: {
+        16: 'repeat(16, minmax(0, 1fr))',
       },
     },
   },

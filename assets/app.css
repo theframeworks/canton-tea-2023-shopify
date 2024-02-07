@@ -627,6 +627,20 @@ video {
   }
 }
 
+.tf-type-heading-md:not(#app) {
+  font-family: var(--font-heading-family);
+  font-size: 32px;
+  line-height: 32px;
+  letter-spacing: 0em;
+}
+
+@media (min-width: 750px) {
+  .tf-type-heading-md:not(#app) {
+    font-size: 48px;
+    line-height: 44px;
+  }
+}
+
 .tf-type-heading-lg:not(#app) {
   font-family: var(--font-heading-family);
   font-size: 44px;
@@ -745,6 +759,14 @@ video {
   }
 }
 
+@media (min-width: 750px) {
+  @media not all and (min-width: 990px) {
+    .page-width:not(#app) {
+      max-width: none;
+    }
+  }
+}
+
 #app:is(#app) :is(.tw-absolute) {
   position: absolute;
 }
@@ -781,6 +803,10 @@ video {
 
 #app:is(#app) :is(.tw-mb-0) {
   margin-bottom: 0px;
+}
+
+#app:is(#app) :is(.tw-mb-16) {
+  margin-bottom: 4rem;
 }
 
 #app:is(#app) :is(.tw-mr-0) {
@@ -873,6 +899,12 @@ video {
   margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
 }
 
+#app:is(#app) :is(.tw-space-y-8 > :not([hidden]) ~ :not([hidden])) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(2rem * var(--tw-space-y-reverse));
+}
+
 #app:is(#app) :is(.tw-divide-x > :not([hidden]) ~ :not([hidden])) {
   --tw-divide-x-reverse: 0;
   border-right-width: calc(1px * var(--tw-divide-x-reverse));
@@ -881,6 +913,15 @@ video {
 
 #app:is(#app) :is(.tw-whitespace-nowrap) {
   white-space: nowrap;
+}
+
+#app:is(#app) :is(.tw-border-t) {
+  border-top-width: 1px;
+}
+
+#app:is(#app) :is(.tw-border-stroke-grey) {
+  --tw-border-opacity: 1;
+  border-color: rgb(143 143 143 / var(--tw-border-opacity));
 }
 
 #app:is(#app) :is(.tw-bg-clickable-grey) {
@@ -903,12 +944,20 @@ video {
   padding-bottom: 1.25rem;
 }
 
+#app:is(#app) :is(.tw-pb-8) {
+  padding-bottom: 2rem;
+}
+
 #app:is(#app) :is(.tw-pl-4) {
   padding-left: 1rem;
 }
 
 #app:is(#app) :is(.tw-pt-6) {
   padding-top: 1.5rem;
+}
+
+#app:is(#app) :is(.tw-pt-8) {
+  padding-top: 2rem;
 }
 
 #app:is(#app) :is(.tw-text-5xl) {
@@ -990,14 +1039,42 @@ video {
 }
 
 @media (min-width: 750px) {
+  #app:is(#app) :is(.md\:tw-sticky) {
+    position: sticky;
+  }
+
+  #app:is(#app) :is(.md\:tw-top-8) {
+    top: 2rem;
+  }
+
   #app:is(#app) :is(.md\:tw-grid-cols-2) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  #app:is(#app) :is(.md\:tw-items-start) {
+    align-items: flex-start;
   }
 }
 
 @media (min-width: 1200px) {
+  #app:is(#app) :is(.xl\:tw-col-span-5) {
+    grid-column: span 5 / span 5;
+  }
+
+  #app:is(#app) :is(.xl\:tw-col-span-9) {
+    grid-column: span 9 / span 9;
+  }
+
+  #app:is(#app) :is(.xl\:tw-col-start-8) {
+    grid-column-start: 8;
+  }
+
   #app:is(#app) :is(.xl\:tw-max-w-screen-xl) {
     max-width: 1200px;
+  }
+
+  #app:is(#app) :is(.xl\:tw-grid-cols-16) {
+    grid-template-columns: repeat(16, minmax(0, 1fr));
   }
 
   #app:is(#app) :is(.xl\:tw-pl-36) {
@@ -1011,4 +1088,12 @@ video {
 
 #app:is(#app) :is(.\[\&_\.icon-caret\]\:tw-right-4 .icon-caret) {
   right: 1rem;
+}
+
+#app:is(#app) :is(.\[\&_li\]\:tw-w-full li) {
+  width: 100%;
+}
+
+#app:is(#app) :is(.\[\&_li\]\:tw-max-w-none li) {
+  max-width: none;
 }
