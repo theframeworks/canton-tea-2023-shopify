@@ -208,12 +208,6 @@
     "product-features": {
       "type": "product-features",
       "blocks": {
-        "product_feature_nnPAcq": {
-          "type": "product-feature",
-          "settings": {
-            "text": ""
-          }
-        },
         "product_feature_MDHDbR": {
           "type": "product-feature",
           "settings": {
@@ -224,7 +218,6 @@
         }
       },
       "block_order": [
-        "product_feature_nnPAcq",
         "product_feature_MDHDbR"
       ],
       "settings": {
