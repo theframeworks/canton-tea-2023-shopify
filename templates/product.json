@@ -207,7 +207,19 @@
     },
     "product-features": {
       "type": "product-features",
-      "settings": {}
+      "blocks": {
+        "product_feature_nnPAcq": {
+          "type": "product-feature",
+          "settings": {
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "product_feature_nnPAcq"
+      ],
+      "settings": {
+      }
     },
     "related-products": {
       "type": "related-products",
