@@ -213,7 +213,8 @@
           "settings": {
             "title": "{{ product.metafields.custom.flavour_title.value }}",
             "heading": "{{ product.metafields.custom.flavour_heading | metafield_text }}",
-            "text": "<p>{{ product.metafields.custom.flavour_text | metafield_tag }}<\/p>"
+            "text": "{{ product.metafields.custom.flavour_text | metafield_tag }}",
+            "media": "shopify:\/\/shop_images\/jade-green-tips-leaves.jpg"
           }
         }
       },
