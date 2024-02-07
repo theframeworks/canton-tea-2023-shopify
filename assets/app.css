@@ -815,6 +815,10 @@ video {
   width: 100%;
 }
 
+#app:is(#app) :is(.tw-max-w-none) {
+  max-width: none;
+}
+
 #app:is(#app) :is(.tw-flex-1) {
   flex: 1 1 0%;
 }

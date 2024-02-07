@@ -34,7 +34,7 @@
         endif
       -%}
       {%- if picker_type == 'swatch' -%}
-        <fieldset class="js product-form__input product-form__input--swatch">
+        <fieldset class="tw-max-w-none js product-form__input product-form__input--swatch">
           <legend class="form__label">
             {{ option.name }}:
             <span data-selected-swatch-value="{{ option.name }}">
@@ -49,7 +49,7 @@
           %}
         </fieldset>
       {%- elsif picker_type == 'button' -%}
-        <fieldset class="js product-form__input product-form__input--pill">
+        <fieldset class="tw-max-w-none js product-form__input product-form__input--pill">
           <legend class="form__label">{{ option.name }}</legend>
           {% render 'product-variant-options',
             product: product,
@@ -59,7 +59,7 @@
           %}
         </fieldset>
       {%- else -%}
-        <div class="product-form__input product-form__input--dropdown">
+        <div class="tw-max-w-none product-form__input product-form__input--dropdown">
           <label class="form__label visually-hidden" for="Option-{{ section.id }}-{{ forloop.index0 }}">
             {{ option.name }}
           </label>
@@ -97,7 +97,7 @@
 {%- endunless -%}
 
 <noscript class="product-form__noscript-wrapper-{{ section.id }}">
-  <div class="product-form__input{% if product.has_only_default_variant %} hidden{% endif %}">
+  <div class="tw-max-w-none product-form__input{% if product.has_only_default_variant %} hidden{% endif %}">
     <label class="form__label" for="Variants-{{ section.id }}">
       {{- 'products.product.product_variants' | t -}}
     </label>
