@@ -213,10 +213,19 @@
           "settings": {
             "text": ""
           }
+        },
+        "product_feature_MDHDbR": {
+          "type": "product-feature",
+          "settings": {
+            "title": "{{ product.metafields.custom.flavour_title.value }}",
+            "heading": "",
+            "text": "{{ product.metafields.custom.flavour_text | metafield_tag }}"
+          }
         }
       },
       "block_order": [
-        "product_feature_nnPAcq"
+        "product_feature_nnPAcq",
+        "product_feature_MDHDbR"
       ],
       "settings": {
       }
