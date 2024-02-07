@@ -213,10 +213,24 @@
           "settings": {
             "metafield-namespace": "product-features-flavour"
           }
+        },
+        "product_feature_9rd8eW": {
+          "type": "product-feature",
+          "settings": {
+            "metafield-namespace": "product-features-tasting"
+          }
+        },
+        "product_feature_QNTV6R": {
+          "type": "product-feature",
+          "settings": {
+            "metafield-namespace": "product-features-origin"
+          }
         }
       },
       "block_order": [
-        "product_feature_MDHDbR"
+        "product_feature_MDHDbR",
+        "product_feature_9rd8eW",
+        "product_feature_QNTV6R"
       ],
       "settings": {
       }
