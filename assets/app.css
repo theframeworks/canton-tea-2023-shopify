@@ -1001,6 +1001,10 @@ video {
   color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
+#app:is(#app) :is(.tw-text-foreground) {
+  color: var(--color-foreground);
+}
+
 #app:is(#app) :is(.tw-opacity-50) {
   opacity: 0.5;
 }
@@ -1046,6 +1050,24 @@ video {
   #app:is(#app) :is(.max-md\:tw-max-w-12) {
     max-width: 3rem;
   }
+
+  #app:is(#app) :is(.max-md\:tw-border-none) {
+    border-style: none;
+  }
+}
+
+@media not all and (min-width: 500px) {
+  #app:is(#app) :is(.max-sm\:tw-border-none) {
+    border-style: none;
+  }
+}
+
+@media (min-width: 500px) {
+  @media not all and (min-width: 1200px) {
+    #app:is(#app) :is(.sm\:max-xl\:tw-pr-16) {
+      padding-right: 4rem;
+    }
+  }
 }
 
 @media (min-width: 750px) {
@@ -1075,20 +1097,52 @@ video {
     grid-column: span 9 / span 9;
   }
 
+  #app:is(#app) :is(.xl\:tw-col-span-7) {
+    grid-column: span 7 / span 7;
+  }
+
   #app:is(#app) :is(.xl\:tw-col-start-8) {
     grid-column-start: 8;
+  }
+
+  #app:is(#app) :is(.xl\:tw-col-start-10) {
+    grid-column-start: 10;
+  }
+
+  #app:is(#app) :is(.xl\:tw-col-start-2) {
+    grid-column-start: 2;
+  }
+
+  #app:is(#app) :is(.xl\:tw-grid) {
+    display: grid;
+  }
+
+  #app:is(#app) :is(.xl\:tw-w-auto) {
+    width: auto;
   }
 
   #app:is(#app) :is(.xl\:tw-max-w-screen-xl) {
     max-width: 1200px;
   }
 
+  #app:is(#app) :is(.xl\:tw-max-w-none) {
+    max-width: none;
+  }
+
   #app:is(#app) :is(.xl\:tw-grid-cols-16) {
     grid-template-columns: repeat(16, minmax(0, 1fr));
   }
 
+  #app:is(#app) :is(.xl\:tw-gap-8) {
+    gap: 2rem;
+  }
+
   #app:is(#app) :is(.xl\:tw-pl-36) {
     padding-left: 9rem;
+  }
+
+  #app:is(#app) :is(.xl\:tw-pl-0) {
+    padding-left: 0px;
   }
 }
 

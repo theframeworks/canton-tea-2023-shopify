@@ -1,8 +1,11 @@
 {%- for block in section.blocks -%}
     {% assign fields = product.metafields[block.settings.metafield-namespace] %}
     <section class="tw-mb-16 page-width">
-      <div class="tw-pt-8 tw-border-t tw-border-stroke-grey tw-grid tw-gap-8 md:tw-items-start md:tw-grid-cols-2 xl:tw-grid-cols-16">
-        <div class="tw-space-y-8 xl:tw-col-span-5 md:tw-sticky md:tw-top-8">
+      <div class="
+        tw-pt-8 tw-border-t tw-border-stroke-grey tw-grid tw-gap-8 md:tw-items-start md:tw-grid-cols-2 xl:tw-grid-cols-16
+        {% if forloop.first %} max-md:tw-border-none {% endif %}
+      ">
+        <div class="tw-space-y-8 xl:tw-col-span-5 md:tw-sticky md:tw-top-8 sm:max-xl:tw-pr-16">
           {% if fields.title %}
             <h2 class="tf-type-body-sm tw-text-canton-grey">
               {{ fields.title | escape }}
