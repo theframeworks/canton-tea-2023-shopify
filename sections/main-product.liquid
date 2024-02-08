@@ -201,7 +201,7 @@
               </p>
             {%- when 'description' -%}
               {%- if product.description != blank -%}
-                <div class="product__accordion accordion quick-add-hidden" {{ block.shopify_attributes }}>
+                <div class="tw-border-stroke-grey product__accordion accordion quick-add-hidden" {{ block.shopify_attributes }}>
                   <details id="Details-{{ block.id }}-{{ section.id }}" open data-details-group="product-accordion">
                     <summary class="[&_.icon-caret]:tw-right-0">
                       <div class="summary__title">
@@ -231,7 +231,7 @@
             {%- when 'custom_liquid' -%}
               {{ block.settings.custom_liquid }}
             {%- when 'collapsible_tab' -%}
-              <div class="product__accordion accordion quick-add-hidden" {{ block.shopify_attributes }}>
+              <div class="tw-border-stroke-grey product__accordion accordion quick-add-hidden" {{ block.shopify_attributes }}>
                 <details id="Details-{{ block.id }}-{{ section.id }}" data-details-group="product-accordion">
                   <summary class="[&_.icon-caret]:tw-right-0">
                     <div class="summary__title">
