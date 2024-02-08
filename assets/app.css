@@ -991,6 +991,16 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+#app:is(#app) :is(.tw-text-canton-berry-and-hibiscus) {
+  --tw-text-opacity: 1;
+  color: rgb(214 27 38 / var(--tw-text-opacity));
+}
+
+#app:is(#app) :is(.tw-text-black) {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
 #app:is(#app) :is(.tw-opacity-50) {
   opacity: 0.5;
 }

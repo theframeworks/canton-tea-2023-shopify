@@ -17,8 +17,9 @@ module.exports = {
       black: '#000000',
       white: '#FFFFFF',
       foreground: 'var(--color-foreground)',
-      'clickable-grey': '#786E6E',
       'canton-grey': '#4E4B48',
+      'canton-berry-and-hibiscus': '#D61B26',
+      'clickable-grey': '#786E6E',
       'stroke-grey': '#8F8F8F',
     },
     screens: {
