@@ -2771,19 +2771,6 @@
         "name": "Quick order list"
       }
     },
-    "product-features": {
-      "name": "Product features",
-      "blocks": {
-        "product-feature": {
-          "name": "Product feature",
-          "settings": {
-            "metafield-namespace": {
-              "label": "Metafield namespace"
-            }
-          }
-        }
-      }
-    },
     "related-products": {
       "name": "Related products",
       "settings": {
@@ -3364,6 +3351,19 @@
       },
       "presets": {
         "name": "Collapsible content"
+      }
+    },
+    "product-features": {
+      "name": "Product features",
+      "blocks": {
+        "product-feature": {
+          "name": "Product feature",
+          "settings": {
+            "metafield-namespace": {
+              "label": "Metafield namespace"
+            }
+          }
+        }
       }
     }
   }

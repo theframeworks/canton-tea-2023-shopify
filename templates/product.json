@@ -252,6 +252,51 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
+    },
+    "multicolumn_EqkRbD": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_FzDhKN": {
+          "type": "column",
+          "settings": {
+            "image": "{{ product.metafields.related_pages[\"1_image\"].value }}",
+            "title": "{{ product.metafields.related_pages[\"1_heading\"].value }}",
+            "text": "{{ product.metafields.related_pages[\"1_description\"] | metafield_tag }}",
+            "link_label": "{{ product.metafields.related_pages[\"1_link_label\"].value }}",
+            "link": "{{ product.metafields.related_pages[\"1_link\"].value }}"
+          }
+        },
+        "column_84LqzT": {
+          "type": "column",
+          "settings": {
+            "image": "{{ product.metafields.related_pages[\"2_image\"].value }}",
+            "title": "{{ product.metafields.related_pages[\"2_heading\"].value }}",
+            "text": "{{ product.metafields.related_pages[\"2_description\"] | metafield_tag }}",
+            "link_label": "{{ product.metafields.related_pages[\"2_link_label\"].value }}",
+            "link": "{{ product.metafields.related_pages[\"2_link\"].value }}"
+          }
+        }
+      },
+      "block_order": [
+        "column_FzDhKN",
+        "column_84LqzT"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
@@ -259,6 +304,7 @@
     "image-with-text",
     "multicolumn",
     "product-features",
-    "related-products"
+    "related-products",
+    "multicolumn_EqkRbD"
   ]
 }

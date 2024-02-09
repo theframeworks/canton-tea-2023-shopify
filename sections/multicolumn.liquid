@@ -80,7 +80,7 @@
                 {% if section.settings.image_ratio == 'adapt' or section.settings.image_ratio == 'circle' %}
                   {% assign spaced_image = true %}
                 {% endif %}
-                <div class="multicolumn-card__image-wrapper multicolumn-card__image-wrapper--{{ section.settings.image_width }}-width{% if section.settings.image_width != 'full' or spaced_image %} multicolumn-card-spacing{% endif %}">
+                <div class="tw-mx-0 multicolumn-card__image-wrapper multicolumn-card__image-wrapper--{{ section.settings.image_width }}-width{% if section.settings.image_width != 'full' or spaced_image %} multicolumn-card-spacing{% endif %}">
                   <div
                     class="media media--transparent media--{{ section.settings.image_ratio }}"
                     {% if section.settings.image_ratio == 'adapt' %}
@@ -118,16 +118,16 @@
                   </div>
                 </div>
               {%- endif -%}
-              <div class="multicolumn-card__info">
+              <div class="tw-px-0 tw-max-w-xl tw-space-y-12 multicolumn-card__info">
                 {%- if block.settings.title != blank -%}
-                  <h3 class="inline-richtext">{{ block.settings.title }}</h3>
+                  <h3 class="tw-text-balance tf-type-heading-md inline-richtext">{{ block.settings.title }}</h3>
                 {%- endif -%}
                 {%- if block.settings.text != blank -%}
                   <div class="rte">{{ block.settings.text }}</div>
                 {%- endif -%}
                 {%- if block.settings.link_label != blank -%}
                   <a
-                    class="link animate-arrow"
+                    class="tw-inline-block tw-underline tw-underline-offset-2 tw-decoration-1"
                     {% if block.settings.link == blank %}
                       role="link" aria-disabled="true"
                     {% else %}
@@ -135,8 +135,7 @@
                     {% endif %}
                   >
                     {{- block.settings.link_label | escape -}}
-                    <span class="icon-wrap">&nbsp;{% render 'icon-arrow' %}</span></a
-                  >
+                  </a>
                 {%- endif -%}
               </div>
             </div>

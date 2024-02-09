@@ -765,6 +765,11 @@ video {
   margin-right: -0.5rem;
 }
 
+#app:is(#app) :is(.tw-mx-0) {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
 #app:is(#app) :is(.tw-my-0) {
   margin-top: 0px;
   margin-bottom: 0px;
@@ -788,6 +793,10 @@ video {
 
 #app:is(#app) :is(.tw-block) {
   display: block;
+}
+
+#app:is(#app) :is(.tw-inline-block) {
+  display: inline-block;
 }
 
 #app:is(#app) :is(.tw-flex) {
@@ -820,6 +829,10 @@ video {
 
 #app:is(#app) :is(.tw-max-w-none) {
   max-width: none;
+}
+
+#app:is(#app) :is(.tw-max-w-xl) {
+  max-width: 36rem;
 }
 
 #app:is(#app) :is(.tw-flex-1) {
@@ -874,6 +887,12 @@ video {
   gap: 2rem;
 }
 
+#app:is(#app) :is(.tw-space-y-12 > :not([hidden]) ~ :not([hidden])) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(3rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(3rem * var(--tw-space-y-reverse));
+}
+
 #app:is(#app) :is(.tw-space-y-6 > :not([hidden]) ~ :not([hidden])) {
   --tw-space-y-reverse: 0;
   margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
@@ -894,6 +913,10 @@ video {
 
 #app:is(#app) :is(.tw-whitespace-nowrap) {
   white-space: nowrap;
+}
+
+#app:is(#app) :is(.tw-text-balance) {
+  text-wrap: balance;
 }
 
 #app:is(#app) :is(.tw-border-t) {
