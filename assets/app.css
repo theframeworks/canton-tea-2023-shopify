@@ -583,6 +583,12 @@ video {
   }
 }
 
+@media (min-width: 1400px) {
+  .tw-debug-screens::before {
+    content: 'screen: pw';
+  }
+}
+
 .tf-type-body-sm:not(#app) {
   font-family: var(--font-body-family);
   font-size: 12px;
@@ -681,89 +687,37 @@ video {
   display: none;
 }
 
-@media not all and (min-width: 1200px) {
+.page-width:not(#app) {
+  width: 100%;
+}
+
+@media (min-width: 500px) {
   .page-width:not(#app) {
-    width: 100%;
-  }
-
-  @media (min-width: 500px) {
-    .page-width:not(#app) {
-      max-width: 500px;
-    }
-  }
-
-  .page-width:not(#app) {
-    width: 100%;
-  }
-
-  @media (min-width: 500px) {
-    .page-width:not(#app) {
-      max-width: 500px;
-    }
-  }
-
-  @media (min-width: 750px) {
-    .page-width:not(#app) {
-      max-width: 750px;
-    }
-  }
-
-  .page-width:not(#app) {
-    width: 100%;
-  }
-
-  @media (min-width: 500px) {
-    .page-width:not(#app) {
-      max-width: 500px;
-    }
-  }
-
-  @media (min-width: 750px) {
-    .page-width:not(#app) {
-      max-width: 750px;
-    }
-  }
-
-  @media (min-width: 990px) {
-    .page-width:not(#app) {
-      max-width: 990px;
-    }
-  }
-
-  .page-width:not(#app) {
-    width: 100%;
-  }
-
-  @media (min-width: 500px) {
-    .page-width:not(#app) {
-      max-width: 500px;
-    }
-  }
-
-  @media (min-width: 750px) {
-    .page-width:not(#app) {
-      max-width: 750px;
-    }
-  }
-
-  @media (min-width: 990px) {
-    .page-width:not(#app) {
-      max-width: 990px;
-    }
-  }
-
-  @media (min-width: 1200px) {
-    .page-width:not(#app) {
-      max-width: 1200px;
-    }
+    max-width: 500px;
   }
 }
 
 @media (min-width: 750px) {
-  @media not all and (min-width: 990px) {
-    .page-width:not(#app) {
-      max-width: none;
-    }
+  .page-width:not(#app) {
+    max-width: 750px;
+  }
+}
+
+@media (min-width: 990px) {
+  .page-width:not(#app) {
+    max-width: 990px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .page-width:not(#app) {
+    max-width: 1200px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .page-width:not(#app) {
+    max-width: 1400px;
   }
 }
 
