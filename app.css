@@ -15,6 +15,10 @@
         @apply tw-font-heading tw-tracking-widest tw-uppercase tw-text-[12px]/[16px];
     }
 
+    .tf-type-caps:not(#app) {
+        @apply tw-font-heading tw-tracking-widest tw-uppercase tw-text-[16px]/[20px];
+    }
+
     .tf-type-smallcaps:not(#app) {
         @apply tw-font-heading tw-tracking-widest tw-uppercase tw-text-[10px]/[18px];
     }

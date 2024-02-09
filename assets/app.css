@@ -611,12 +611,27 @@ video {
   letter-spacing: 0.1em;
 }
 
+.tf-type-caps:not(#app) {
+  font-family: var(--font-heading-family);
+  font-size: 16px;
+  line-height: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
 .tf-type-smallcaps:not(#app) {
   font-family: var(--font-heading-family);
   font-size: 10px;
   line-height: 18px;
   text-transform: uppercase;
   letter-spacing: 0.1em;
+}
+
+.tf-type-heading-xs:not(#app) {
+  font-family: var(--font-heading-family);
+  font-size: 22px;
+  line-height: 24px;
+  letter-spacing: 0em;
 }
 
 .tf-type-heading-sm:not(#app) {
@@ -763,8 +778,16 @@ video {
   margin-bottom: 4rem;
 }
 
+#app:is(#app) :is(.tw-mb-8) {
+  margin-bottom: 2rem;
+}
+
 #app:is(#app) :is(.tw-mr-0) {
   margin-right: 0px;
+}
+
+#app:is(#app) :is(.tw-block) {
+  display: block;
 }
 
 #app:is(#app) :is(.tw-flex) {
@@ -805,6 +828,10 @@ video {
 
 #app:is(#app) :is(.tw-flex-none) {
   flex: none;
+}
+
+#app:is(#app) :is(.tw-flex-grow) {
+  flex-grow: 1;
 }
 
 #app:is(#app) :is(.tw-grid-cols-3) {
@@ -893,6 +920,11 @@ video {
   padding-right: 1rem;
 }
 
+#app:is(#app) :is(.tw-py-0) {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
 #app:is(#app) :is(.tw-py-5) {
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
@@ -904,6 +936,10 @@ video {
 
 #app:is(#app) :is(.tw-pl-4) {
   padding-left: 1rem;
+}
+
+#app:is(#app) :is(.tw-pr-24) {
+  padding-right: 6rem;
 }
 
 #app:is(#app) :is(.tw-pt-6) {
@@ -923,12 +959,26 @@ video {
   font-weight: 700;
 }
 
+#app:is(#app) :is(.tw-uppercase) {
+  text-transform: uppercase;
+}
+
 #app:is(#app) :is(.tw-lowercase) {
   text-transform: lowercase;
 }
 
 #app:is(#app) :is(.tw-leading-none) {
   line-height: 1;
+}
+
+#app:is(#app) :is(.tw-text-black) {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
+#app:is(#app) :is(.tw-text-canton-berry-and-hibiscus) {
+  --tw-text-opacity: 1;
+  color: rgb(214 27 38 / var(--tw-text-opacity));
 }
 
 #app:is(#app) :is(.tw-text-canton-grey) {
@@ -940,23 +990,25 @@ video {
   color: currentColor;
 }
 
+#app:is(#app) :is(.tw-text-foreground) {
+  color: var(--color-foreground);
+}
+
 #app:is(#app) :is(.tw-text-white) {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-#app:is(#app) :is(.tw-text-canton-berry-and-hibiscus) {
-  --tw-text-opacity: 1;
-  color: rgb(214 27 38 / var(--tw-text-opacity));
+#app:is(#app) :is(.tw-underline) {
+  text-decoration-line: underline;
 }
 
-#app:is(#app) :is(.tw-text-black) {
-  --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity));
+#app:is(#app) :is(.tw-decoration-1) {
+  text-decoration-thickness: 1px;
 }
 
-#app:is(#app) :is(.tw-text-foreground) {
-  color: var(--color-foreground);
+#app:is(#app) :is(.tw-underline-offset-2) {
+  text-underline-offset: 2px;
 }
 
 #app:is(#app) :is(.tw-opacity-50) {
@@ -1000,18 +1052,18 @@ video {
   text-decoration-line: underline;
 }
 
+@media not all and (min-width: 1200px) {
+  #app:is(#app) :is(.max-xl\:tw-mb-8) {
+    margin-bottom: 2rem;
+  }
+}
+
 @media not all and (min-width: 750px) {
   #app:is(#app) :is(.max-md\:tw-max-w-12) {
     max-width: 3rem;
   }
 
   #app:is(#app) :is(.max-md\:tw-border-none) {
-    border-style: none;
-  }
-}
-
-@media not all and (min-width: 500px) {
-  #app:is(#app) :is(.max-sm\:tw-border-none) {
     border-style: none;
   }
 }
@@ -1043,20 +1095,24 @@ video {
 }
 
 @media (min-width: 1200px) {
-  #app:is(#app) :is(.xl\:tw-col-span-5) {
-    grid-column: span 5 / span 5;
+  #app:is(#app) :is(.xl\:tw-order-first) {
+    order: -9999;
   }
 
-  #app:is(#app) :is(.xl\:tw-col-span-9) {
-    grid-column: span 9 / span 9;
+  #app:is(#app) :is(.xl\:tw-col-span-2) {
+    grid-column: span 2 / span 2;
+  }
+
+  #app:is(#app) :is(.xl\:tw-col-span-5) {
+    grid-column: span 5 / span 5;
   }
 
   #app:is(#app) :is(.xl\:tw-col-span-7) {
     grid-column: span 7 / span 7;
   }
 
-  #app:is(#app) :is(.xl\:tw-col-start-8) {
-    grid-column-start: 8;
+  #app:is(#app) :is(.xl\:tw-col-span-9) {
+    grid-column: span 9 / span 9;
   }
 
   #app:is(#app) :is(.xl\:tw-col-start-10) {
@@ -1067,16 +1123,16 @@ video {
     grid-column-start: 2;
   }
 
+  #app:is(#app) :is(.xl\:tw-col-start-8) {
+    grid-column-start: 8;
+  }
+
   #app:is(#app) :is(.xl\:tw-grid) {
     display: grid;
   }
 
   #app:is(#app) :is(.xl\:tw-w-auto) {
     width: auto;
-  }
-
-  #app:is(#app) :is(.xl\:tw-max-w-screen-xl) {
-    max-width: 1200px;
   }
 
   #app:is(#app) :is(.xl\:tw-max-w-none) {
@@ -1087,12 +1143,16 @@ video {
     grid-template-columns: repeat(16, minmax(0, 1fr));
   }
 
-  #app:is(#app) :is(.xl\:tw-gap-8) {
-    gap: 2rem;
+  #app:is(#app) :is(.xl\:tw-grid-cols-3) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  #app:is(#app) :is(.xl\:tw-pl-36) {
-    padding-left: 9rem;
+  #app:is(#app) :is(.xl\:tw-gap-4) {
+    gap: 1rem;
+  }
+
+  #app:is(#app) :is(.xl\:tw-gap-8) {
+    gap: 2rem;
   }
 
   #app:is(#app) :is(.xl\:tw-pl-0) {
