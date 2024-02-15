@@ -748,6 +748,10 @@ video {
   top: -.5px;
 }
 
+#app:is(#app) :is(.tw-left-4) {
+  left: 1rem;
+}
+
 #app:is(#app) :is(.tw-right-8) {
   right: 2rem;
 }
@@ -756,8 +760,36 @@ video {
   top: 1rem;
 }
 
+#app:is(#app) :is(.tw-top-auto) {
+  top: auto;
+}
+
 #app:is(#app) :is(.tw-z-10) {
   z-index: 10;
+}
+
+#app:is(#app) :is(.tw-col-span-3) {
+  grid-column: span 3 / span 3;
+}
+
+#app:is(#app) :is(.tw-col-span-7) {
+  grid-column: span 7 / span 7;
+}
+
+#app:is(#app) :is(.tw-col-start-4) {
+  grid-column-start: 4;
+}
+
+#app:is(#app) :is(.tw-col-start-8) {
+  grid-column-start: 8;
+}
+
+#app:is(#app) :is(.tw-row-start-1) {
+  grid-row-start: 1;
+}
+
+#app:is(#app) :is(.tw-row-start-2) {
+  grid-row-start: 2;
 }
 
 #app:is(#app) :is(.-tw-mx-2) {
@@ -789,6 +821,10 @@ video {
 
 #app:is(#app) :is(.tw-mr-0) {
   margin-right: 0px;
+}
+
+#app:is(#app) :is(.tw-mt-0) {
+  margin-top: 0px;
 }
 
 #app:is(#app) :is(.tw-block) {
@@ -827,6 +863,10 @@ video {
   width: 100%;
 }
 
+#app:is(#app) :is(.tw-max-w-lg) {
+  max-width: 32rem;
+}
+
 #app:is(#app) :is(.tw-max-w-none) {
   max-width: none;
 }
@@ -845,6 +885,14 @@ video {
 
 #app:is(#app) :is(.tw-flex-grow) {
   flex-grow: 1;
+}
+
+#app:is(#app) :is(.tw-origin-top-left) {
+  transform-origin: top left;
+}
+
+#app:is(#app) :is(.tw-grid-cols-16) {
+  grid-template-columns: repeat(16, minmax(0, 1fr));
 }
 
 #app:is(#app) :is(.tw-grid-cols-3) {
@@ -871,6 +919,10 @@ video {
   gap: 3rem;
 }
 
+#app:is(#app) :is(.tw-gap-16) {
+  gap: 4rem;
+}
+
 #app:is(#app) :is(.tw-gap-2) {
   gap: 0.5rem;
 }
@@ -885,6 +937,15 @@ video {
 
 #app:is(#app) :is(.tw-gap-8) {
   gap: 2rem;
+}
+
+#app:is(#app) :is(.tw-gap-x-8) {
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
+}
+
+#app:is(#app) :is(.tw-gap-y-24) {
+  row-gap: 6rem;
 }
 
 #app:is(#app) :is(.tw-space-y-12 > :not([hidden]) ~ :not([hidden])) {
@@ -911,12 +972,32 @@ video {
   border-left-width: calc(1px * calc(1 - var(--tw-divide-x-reverse)));
 }
 
+#app:is(#app) :is(.tw-divide-y > :not([hidden]) ~ :not([hidden])) {
+  --tw-divide-y-reverse: 0;
+  border-top-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
+  border-bottom-width: calc(1px * var(--tw-divide-y-reverse));
+}
+
+#app:is(#app) :is(.tw-divide-stroke-grey > :not([hidden]) ~ :not([hidden])) {
+  --tw-divide-opacity: 1;
+  border-color: rgb(143 143 143 / var(--tw-divide-opacity));
+}
+
+#app:is(#app) :is(.tw-self-end) {
+  align-self: flex-end;
+}
+
 #app:is(#app) :is(.tw-whitespace-nowrap) {
   white-space: nowrap;
 }
 
 #app:is(#app) :is(.tw-text-balance) {
   text-wrap: balance;
+}
+
+#app:is(#app) :is(.tw-border-y) {
+  border-top-width: 1px;
+  border-bottom-width: 1px;
 }
 
 #app:is(#app) :is(.tw-border-t) {
@@ -928,9 +1009,17 @@ video {
   border-color: rgb(143 143 143 / var(--tw-border-opacity));
 }
 
+#app:is(#app) :is(.tw-bg-button-grey\/15) {
+  background-color: rgb(113 111 109 / 0.15);
+}
+
 #app:is(#app) :is(.tw-bg-clickable-grey) {
   --tw-bg-opacity: 1;
   background-color: rgb(120 110 110 / var(--tw-bg-opacity));
+}
+
+#app:is(#app) :is(.tw-p-0) {
+  padding: 0px;
 }
 
 #app:is(#app) :is(.tw-px-0) {
@@ -953,6 +1042,15 @@ video {
   padding-bottom: 1.25rem;
 }
 
+#app:is(#app) :is(.tw-py-6) {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+#app:is(#app) :is(.tw-pb-0) {
+  padding-bottom: 0px;
+}
+
 #app:is(#app) :is(.tw-pb-8) {
   padding-bottom: 2rem;
 }
@@ -971,6 +1069,10 @@ video {
 
 #app:is(#app) :is(.tw-pt-8) {
   padding-top: 2rem;
+}
+
+#app:is(#app) :is(.tw-text-left) {
+  text-align: left;
 }
 
 #app:is(#app) :is(.tw-text-5xl) {
@@ -1009,6 +1111,11 @@ video {
   color: rgb(78 75 72 / var(--tw-text-opacity));
 }
 
+#app:is(#app) :is(.tw-text-clickable-grey) {
+  --tw-text-opacity: 1;
+  color: rgb(120 110 110 / var(--tw-text-opacity));
+}
+
 #app:is(#app) :is(.tw-text-current) {
   color: currentColor;
 }
@@ -1036,6 +1143,14 @@ video {
 
 #app:is(#app) :is(.tw-opacity-50) {
   opacity: 0.5;
+}
+
+#app:is(#app) :is(.tw-transition) {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }
 
 /* using :not(#app) increases specificity to override the style coming from the dawn theme */
@@ -1073,6 +1188,60 @@ video {
 
 #app:is(#app) :is(.hover\:tw-underline:hover) {
   text-decoration-line: underline;
+}
+
+#app:is(#app) :is(:has(>.parent\:tw-col-span-3)) {
+  grid-column: span 3 / span 3;
+}
+
+#app:is(#app) :is(:has(>.parent\:tw-col-span-4)) {
+  grid-column: span 4 / span 4;
+}
+
+#app:is(#app) :is(:has(>.parent\:tw-col-start-1)) {
+  grid-column-start: 1;
+}
+
+#app:is(#app) :is(:has(>.parent\:tw-col-start-12)) {
+  grid-column-start: 12;
+}
+
+#app:is(#app) :is(:has(>.parent\:tw-row-span-2)) {
+  grid-row: span 2 / span 2;
+}
+
+#app:is(#app) :is(:has(>.parent\:tw-row-start-1)) {
+  grid-row-start: 1;
+}
+
+#app:is(#app) :is(:has(>.parent\:tw-row-start-2)) {
+  grid-row-start: 2;
+}
+
+#app:is(#app) :is(:has(>.parent\:tw-self-end)) {
+  align-self: flex-end;
+}
+
+#app:is(#app) :is(.tw-peer:where(:focus,:not(:-moz-placeholder-shown)) ~ .peer-selected\:-tw-translate-y-3) {
+  --tw-translate-y: -0.75rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+#app:is(#app) :is(.tw-peer:where(:focus,:not(:placeholder-shown)) ~ .peer-selected\:-tw-translate-y-3) {
+  --tw-translate-y: -0.75rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+#app:is(#app) :is(.tw-peer:where(:focus,:not(:-moz-placeholder-shown)) ~ .peer-selected\:tw-scale-75) {
+  --tw-scale-x: .75;
+  --tw-scale-y: .75;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+#app:is(#app) :is(.tw-peer:where(:focus,:not(:placeholder-shown)) ~ .peer-selected\:tw-scale-75) {
+  --tw-scale-x: .75;
+  --tw-scale-y: .75;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 @media not all and (min-width: 1200px) {
@@ -1197,4 +1366,12 @@ video {
 
 #app:is(#app) :is(.\[\&_li\]\:tw-max-w-none li) {
   max-width: none;
+}
+
+#app:is(#app) :is(.\[\&_svg\]\:tw-h-auto svg) {
+  height: auto;
+}
+
+#app:is(#app) :is(.\[\&_svg\]\:tw-w-2\.5 svg) {
+  width: 0.625rem;
 }

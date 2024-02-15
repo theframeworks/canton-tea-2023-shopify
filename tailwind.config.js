@@ -17,6 +17,8 @@ module.exports = {
       black: '#000000',
       white: '#FFFFFF',
       foreground: 'var(--color-foreground)',
+      grey: '#E0E0E0',
+      'button-grey': '#716F6D',
       'canton-grey': '#4E4B48',
       'canton-berry-and-hibiscus': '#D61B26',
       'clickable-grey': '#786E6E',
@@ -39,5 +41,18 @@ module.exports = {
       },
     },
   },
-  plugins: [require('tailwindcss-debug-screens')],
+  plugins: [
+    require('tailwindcss-debug-screens'),
+    function ({ addVariant }) {
+      const addVariantWithStates = (variant, selector) => {
+        addVariant(variant, `&${selector}`);
+        addVariant(`group-${variant}`, `:merge(.group)${selector} &`);
+        addVariant(`peer-${variant}`, `:merge(.peer)${selector} ~ &`);
+      };
+
+      addVariant('parent', ':has(>&)');
+
+      addVariantWithStates('selected', ':where(:focus,:not(:placeholder-shown))');
+    },
+  ],
 };
