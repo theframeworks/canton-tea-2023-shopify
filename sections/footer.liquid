@@ -52,7 +52,10 @@
         {%- if section.blocks.size > 0 -%}
           <div
             class="
-              tw-grid tw-grid-cols-16 tw-gap-x-8 tw-gap-y-24
+              tw-grid tw-gap-x-8 tw-gap-y-16
+              md:tw-grid-cols-2
+              lg:tw-gap-y-24 lg:tw-grid-cols-12
+              xl:tw-grid-cols-16
               footer__blocks-wrapper {{ footer_grid_class }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}
             "
             {% if settings.animations_reveal_on_scroll %}
@@ -76,12 +79,25 @@
                   {%- when '@app' -%}
                     {% render block %}
                   {%- when 'text' -%}
-                    <div class="parent:tw-self-end parent:tw-col-start-1 parent:tw-col-span-3 parent:tw-row-start-2 tw-text-balance tf-type-body-sm footer-block__details-content rte">
+                    <div class="
+                      tw-mb-0 tw-text-balance tf-type-body-sm
+                      md:parent:tw-col-start-1 md:parent:tw-row-start-2
+                      lg:parent:tw-self-end lg:parent:tw-col-span-3
+                      xl:max-pw:parent:tw-col-span-4
+                      footer-block__details-content rte
+                    ">
                       {{ block.settings.subtext }}
                     </div>
                   {%- when 'link_list' -%}
                     {%- if block.settings.menu != blank -%}
-                      <ul class="tw-divide-y tw-divide-stroke-grey tw-border-y tw-border-stroke-grey parent:tw-col-start-12 parent:tw-col-span-4 parent:tw-row-span-2 footer-block__details-content list-unstyled">
+                      <ul class="
+                        tw-mb-0 tw-divide-y tw-divide-stroke-grey tw-border-y tw-border-stroke-grey
+                        md:parent:tw-row-span-3
+                        lg:parent:tw-col-start-10 lg:parent:tw-col-span-3 lg:parent:tw-row-span-2
+                        xl:parent:tw-col-start-13 xl:parent:tw-col-span-4
+                        pw:parent:tw-col-start-12
+                        footer-block__details-content list-unstyled
+                      ">
                         {%- for link in block.settings.menu.links -%}
                           <li class="tw-mr-0">
                             <a
@@ -126,11 +142,16 @@
                       {%- endif -%}
                     </div>
                   {%- when 'image' -%}
-                    <div class="parent:tw-col-start-1 parent:tw-col-span-3 parent:tw-row-start-1 footer-block__details-content footer-block-image {{ block.settings.alignment }}">
+                    <div class="
+                      tw-mb-0 tw-justify-start
+                      lg:parent:tw-row-start-1 lg:parent:tw-col-start-1 lg:parent:tw-col-span-3
+                      xl:max-pw:parent:tw-col-span-4
+                      footer-block__details-content footer-block-image {{ block.settings.alignment }}
+                    ">
                       {%- if block.settings.image != blank -%}
                         {%- assign image_size_2x = block.settings.image_width | times: 2 | at_most: 5760 -%}
                         <div
-                          class="footer-block__image-wrapper"
+                          class="tw-mb-0 footer-block__image-wrapper"
                           style="max-width: min(100%, {{ block.settings.image_width }}px);"
                         >
                           <img
@@ -151,7 +172,10 @@
             {%- endfor -%}
             <div
               class="
-                tw-col-start-4 tw-col-span-7 tw-row-start-1 tw-mt-0
+                tw-mt-0 tw-row-start-3
+                max-md:tw-justify-start
+                lg:tw-col-start-4 lg:tw-col-span-6 lg:tw-row-start-1
+                xl:tw-col-span-7
                 footer-block--newsletter{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}
               "
               {% if settings.animations_reveal_on_scroll %}
@@ -159,7 +183,7 @@
               {% endif %}
             >
               {%- if section.settings.newsletter_enable -%}
-                <div class="tw-text-left footer-block__newsletter">
+                <div class="tw-text-left tw-w-full footer-block__newsletter">
                   {%- if section.settings.newsletter_heading != blank -%}
                     <h2 class="tw-text-balance tw-max-w-lg tf-type-body-sm footer-block__heading inline-richtext">{{ section.settings.newsletter_heading }}</h2>
                   {%- endif -%}
@@ -223,7 +247,28 @@
                 </div>
               {%- endif -%}
             </div>
-            <div class="tw-self-end tw-col-start-4 tw-col-span-3 tw-row-start-2">
+            <div class="
+              md:max-lg:tw-order-last
+              lg:tw-self-end lg:tw-row-start-2 lg:tw-col-start-7 lg:tw-col-span-3
+              xl:tw-col-start-7 xl:tw-col-span-4 xl:max-pw:tw-col-start-8
+            ">
+              {%- if shop.features.follow_on_shop? and section.settings.enable_follow_on_shop -%}
+                <div class="footer__follow-on-shop">
+                  {% comment %} TODO: enable theme-check once `login_button` is accepted as valid filter {% endcomment %}
+                  {% # theme-check-disable %}
+                  {{ shop | login_button: action: 'follow' }}
+                  {% # theme-check-enable %}
+                </div>
+              {%- endif -%}
+
+              {%- if section.settings.show_social and has_social_icons -%}
+                {%- render 'social-icons', class: 'tw-text-clickable-grey max-md:tw-justify-start' -%}
+              {%- endif -%}
+            </div>
+            <div class="
+              lg:tw-self-end lg:tw-row-start-2 lg:tw-col-start-4 lg:tw-col-span-3
+              xl:max-pw:tw-col-start-5
+            ">
               <div>
                 <small class="tf-type-body-sm tw-block">
                   Copyright {{ shop.name }} {{ 'now' | date: '%Y' }}
@@ -240,20 +285,6 @@
                   </ul>
                 {%- endif -%}
               </div>
-            </div>
-            <div class="tw-self-end tw-col-start-8 tw-col-span-3 tw-row-start-2">
-              {%- if shop.features.follow_on_shop? and section.settings.enable_follow_on_shop -%}
-                <div class="footer__follow-on-shop">
-                  {% comment %} TODO: enable theme-check once `login_button` is accepted as valid filter {% endcomment %}
-                  {% # theme-check-disable %}
-                  {{ shop | login_button: action: 'follow' }}
-                  {% # theme-check-enable %}
-                </div>
-              {%- endif -%}
-  
-              {%- if section.settings.show_social and has_social_icons -%}
-                {%- render 'social-icons', class: 'tw-text-clickable-grey' -%}
-              {%- endif -%}
             </div>
           </div>
         {%- endif -%}
